@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: python.md
+- file: sympy.md
+- file: numpy.md
+- file: Lab1-Intro-to-Python.ipynb
+- file: Lab2-Partial-Fractions.ipynb
+- file: numerical-integration-example.ipynb
+- file: Lab3-Arc-Length.ipynb
+- file: Lab4-Surface-Area.ipynb
+- file: ODE-intro.ipynb
+- file: Lab5-ODEs.ipynb
+- file: Lab6-ODE-systems.ipynb
+- file: Lab7-Parametric-Curves.ipynb
+- file: Lab8-Polar-Curves.ipynb
