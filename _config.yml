@@ -22,7 +22,7 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/sean-fitzpatrick/CalcLabs  # Online location of your book
-  path_to_book: ULethCalc  # Optional path to your book, relative to the repository root
+  # path_to_book: ULethCalc  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -30,7 +30,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  
+
 launch_buttons:
   notebook_interface: "classic" # can also use "jupyterlab"
   jupyterhub_url: "https://uleth.syzygy.ca/jupyter/"
