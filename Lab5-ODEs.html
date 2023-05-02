@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab 5: Differential Equations &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lab5-ODEs';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial 6: Systems of differential equations" href="Lab6-ODE-systems.html" />
+    <link rel="prev" title="Introduction to Differential Equations" href="ODE-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab1-Intro-to-Python.html">Lab 1: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab2-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab3-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab4-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab6-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab7-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab8-Polar-Curves.html">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FLab5-ODEs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lab5-ODEs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 5: Differential Equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-fields">Slope fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solutions">Exact solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-euler-s-method">Code for Euler’s Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-solution">Checking the solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenge">Additional Challenge</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-5-differential-equations">
+<h1>Lab 5: Differential Equations<a class="headerlink" href="#lab-5-differential-equations" title="Permalink to this heading">#</a></h1>
+<p>Today we will be using the Numpy and SciPy Python libraries in order to numerical approximate solutions to <em>Ordinary Differential Equations</em> using the Euler method. The session will build on the Jupyter notebooks which you have been using in class this week.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section id="slope-fields">
+<h2>Slope fields<a class="headerlink" href="#slope-fields" title="Permalink to this heading">#</a></h2>
+<p>The following code was introduced in class to demonstrate how to use Python to generate a slope field for a differential equation of the form <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfield</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+            <span class="n">slope</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+                <span class="n">z</span> <span class="o">=</span> <span class="n">slope</span><span class="o">*</span><span class="p">(</span><span class="n">domain</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="n">y1</span>
+                <span class="k">return</span> <span class="n">z</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Slope field for y&#39;=f(x,y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<p>Produce slope fields for the following differential equations:</p>
+<p>(a) <span class="math notranslate nohighlight">\(y' = y\sin(x)\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(y' = x^2(1-y)\)</span></p>
+<p>For each equation, you will need to:</p>
+<ul class="simple">
+<li><p>define the function <code class="docutils literal notranslate"><span class="pre">f(y,x)</span></code> (remember that we have to write y,x and not x,y!)</p></li>
+<li><p>define x and y using the <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> command</p></li>
+<li><p>run the code above by putting <code class="docutils literal notranslate"><span class="pre">dfield(f)</span></code> as the last line in your code cell.</p></li>
+</ul>
+</section>
+</section>
+<section id="exact-solutions">
+<h2>Exact solutions<a class="headerlink" href="#exact-solutions" title="Permalink to this heading">#</a></h2>
+<p>Recall that for a separable differential equation of the form <span class="math notranslate nohighlight">\(y'=f(x)g(y)\)</span>, we can solve by rearranging this as <span class="math notranslate nohighlight">\(\dfrac{1}{g(y)}\dfrac{dy}{dx}=f(x)\)</span> and then integrating both sides with respect to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<p>Solve the initial value problems below (the equations are the same as in problem 1).</p>
+<p>(a) <span class="math notranslate nohighlight">\(y'=y\sin(x)\)</span>, with <span class="math notranslate nohighlight">\(y(0)=\pi/2\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\(y'=x^2(1-y)\)</span>, with <span class="math notranslate nohighlight">\(y(0)=3\)</span>.</p>
+<p>You can either solve them by hand, or use SymPy. The SymPy code is as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">yprime</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">yprime</span><span class="p">,</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a458a3c632096b0c50cfcb788c770086434fabd87e089086686fac82877c05d6.png" src="_images/a458a3c632096b0c50cfcb788c770086434fabd87e089086686fac82877c05d6.png" />
+</div>
+</div>
+<p>What this does:</p>
+<ul class="simple">
+<li><p>defines <code class="docutils literal notranslate"><span class="pre">x</span></code> as a symbolic variable</p></li>
+<li><p>defines <code class="docutils literal notranslate"><span class="pre">y</span></code> (symbolically) as a function of <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>defines <code class="docutils literal notranslate"><span class="pre">yprime</span></code> as the derivative of <code class="docutils literal notranslate"><span class="pre">y</span></code> with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>defines a differential equation “<code class="docutils literal notranslate"><span class="pre">eq</span></code>” of the form <span class="math notranslate nohighlight">\(y'=x-y\)</span>. (You should replace <code class="docutils literal notranslate"><span class="pre">x-y</span></code> with an approprirate function.)</p></li>
+<li><p>displays the differential equation</p></li>
+</ul>
+<p>You can now ask the computer to solve the equation using the command <code class="docutils literal notranslate"><span class="pre">sy.dsolve(eq)</span></code>. If the output looks messy, you can try wrapping this command in <code class="docutils literal notranslate"><span class="pre">sy.simplify()</span></code>. To specify that you want to solve for <span class="math notranslate nohighlight">\(y\)</span>, you can use <code class="docutils literal notranslate"><span class="pre">sy.dsolve(eq,y(x))</span></code>, and to enter an intial condition <span class="math notranslate nohighlight">\(y(0)=1\)</span>, try <code class="docutils literal notranslate"><span class="pre">sy.dsolve(eq,y,ics={y(0):1})</span></code> as an optional argument (after the <code class="docutils literal notranslate"><span class="pre">y(x)</span></code> in <code class="docutils literal notranslate"><span class="pre">sy.dsolve(eq,y)</span></code>).</p>
+</section>
+</section>
+<section id="euler-s-method">
+<h2>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Essentially a numerical counterpart to slope fields.</p></li>
+<li><p>Recall the linear approximation $<span class="math notranslate nohighlight">\(g(x_0+\Delta x) \approx g(x_0) + g'(x_0)\Delta x.\)</span>$</p></li>
+<li><p>Given <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span>, look for solution <span class="math notranslate nohighlight">\(y=g(x)\)</span> with initial condition <span class="math notranslate nohighlight">\(g(x_0)=y_0\)</span>.</p></li>
+<li><p>Notice <span class="math notranslate nohighlight">\(g'(x_0) = f(x_0,y_0)\)</span>.</p></li>
+<li><p>Proceed in “steps”, with fixed <strong>step size</strong> <span class="math notranslate nohighlight">\(\Delta x\)</span> as follows:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((x_0,y_0)\)</span> is given.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1 = x_0+\Delta x\)</span> and <span class="math notranslate nohighlight">\(y_1 = y_0+f(x_0,y_0)\Delta x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_2 = x_0+2\Delta x\)</span> and <span class="math notranslate nohighlight">\(y_2 = y_1+f(x_1,y_1)\Delta x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_3 = x_0+3\Delta x\)</span> and <span class="math notranslate nohighlight">\(y_3 = y_2+f(x_2,y_2)\Delta x\)</span></p></li>
+</ol>
+<p>etc.</p>
+<section id="code-for-euler-s-method">
+<h3>Code for Euler’s Method<a class="headerlink" href="#code-for-euler-s-method" title="Permalink to this heading">#</a></h3>
+<p>The following is borrowed from <a class="reference external" href="https://www.math.ubc.ca/~pwalls/math-python/differential-equations/first-order/">Patrick Walls at UBC</a>. We define a function called odeEuler that implements the steps outlined above.</p>
+<p>Input is an ODE of the form <span class="math notranslate nohighlight">\(y'=f(y,x)\)</span>. Syntax is <code class="docutils literal notranslate"><span class="pre">odeEuler(f,y0,x)</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> is our function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> is the initial value for <span class="math notranslate nohighlight">\(y\)</span>, corresponding to the value in <code class="docutils literal notranslate"><span class="pre">x</span></code> at index 0.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> is a NumPy array (the values to be used for the steps)</p></li>
+</ul>
+<p>Before you can use it, you will need to define the function <code class="docutils literal notranslate"><span class="pre">f(y,x)</span></code>, and the values for <code class="docutils literal notranslate"><span class="pre">x</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">x=np.linspace(0,2,100)</span></code> will use 100 samples for <code class="docutils literal notranslate"><span class="pre">x</span></code> between 0 and 2).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output is a NumPy array containing the <span class="math notranslate nohighlight">\(y\)</span> values correpsonding to the <span class="math notranslate nohighlight">\(x\)</span> values in <code class="docutils literal notranslate"><span class="pre">x</span></code>.<br><br></p>
+<p>If you want to plot these points, you can do the following. (You can copy this code into the empty cells below, and then edit as needed.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="c1">#you need to replace 2*x-3*y with your function here</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="c1">#replace a, b, and n with numbers</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#replace 0 with the initial value for y here</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this heading">#</a></h3>
+<p>Apply Euler’s method to the two initial value problems from Problem 2. For each problem, you will need to define the function <code class="docutils literal notranslate"><span class="pre">f(y,x)</span></code> and the initial value <code class="docutils literal notranslate"><span class="pre">y0</span></code> before running the <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> and plot commands. For each differential equation, use <span class="math notranslate nohighlight">\(x\)</span> values from 0 to 2 with 50 steps.</p>
+</section>
+</section>
+<section id="checking-the-solution">
+<h2>Checking the solution<a class="headerlink" href="#checking-the-solution" title="Permalink to this heading">#</a></h2>
+<p>How well does our algorithm work? We can plot our values against the exact ones.<br></p>
+<p>For each initial value problem done in problems 2 and 3: first define the function <code class="docutils literal notranslate"><span class="pre">f(y,x)</span></code> used by the <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> function, and then define a function <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> that gives the exact solution. You can use your answers from Problem 2, but you will need to enter them as NumPy functions rather than SymPy functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You will need to change the definitions of f(y,x), y0 and g(x) below to the ones for part (a)</span>
+<span class="c1"># You may also need to define x as an np.linspace</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">9</span><span class="o">+</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_exact</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_euler</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y_euler</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_exact</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Euler&#39;</span><span class="p">,</span><span class="s1">&#39;Exact&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/434715e27119cc7b6b732982a626db8057420799b2fc2645a1d9badd1f696ff2.png" src="_images/434715e27119cc7b6b732982a626db8057420799b2fc2645a1d9badd1f696ff2.png" />
+</div>
+</div>
+<p>If your graphs don’t fit well in the window, you can adjust the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values shown by changing the numbers in the <code class="docutils literal notranslate"><span class="pre">plt.axis</span></code> line.</p>
+<p>Next, repeat the above for part (b).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enter f(y,x) and g(x) for part (b) here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copy,paste, and re-run the plotting code above here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-challenge">
+<h2>Additional Challenge<a class="headerlink" href="#additional-challenge" title="Permalink to this heading">#</a></h2>
+<p>If you have time, see if you can produce a plot that shows the slope field, the exact solution, and the Euler’s method approximation, all in the same plot.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ODE-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Differential Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lab6-ODE-systems.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial 6: Systems of differential equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-fields">Slope fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solutions">Exact solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-euler-s-method">Code for Euler’s Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-solution">Checking the solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-challenge">Additional Challenge</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
