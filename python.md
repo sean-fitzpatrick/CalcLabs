@@ -1,4 +1,4 @@
-# Intro to Python for calculus
+# Intro to Python for Calculus (markdown)
 
 In this section, we'll review some of the elements of core Python that feature in our notebooks.
 If you're an experienced Python programmer, you'll no doubt find some omissions and shortcomings in our documentation.

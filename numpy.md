@@ -1,4 +1,4 @@
-# Intro to NumPy for calculus
+# Intro to NumPy for Calculus (markdown)
 
 By Raheem Mir
 

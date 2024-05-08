@@ -1,4 +1,4 @@
-# Intro to SymPy for Calculus
+# Intro to SymPy for Calculus (markdown)
 
 By Raheem Mir
 
