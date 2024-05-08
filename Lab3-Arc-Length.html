@@ -226,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fsean-fitzpatrick%2FCalcLabs&urlpath=tree%2FCalcLabs%2FLab3-Arc-Length.ipynb&branch=main" target="_blank"
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Lab3-Arc-Length.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -542,8 +542,20 @@ document.write(`
 </div>
 </div>
 </div>
-<p>You should see an array consisting of the numbers from 0 to 10. Numpy has a “colon syntax” for accessing parts of an array. To see the full array <code class="docutils literal notranslate"><span class="pre">P</span></code>, you can enter <code class="docutils literal notranslate"><span class="pre">P[:]</span></code>. Try it:</p>
+<p>You should see an array consisting of the numbers from 0 to 10. Python has a “colon syntax” for accessing parts of an array. To see the full array <code class="docutils literal notranslate"><span class="pre">P</span></code>, you can enter <code class="docutils literal notranslate"><span class="pre">P[:]</span></code>. Try it:</p>
 <p>If you want all the entries after a certain point in the index, you can place a colon to the right of the index value. For example, <code class="docutils literal notranslate"><span class="pre">P[3:]</span></code> will give everything after (and including) the third index position. Try it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 1., 2.])
+</pre></div>
+</div>
+</div>
+</div>
 <p>Remember that a Python index starts at 0, so position 3 is actually the 4th entry!</p>
 <p>To get everything before a certain position, put the colon on the left. See what happens if you enter <code class="docutils literal notranslate"><span class="pre">P[:4]</span></code>:</p>
 <p>Finally, you can also start from the end instead of the beginning, using negative index values. See what happens if you input <code class="docutils literal notranslate"><span class="pre">P[:-3]</span></code> and <code class="docutils literal notranslate"><span class="pre">P[-4:]</span></code>:</p>

@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -340,7 +342,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -356,6 +360,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-arithmetic-operations">Basic arithmetic operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-arrays">Lists and arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-lists">Operations with lists</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -367,7 +385,167 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="intro-to-python-for-calculus">
 <h1>Intro to Python for calculus<a class="headerlink" href="#intro-to-python-for-calculus" title="Permalink to this heading">#</a></h1>
-<p>Evenually this will contain details on the basics of Python, including how to work with arrays.</p>
+<p>In this section, we’ll review some of the elements of core Python that feature in our notebooks.
+If you’re an experienced Python programmer, you’ll no doubt find some omissions and shortcomings in our documentation.
+Suggestions are welcome! These labs have been written by mathematicians with no formal training in programming,
+and are rather utilitarian in nature.</p>
+<section id="basic-arithmetic-operations">
+<h2>Basic arithmetic operations<a class="headerlink" href="#basic-arithmetic-operations" title="Permalink to this heading">#</a></h2>
+<p>One thing to keep in mind, if you’re coming from a C++ background, is that most of the time in Python,
+we don’t need to worry about specifying data types (until we do…)
+If you ask Python to perform the sum <code class="docutils literal notranslate"><span class="pre">4+3</span></code>, it will do so, and return 7.
+If you ask for <code class="docutils literal notranslate"><span class="pre">4/3</span></code>, you will get a floating point answer, rather than a fraction.
+(If you want to get a fraction, see the <a class="reference internal" href="sympy.html"><span class="doc std std-doc">SymPy documentation</span></a>.)</p>
+<p>Basic operations are:</p>
+<ul class="simple">
+<li><p>Addition: <code class="docutils literal notranslate"><span class="pre">4+3</span></code></p></li>
+<li><p>Subtraction: <code class="docutils literal notranslate"><span class="pre">4-3</span></code></p></li>
+<li><p>Multiplication: <code class="docutils literal notranslate"><span class="pre">4*3</span></code></p></li>
+<li><p>Division: <code class="docutils literal notranslate"><span class="pre">4/3</span></code></p></li>
+<li><p>Exponentiation: <code class="docutils literal notranslate"><span class="pre">4**3</span></code> (Caution: Python will not understand <code class="docutils literal notranslate"><span class="pre">4^3</span></code>, even if that’s what you’re used to.)</p></li>
+</ul>
+<p>It’s a good idea to do some playing around; in particular, do some experiments with order of operation,
+and determine for yourself when parentheses are (and aren’t) needed.
+(Of course, a few extra parentheses won’t hurt.)</p>
+<p><strong>Note:</strong> one of the most common errors that students run into in their calculus labs is forgetting the multiplication operator.
+We’re used to writing expressions like <code class="docutils literal notranslate"><span class="pre">2x</span></code> that have an implied multiplication,
+but this will not be understood by Python. You must enter <code class="docutils literal notranslate"><span class="pre">2*x</span></code>.</p>
+</section>
+<section id="variables-and-print-statements">
+<h2>Variables and print statements<a class="headerlink" href="#variables-and-print-statements" title="Permalink to this heading">#</a></h2>
+<p>With multi-step calculations, it is often useful to assign variable names.
+This is also useful if we want to later change the numbers in our calculuations.</p>
+<p>For example, instead of computing the sum <code class="docutils literal notranslate"><span class="pre">4+3</span></code> directly, we could enter the information as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>If you run this code in a Jupyter code cell, nothing will happen.
+Well, nothing that you can see. The computer has stored this information, but you haven’t asked it to do anything with it.
+If you want to see the result of the addition, you need to use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that if we put <code class="docutils literal notranslate"><span class="pre">4+3</span></code> in a code cell and run it, we get the output immediately.</p>
+<p>We can also store and print string variables in a similar fashion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string_var</span> <span class="o">=</span> <span class="s2">&quot;Hey, I&#39;m a string!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_var</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will produce the output <code class="docutils literal notranslate"><span class="pre">Hey,</span> <span class="pre">I'm</span> <span class="pre">a</span> <span class="pre">string!</span></code>.</p>
+<p><strong>Caution</strong>: running an operation like <code class="docutils literal notranslate"><span class="pre">4+3</span></code> will automatically produce output.
+But in a Jupyter notebook, this is only true if it’s the last (or only) line in your cell.
+If you enter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span>
+<span class="mi">4</span><span class="o">*</span><span class="mi">3</span>
+<span class="mi">4</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>and run it, the only output you’ll get is <code class="docutils literal notranslate"><span class="pre">1</span></code> (the result of doing <code class="docutils literal notranslate"><span class="pre">4-3</span></code>).
+If you want to get all three outputs from a single cell, you can use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command.
+See what happens if you do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<p>A <em>function</em> in Python is just like a function in mathematics: you define it by saying what it should do to a given input.
+Then, if you give your function an input, it will provide you with the corresponding output.
+The syntax for defining a function is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>This defines the function <span class="math notranslate nohighlight">\(f(x)=x^2+4\)</span>. But note that Python will not communicate your function to you in this way.
+Indeed, if you try running the command <code class="docutils literal notranslate"><span class="pre">print(f(x))</span></code>, you will get an error,
+since we haven’t told the computer what <code class="docutils literal notranslate"><span class="pre">x</span></code> is!
+The command <code class="docutils literal notranslate"><span class="pre">print(f)</span></code> is no better: you’ll get an output like <code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">f</span> <span class="pre">at</span> <span class="pre">0x7f27cd037880&gt;</span></code> that is probably not very illuminating.</p>
+<p>However, your function <em>has</em> been defined, and it <em>will</em> give you output, as long as you first give it input.
+Enter <code class="docutils literal notranslate"><span class="pre">f(2)</span></code> and you’ll get the output <code class="docutils literal notranslate"><span class="pre">8</span></code>, which is indeed the value of <span class="math notranslate nohighlight">\(2^2+4\)</span>.</p>
+<p><strong>Note:</strong> the indentation above is an essential part of Python syntax!
+Your function definition won’t work without it.
+Fortunately, when you’re working in a Jupyter notebook,
+as long as you remember the colon at the end of the first line,
+the computer will add the indentation for you as soon as you hit enter.</p>
+<p>A quicker way to define a function is to use Python’s <code class="docutils literal notranslate"><span class="pre">lambda</span></code> syntax.
+This is especially useful if you need to define a function inline as part of a larger program.
+Instead of the function definition we did above, an equivalent syntax is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>(It’s faster, but until you get used to it, I’m not sure the syntax is any easier to remember!)</p>
+</section>
+<section id="lists-and-arrays">
+<h2>Lists and arrays<a class="headerlink" href="#lists-and-arrays" title="Permalink to this heading">#</a></h2>
+<p>Most of the time, we won’t be interested in evaluating a function at a single point.
+Instead, we’ll want to evaluate a function on a whole list of points,
+and produce a list of output values as a result.
+(These might then be used for something like plotting a graph of the function.)</p>
+<p>Most often, we will be working with lists when using the <a class="reference internal" href="numpy.html"><span class="doc std std-doc">NumPy library</span></a> for numerical computations.
+In that context, the content of our list will be floating point numbers, and the list is called an <strong>array</strong>.
+(An array is really just a special type of list, where all the entries have the same data type, which is usually <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>.
+Arrays come from libraries like NumPy and aren’t built into Python.)</p>
+<p>Lists entries don’t have to be of the same type. It’s also important to note that a list:</p>
+<ul class="simple">
+<li><p>is <em>ordered</em></p></li>
+<li><p>can contain <em>duplicates</em></p></li>
+<li><p>can be changed (the Python word for this is <em>mutable</em>)</p></li>
+</ul>
+<p>In particular, we can start with an empty list and then populate it.
+Some examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;Hello world&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">integer_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that lists are always denoted by square brackets.</p>
+<section id="operations-with-lists">
+<h3>Operations with lists<a class="headerlink" href="#operations-with-lists" title="Permalink to this heading">#</a></h3>
+<p>One of the simplest things we can do with a list is get its length.
+Try running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">empty_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mixed_list</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> command will give the data type of a list, but this is unlikely to be needed in a calculus lab.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">append</span></code> command is quite useful, as this lets us add items to a list.
+For example, if we run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">empty_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>the output will be <code class="docutils literal notranslate"><span class="pre">[3]</span></code>.</p>
+<p>Often this is done as part of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. If we want to append our list 10 times, we can do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">empty_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Again note the importance of the indentation for the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.
+The output of the above will be <code class="docutils literal notranslate"><span class="pre">[0,1,2,3,4,5,6,7,8,9]</span></code>. We asked for 10 steps,
+and the computer obliged. But the computer always starts counting at zero!</p>
+<p>One of the things we’ll need to be able to do is access list items.
+Here is some of the syntax for doing so, for a list named <code class="docutils literal notranslate"><span class="pre">L</span></code>:</p>
+<ul class="simple">
+<li><p>the whole list: <code class="docutils literal notranslate"><span class="pre">L[:]</span></code></p></li>
+<li><p>everything after (and including) index position <code class="docutils literal notranslate"><span class="pre">i</span></code>: <code class="docutils literal notranslate"><span class="pre">L[i:]</span></code></p></li>
+<li><p>everything before index position <code class="docutils literal notranslate"><span class="pre">i</span></code>: <code class="docutils literal notranslate"><span class="pre">L[:i]</span></code></p></li>
+<li><p>everything before the position <code class="docutils literal notranslate"><span class="pre">j</span></code> steps from the end: <code class="docutils literal notranslate"><span class="pre">L[:-j]</span></code></p></li>
+<li><p>everything after (and including) the position <code class="docutils literal notranslate"><span class="pre">j</span></code> steps from the end: <code class="docutils literal notranslate"><span class="pre">L[-j:]</span></code></p></li>
+</ul>
+<p>(For the last two, “from the end” is meant in the sense that one step from the end is the last entry.)</p>
+<p>For example, if <code class="docutils literal notranslate"><span class="pre">L</span></code> is a partition of an interval, and we want to do a Riemann sum,
+the list <code class="docutils literal notranslate"><span class="pre">L[1:]</span></code> consists of all points in the partition except the first one, which is what you want for right endpoints.
+If you want left endpoints, you would use the list <code class="docutils literal notranslate"><span class="pre">L[:-1]</span></code>, which consists of everything except the last point.</p>
+<p>If you need further details on working with lists, you will find plenty of <a class="reference external" href="https://www.w3schools.com/python/python_lists.asp">help online</a>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,6 +606,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-arithmetic-operations">Basic arithmetic operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-arrays">Lists and arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-lists">Operations with lists</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
