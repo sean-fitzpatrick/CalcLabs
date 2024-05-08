@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ODE-intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lab 5: Differential Equations" href="Lab5-ODEs.html" />
-    <link rel="prev" title="Lab 4: Arc length and surface area" href="Lab4-Surface-Area.html" />
+    <link rel="next" title="Lab 5: Differential Equations" href="Calc2-Lab4-ODEs.html" />
+    <link rel="prev" title="Lab 4: Arc length and surface area" href="Calc2-Lab3-Surface-Area.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,18 +160,25 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab1-Intro-to-Python.html">Lab 1: Numpy and Sympy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab2-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab3-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab4-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab5-ODEs.html">Lab 5: Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab6-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab7-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lab8-Polar-Curves.html">Lab 8: Polar curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
 </ul>
 
     </div>
@@ -595,9 +602,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/5769a12910c3f9c854a710fb698fae898bcf77d9f8e11da45287b0eec08463e8.png" src="_images/5769a12910c3f9c854a710fb698fae898bcf77d9f8e11da45287b0eec08463e8.png" />
-</div>
 </div>
 <p>Next, we can try using the computer to solve the ODE, and see how the solution fits.</p>
 <p>We’re using the <em>SciPy</em>, which is quite powerful. I’ve borred an example <a class="reference external" href="https://sam-dolan.staff.shef.ac.uk/mas212/notebooks/ODE_Example.html">from here</a> that solves a problem similar to ours.</p>
@@ -623,9 +627,6 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/df5a30650a0bbb1dc94397b0a58886026da339ad218b3d67c70952bcf5945500.png" src="_images/df5a30650a0bbb1dc94397b0a58886026da339ad218b3d67c70952bcf5945500.png" />
 </div>
 </div>
 <p>The graph doesn’t look great. This is mostly because we only used 20 sample points when we originally set things up for the direction field. Let’s try uncommenting the <code class="docutils literal notranslate"><span class="pre">x=np.linspace(-5,5,100)</span></code> line above and then running the plot command again.</p>
@@ -673,9 +674,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfplot</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/b09637623b7e2374faa3e85ccf7c274160dddc5a5b110faf2f2b34c5f1048db5.png" src="_images/b09637623b7e2374faa3e85ccf7c274160dddc5a5b110faf2f2b34c5f1048db5.png" />
 </div>
 </div>
 </section>
@@ -780,14 +778,6 @@ The next cell will print the sample <span class="math notranslate nohighlight">\
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ]),
- array([1.        , 0.9       , 0.82      , 0.758     , 0.7122    ,
-        0.68098   , 0.662882  , 0.6565938 , 0.66093442, 0.67484098,
-        0.69735688]))
-</pre></div>
-</div>
-</div>
 </div>
 <section id="checking-the-solution">
 <h4>Checking the solution<a class="headerlink" href="#checking-the-solution" title="Permalink to this heading">#</a></h4>
@@ -812,9 +802,6 @@ The general solution is</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/20e18ea008dc617342aaf9998c0e33b0c1ebca46916cea73c11146d5a29aabd7.png" src="_images/20e18ea008dc617342aaf9998c0e33b0c1ebca46916cea73c11146d5a29aabd7.png" />
-</div>
 </div>
 </section>
 </section>
@@ -834,9 +821,6 @@ The general solution is</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/0b86a6dd4a39ae834c2f88910013442c5efe70934386ddf96b31bb603a6bf90f.png" src="_images/0b86a6dd4a39ae834c2f88910013442c5efe70934386ddf96b31bb603a6bf90f.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,18 +829,12 @@ The general solution is</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/89f13e7cc1d7e73e11f4dff323671a66d6bbf96aa5cc070f75d8c7d582f6423b.png" src="_images/89f13e7cc1d7e73e11f4dff323671a66d6bbf96aa5cc070f75d8c7d582f6423b.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/89f13e7cc1d7e73e11f4dff323671a66d6bbf96aa5cc070f75d8c7d582f6423b.png" src="_images/89f13e7cc1d7e73e11f4dff323671a66d6bbf96aa5cc070f75d8c7d582f6423b.png" />
 </div>
 </div>
 <p>We can also add initial conditions using the following syntax, which solves the differential equation with initial condition <span class="math notranslate nohighlight">\(y(0)=2\)</span>.</p>
@@ -865,9 +843,6 @@ The general solution is</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span><span class="mi">2</span><span class="p">})</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/61c95184e388a865de38e6dbe2c7d6b6c9ca84400f3fd8173eb8aae17284c334.png" src="_images/61c95184e388a865de38e6dbe2c7d6b6c9ca84400f3fd8173eb8aae17284c334.png" />
 </div>
 </div>
 </section>
@@ -906,7 +881,7 @@ The general solution is</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Lab4-Surface-Area.html"
+       href="Calc2-Lab3-Surface-Area.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -915,7 +890,7 @@ The general solution is</p>
       </div>
     </a>
     <a class="right-next"
-       href="Lab5-ODEs.html"
+       href="Calc2-Lab4-ODEs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

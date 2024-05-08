@@ -1,0 +1,921 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Limits and Python! &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc1-Lab1-Limits';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Derivatives, Derivatives, and Derivatives!" href="Calc1-Lab2-Derivatives.html" />
+    <link rel="prev" title="Intro to NumPy for Calculus" href="IntrotoNumPy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Limits and Python!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc1-Lab1-Limits.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc1-Lab1-Limits.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Calc1-Lab1-Limits.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Limits and Python!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome">Welcome!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sympy-and-numpy">Using SymPy and NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-limits">Let’s look at Limits!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-a-limit">The concept of a limit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-algebraic-limit">An algebraic limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-trigonometric-limit">A trigonometric limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-limits-using-sympy"><strong>Evaluating Limits Using SymPy</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-further-limit-practice">Some further limit practice</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="limits-and-python">
+<h1>Limits and Python!<a class="headerlink" href="#limits-and-python" title="Permalink to this heading">#</a></h1>
+<p>By Raheem Mir</p>
+<section id="welcome">
+<h2>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h2>
+<p>We are going to be using some Python to explore and work through calculus concepts. Now don’t worry, you don’t need to be a seasoned programmer or have any previous experience. We’ll just be writing some simple code and make use of powerful libraries that do the heavy lifting for us!</p>
+<p>For a review of basic Python syntax, see <a class="reference internal" href="python.html"><span class="doc std std-doc">the introduction</span></a>.</p>
+</section>
+<section id="using-sympy-and-numpy">
+<h2>Using SymPy and NumPy<a class="headerlink" href="#using-sympy-and-numpy" title="Permalink to this heading">#</a></h2>
+<p>Python has many powerful librairies that add convenience and functionality. Two great libraries that we’ll be using for doing calculus with Python, are SymPy and NumPy.</p>
+<p>SymPy is a feature rich library designed for symbolic mathematics. We can use it to do symbolic calculations and manipulations, meaning, it deals with math like we do on paper. It can simplify algebraic expressions, solve equations, perform calculus tasks like evaluating limits or computing integrals and a plethora of other mathematical operations. SymPy gives us exact symbolic answers instead of numerical approximations, making it a great tool for intuitively exploring calculus concepts.</p>
+<p>To begin using SymPy we start by “importing” the library:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure to run this cell! (shift + enter)</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The line: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sy</span></code> loads in the SymPy library for us to use. We give it the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, so every time we call something from SymPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">sy.</span></code>. This is a good way to keep things organized when we are working with multiple libraries.</p>
+<p>The next line: <code class="docutils literal notranslate"><span class="pre">sy.init_printing()</span></code> calls SymPy’s <code class="docutils literal notranslate"><span class="pre">init_printing()</span></code> function, which gets the output to be displayed as nicely formatted mathematics.</p>
+<p>A good next step is telling SymPy the variables we would like to use with the <code class="docutils literal notranslate"><span class="pre">symbols()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span>    <span class="c1"># this makes x, y, and z symbols</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>SymPy is great for defining (and working with) symbolic expressions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will provide you with the tools you need for this lab assignment, but an <a class="reference internal" href="sympy.html"><span class="doc std std-doc">overview of SymPy</span></a> is available if you’d like to take a look at what’s available.</p>
+<p>While SymPy is great for symbolic manipulation, when it comes numerical computation, NumPy is the library of choice. Think of it as a high powered calculator with a large toolset. It implements many common mathematical functions, like trigonometric functions, logarithms and more.</p>
+<p>To start using NumPy, like we did with SymPy, we have to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure to run this cell! (shift + enter)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just as before, the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">as</span></code> syntax loads in a particular Python library and creates a shorthand name for it to call functions with. In this case, when we want to use a function from NumPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">np.</span></code>.</p>
+<p>Now to walkthrough some examples:</p>
+<p>Let’s call the function <span class="math notranslate nohighlight">\(\sin(x)\)</span> using <code class="docutils literal notranslate"><span class="pre">np.sin()</span></code> and evaluate <span class="math notranslate nohighlight">\(\sin(π)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># should output a value very close to zero</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how we used <code class="docutils literal notranslate"><span class="pre">np.pi</span></code>, to represent the constant <span class="math notranslate nohighlight">\(π\)</span> in NumPy.</p>
+<p>Here’s <span class="math notranslate nohighlight">\(\tan(π/4)\)</span> using <code class="docutils literal notranslate"><span class="pre">np.tan()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>NumPy is also a bit different than SymPy when it comes to handling functions. In SymPy, we simply define symbolic expressions to represent functions:</p>
+<p>In SymPy we would write something like: <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">sy.sqrt(x**3</span> <span class="pre">+</span> <span class="pre">sy.sin(x))</span></code> (after defining ‘x’ as a symbol)</p>
+<p>and then recieve a nicely formatted ouput when displaying <code class="docutils literal notranslate"><span class="pre">f</span></code>: <span class="math notranslate nohighlight">\(\sqrt{x^3 + \sin^2(x)}\)</span>.</p>
+<p>In NumPy however, we use Python’s <code class="docutils literal notranslate"><span class="pre">def</span></code> syntax to define functions. This gives us the ability to evaluate functions at specific values, and have the convenience of instant numerical outputs.</p>
+<p>Here’s how we would define the same function in NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can’t get Python to display <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> as a formula like the one above, but we can ask it to evaluate our function at some points:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="let-s-look-at-limits">
+<h2>Let’s look at Limits!<a class="headerlink" href="#let-s-look-at-limits" title="Permalink to this heading">#</a></h2>
+<section id="the-concept-of-a-limit">
+<h3>The concept of a limit<a class="headerlink" href="#the-concept-of-a-limit" title="Permalink to this heading">#</a></h3>
+<p>The <strong>limit</strong> concept is a difficult one, but it’s essential to understanding calculus.
+When we write
+$<span class="math notranslate nohighlight">\(\lim_{x\to c}f(x) = L,\)</span><span class="math notranslate nohighlight">\(
+we are saying that the values of \)</span>f(x)<span class="math notranslate nohighlight">\( can be made as close to \)</span>L<span class="math notranslate nohighlight">\( as we want,
+as long as we use an \)</span>x<span class="math notranslate nohighlight">\( value that's close enough to \)</span>c$.</p>
+<p>Crucially, we do not allow <span class="math notranslate nohighlight">\(x\)</span> to equal <span class="math notranslate nohighlight">\(c\)</span> in the definition. It can get close, but never equal.</p>
+<p>Run the next cell to display an interactive graph of a function. Notice how the <span class="math notranslate nohighlight">\(y\)</span> values change as we drag <span class="math notranslate nohighlight">\(x\)</span>. At what points does it appear as though our function does not have a limit?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Function demo for Jupyter&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.geogebra.org/material/iframe/id/j7yaaxr9/width/599/height/349/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;599px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;349px&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border:0px;&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="an-algebraic-limit">
+<h2>An algebraic limit<a class="headerlink" href="#an-algebraic-limit" title="Permalink to this heading">#</a></h2>
+<p>Consider the following example:
+$<span class="math notranslate nohighlight">\(\lim_{x\to 2}\frac{x^2-5x+6}{x^2-4}=-\frac14.\)</span>$</p>
+<p>Why is this true?</p>
+<p>First, look at the graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">scrolling</span><span class="o">=</span><span class="s2">&quot;no&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Limit material for Jupyter 2&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.geogebra.org/material/iframe/id/sqwrhfup/width/598/height/400/border/888888/sfsb/true/smb/false/stb/true/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;598px&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;400px&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;border:0px;&quot;</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also enter this function into the computer, and analyze it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can ask SymPy to evaluate the limit. The syntax is <code class="docutils literal notranslate"><span class="pre">sy.limit(function,</span> <span class="pre">variable,</span> <span class="pre">value)</span></code>. Let’s try it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All signs seem to point to a limit of <span class="math notranslate nohighlight">\(-\frac14\)</span>. How do we see this for ourselves?</p>
+<p>Note that a limit is necessary here: <span class="math notranslate nohighlight">\(f(2)\)</span> is undefined.</p>
+<p>If we try to put <span class="math notranslate nohighlight">\(x=2\)</span>, we get the nonsensical result of <span class="math notranslate nohighlight">\(\frac00\)</span>.</p>
+<p>But this is a <em>rational function</em>: the top and bottom are both <em>polynomials</em>.</p>
+<p>For any polynomial <span class="math notranslate nohighlight">\(p(x)\)</span>, if <span class="math notranslate nohighlight">\(p(a)=0\)</span>, then <span class="math notranslate nohighlight">\((x-a)\)</span> is a factor!</p>
+<p>So we should be able to factor out <span class="math notranslate nohighlight">\((x-2)\)</span> from both top and bottom:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^2-5x+6}{x^2-4} = \frac{(x-2)(x-3)}{(x-2)(x+2)}\]</div>
+<p>Next, you want to cancel the <span class="math notranslate nohighlight">\(x-2\)</span> factors and proceed.</p>
+<p>But it would be <strong>false</strong> to write <span class="math notranslate nohighlight">\(f(x)=\dfrac{x-3}{x+2}\)</span>, because we lose the exception <span class="math notranslate nohighlight">\(x\neq 2\)</span>.</p>
+<p>Here’s where limits come to the rescue!</p>
+<p>Remember: in <span class="math notranslate nohighlight">\(\lim\limits_{x\to 2}f(x)\)</span>, we consider values of <span class="math notranslate nohighlight">\(x\)</span> close to 2, <em>but not equal to 2</em>.</p>
+<p>Since we don’t let <span class="math notranslate nohighlight">\(x=2\)</span>, we’re allowed to cancel, and after that, the properties of limits take over:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}\lim_{x\to 2}f(x) &amp;= \lim_{x\to 2}\frac{x^2-5x+6}{x^2-4}\\
+&amp;= \lim_{x\to 2}\frac{(x-2)(x-3)}{(x-2)(x+2)}=\lim_{x\to 2}\frac{x-3}{x+2}\\
+&amp;= \frac{\lim_{x\to 2}(x-3)}{\lim_{x\to 2}(x+2)}\\
+&amp;= \frac{2-3}{2+2} = -\frac14,\end{aligned}\end{split}\]</div>
+<p>just as we expected.</p>
+</section>
+<section id="a-trigonometric-limit">
+<h2>A trigonometric limit<a class="headerlink" href="#a-trigonometric-limit" title="Permalink to this heading">#</a></h2>
+<p>Next, we’re going to explore the limit</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 0}\dfrac{\sin(x)}{x}.\]</div>
+<p>Like the last example, trying to evaluate directly results in <span class="math notranslate nohighlight">\(\frac00\)</span>.</p>
+<p>Unlike the last example, we cannot simply factor an <span class="math notranslate nohighlight">\(x\)</span> out from the top to cancel it.</p>
+<p>To get an idea of what we’re dealing with, we’ll first explore numerically and graphically.</p>
+<p>Let’s start by defining our function. Note that we need to specify that the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function comes from the SymPy library with the <code class="docutils literal notranslate"><span class="pre">np.</span></code> prefix,
+because we are going to start by investigating numerically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;not defined&quot;</span> <span class="c1"># because sin(0)/0 is indeterminate</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, we define our function:</p>
+<p>Next we choose some <span class="math notranslate nohighlight">\(x\)</span> values to test our function near <span class="math notranslate nohighlight">\(x = 0\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.001</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span> <span class="c1"># using a list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we compute the corresponding <span class="math notranslate nohighlight">\(f(x)\)</span> values for the chosen <span class="math notranslate nohighlight">\(x\)</span> values and store them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># storing in a list</span>
+
+<span class="c1"># using a loop to compute values and set up table&#39;s columns</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">:</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">value</span><span class="p">)])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s display our results in a table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;| f(x)&quot;</span><span class="p">)</span> <span class="c1"># column headings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">29</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; &quot;</span><span class="o">*</span><span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]))),</span> <span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># formatting the table</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The table helps to illustrate the function’s behaviour near <span class="math notranslate nohighlight">\(x = 0\)</span>, and given this behaviour, it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 0}\dfrac{\sin(x)}{x} =  1.\]</div>
+<p>We can also see this by looking at the graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Establishing this result as fact is actually quite a bit of work, involving a fair amount of trigonometry, and a result called the <em>squeeze theorem</em>. But for now, we’ll cheat and ask the computer to evaluate the limit, using SymPy.</p>
+<section id="evaluating-limits-using-sympy">
+<h3><strong>Evaluating Limits Using SymPy</strong><a class="headerlink" href="#evaluating-limits-using-sympy" title="Permalink to this heading">#</a></h3>
+<p>To evaluate limits using SymPy, we can use the <code class="docutils literal notranslate"><span class="pre">limit()</span></code> function. The syntax is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span><span class="n">variable</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">expression</span></code> is the function, the <code class="docutils literal notranslate"><span class="pre">variable</span></code> is usually (but not always) <code class="docutils literal notranslate"><span class="pre">x</span></code>, and the <code class="docutils literal notranslate"><span class="pre">value</span></code> is the point at which you want to take the limit.</p>
+<p>Below are some examples:</p>
+<p>Let’s start with the example we’ve already seen:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0}\dfrac{\sin(x)}{x}\)</span></p>
+<p>Since Sympy has already been imported, and <span class="math notranslate nohighlight">\(x\)</span> has been set as symbol, we can get straight into representing the function and evaluating:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>From our result it appears that:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 0}\dfrac{\sin(x)}{x} =  1.\]</div>
+<p>But how do we <em>know</em> this? Let’s see how the squeeze theorem is used. Consider the following unit circle diagram. Try dragging the point on the circle.</p>
+<p>Notice how the length <span class="math notranslate nohighlight">\(\theta\)</span> of the circular arc (in red) is always between the vertical line on the left (in blue, of length <span class="math notranslate nohighlight">\(\sin(\theta)\)</span>),
+and the vertical line on the right (in green, of length <span class="math notranslate nohighlight">\(\tan(\theta)\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">scrolling</span><span class="o">=</span><span class="s2">&quot;no&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Limit Material for Jupyter 1&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.geogebra.org/material/iframe/id/zdtuv9mq/width/510/height/353/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;510px&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;353px&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;border:0px;&quot;</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives the inequality
+$<span class="math notranslate nohighlight">\(\sin(\theta)\leq \theta\leq \tan(\theta).\)</span>$</p>
+<p>If we take reciprocals and multiply everything by <span class="math notranslate nohighlight">\(\sin(\theta)\)</span>, we get the inequality
+$<span class="math notranslate nohighlight">\(\cos(\theta)\leq \frac{\sin(\theta)}{\theta}\leq 1,\)</span><span class="math notranslate nohighlight">\(
+when \)</span>\theta&gt;0<span class="math notranslate nohighlight">\(. A similar result holds when \)</span>\theta&lt;0$.</p>
+<p>In the diagram below, you can see how, as <span class="math notranslate nohighlight">\(\theta\to 0\)</span>, the value of <span class="math notranslate nohighlight">\(\sin(\theta)/\theta\)</span> is “squeezed” between <span class="math notranslate nohighlight">\(\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">scrolling</span><span class="o">=</span><span class="s2">&quot;no&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Limit material for Jupyter 3&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.geogebra.org/material/iframe/id/gfa5pqeh/width/736/height/367/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;736px&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;367px&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;border:0px;&quot;</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="some-further-limit-practice">
+<h2>Some further limit practice<a class="headerlink" href="#some-further-limit-practice" title="Permalink to this heading">#</a></h2>
+<p>Now for some more!</p>
+<p>Let’s evaluate:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1}{(x^2 + 2x + 2)}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">f1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above result makes sense according to the limit properties. In particular, we know that we can evaluate the limit of a polynomial function by simply plugging in the number.</p>
+<p>In the next example, plugging in <span class="math notranslate nohighlight">\(x=1\)</span> would give us an answer of <span class="math notranslate nohighlight">\(0/0\)</span>, which is undefined. Such expressions are called <em>indeterminate forms</em>. We saw this earlier with the expression <span class="math notranslate nohighlight">\(\sin(x)/x\)</span>.</p>
+<p>Despite the <span class="math notranslate nohighlight">\(0/0\)</span> result, we still get a limit!</p>
+<p>Example 1: <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1}\dfrac{x^2 -1}{x-1}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason we can evaluate this limit can be seen if we factor the numerator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both numerator and denominator have the factor <span class="math notranslate nohighlight">\(x-1\)</span>. Since the limit involves values of <span class="math notranslate nohighlight">\(x\)</span> that are <em>close</em>, <strong>but not equal to</strong> 1, we can cancel this factor from top and bottom, and then evaluate.</p>
+<p>Example 2: <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to -3}\dfrac{x^2 +10x + 21}{x^2+5x+6}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">21</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">f3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f3</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>SymPy can also handle limits at infinity. The infinity symbol is entered as <code class="docutils literal notranslate"><span class="pre">oo</span></code> (that’s the letter o, twice). But we need to specify that it comes from SymPy, so we type <code class="docutils literal notranslate"><span class="pre">sy.oo</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f3</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">sy</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="IntrotoNumPy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Intro to NumPy for Calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Calc1-Lab2-Derivatives.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Derivatives, Derivatives, and Derivatives!</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome">Welcome!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sympy-and-numpy">Using SymPy and NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-limits">Let’s look at Limits!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-a-limit">The concept of a limit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-algebraic-limit">An algebraic limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-trigonometric-limit">A trigonometric limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-limits-using-sympy"><strong>Evaluating Limits Using SymPy</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-further-limit-practice">Some further limit practice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

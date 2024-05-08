@@ -1,0 +1,1095 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial 6: Systems of differential equations &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc2-Lab5-ODE-systems';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lab 7: Parametric curves" href="Calc2-Lab6-Parametric-Curves.html" />
+    <link rel="prev" title="Lab 5: Differential Equations" href="Calc2-Lab4-ODEs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab5-ODE-systems.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc2-Lab5-ODE-systems.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Calc2-Lab5-ODE-systems.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial 6: Systems of differential equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-preview-of-parametric-curves">A preview of parametric curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-fields-for-linear-systems">Direction fields for linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method-for-systems">Euler’s Method for systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a">Part (a)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b">Part (b)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-systems">Solving linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-systems">Non-linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4">Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5">Problem 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-methods-for-linear-systems">Analytic methods for linear systems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-6-systems-of-differential-equations">
+<h1>Tutorial 6: Systems of differential equations<a class="headerlink" href="#tutorial-6-systems-of-differential-equations" title="Permalink to this heading">#</a></h1>
+<p>Today’s activity takes us a bit beyond what is covered in the textbook, but not too much beyond!</p>
+<p>As side benefits, we get an early introduction to parametric curves, and some reminders about the utility of linear algebra.</p>
+<p>Our focus will be <strong>coupled systems of autonomous differential equations</strong>. The context is the following: we have two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that both depend on an independent variable <span class="math notranslate nohighlight">\(t\)</span> (our parameter, which in many contexts can be viewed as time).</p>
+<p>In a coupled system, the two quantities <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> change in time, but they also influence each other. An example would be sales numbers at two competing stores: the more that store A sells, the less store B sells, and vice-versa.</p>
+<p>We will begin with <strong>linear</strong> systems, of the form
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}\frac{dx}{dt} &amp;= ax+by\\ \frac{dy}{dt}&amp;=cx+dy\end{aligned}
+\)</span><span class="math notranslate nohighlight">\(
+for constants \)</span>a,b,c,d<span class="math notranslate nohighlight">\(. (In a more general linear system, \)</span>a,b,c,d<span class="math notranslate nohighlight">\( could be functions of \)</span>t$, but we will stick to the time-independent case to keep things simple.)</p>
+<p>We will end with a classic example: a <strong>predator-prey</strong> model, where we have two animal populations: a prey species, that if left untouched would experience exponential population growth, and a predator species, whose population growth (or decline) depends on the size of the prey population. This is a <strong>non-linear</strong> system, and we will not be able to understand all the details at this point, but we can still explore it both graphically and numerically.</p>
+<section id="a-preview-of-parametric-curves">
+<h2>A preview of parametric curves<a class="headerlink" href="#a-preview-of-parametric-curves" title="Permalink to this heading">#</a></h2>
+<p>Later in the course, we will study <strong>parametric curves</strong>: sets of points in the plane of the form <span class="math notranslate nohighlight">\((x,y)=(f(t),g(t))\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are functions of a parameter <span class="math notranslate nohighlight">\(t\)</span> defined in some domain <span class="math notranslate nohighlight">\([a,b]\)</span>. As <span class="math notranslate nohighlight">\(t\)</span> increases from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, we can imagine a point that moves in “time”, tracing out a curve.</p>
+<p>For example, we can generate the unit circle <span class="math notranslate nohighlight">\(x^2+y^2=1\)</span> as the set of points <span class="math notranslate nohighlight">\((\cos(t),\sin(t))\)</span>, <span class="math notranslate nohighlight">\(t\in [0,2\pi]\)</span>.</p>
+<p>One of the facts that we will learn later in the course is that the slope of the tangent line to a parametric curve at a point <span class="math notranslate nohighlight">\((x_0,y_0)=(f(t_0),g(t_0))\)</span> is given by
+$<span class="math notranslate nohighlight">\(
+m = \frac{dy}{dx} = \frac{y\,'(t)}{x\,'(t)}.
+\)</span>$</p>
+</section>
+<section id="direction-fields-for-linear-systems">
+<h2>Direction fields for linear systems<a class="headerlink" href="#direction-fields-for-linear-systems" title="Permalink to this heading">#</a></h2>
+<p>We can modify the direction field code from our last tutorial to work for a system of two differential equations. For the <code class="docutils literal notranslate"><span class="pre">dfield</span></code> program from last week, we were given a differential equation <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span>, and we defined the slope using the function <span class="math notranslate nohighlight">\(f(x,y)\)</span>. Given a system
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}\frac{dx}{dt}&amp;=f(x,y)\\ \frac{dy}{dt}&amp;=g(x,y)\end{aligned}
+\)</span><span class="math notranslate nohighlight">\(
+we will redefine the slope as \)</span>g(x,y)/f(x,y)$, based on the result given above.</p>
+<p>But you might have noticed last week that our direction fields didn’t always look great. So before getting into the differential equations, we are going to explore the code a bit more carefully.</p>
+<p>We will test a few versions below to see how they perform. First, our code from last week. The only change I’ve made is to calculate the slope as <span class="math notranslate nohighlight">\(g(x,y)/f(x,y)\)</span> instead of just <span class="math notranslate nohighlight">\(f(x,y)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfield1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+            <span class="n">slope</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">):</span>
+                <span class="n">z</span> <span class="o">=</span> <span class="n">slope</span><span class="o">*</span><span class="p">(</span><span class="n">domain</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="n">y1</span>
+                <span class="k">return</span> <span class="n">z</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Slope field for y&#39;=f(x,y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try this for the system
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}\frac{dx}{dt}&amp;=-x+3y\\\frac{dy}{dt}&amp;=-5x-2y\end{aligned}
+\)</span>$</p>
+<p>To set things up, we need to define the functions <span class="math notranslate nohighlight">\(f(x,y)=-x+3y\)</span> and <span class="math notranslate nohighlight">\(g(x,y)=-5x-2y\)</span>, as well as values to use for both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Notice that I’ve set the range for both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> to match the values in the <code class="docutils literal notranslate"><span class="pre">plt.axis</span></code> command, which sets what range of values gets displayed for each variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create our direction field!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfield1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should probably notice two things:</p>
+<ol class="arabic simple">
+<li><p>It looks terrible!</p></li>
+<li><p>There’s a warning about divison by zero.
+The latter comes from the fact that <span class="math notranslate nohighlight">\(f(x,y)=0\)</span> whenever <span class="math notranslate nohighlight">\(x=3y\)</span>. Let’s fix that, and see if it helps.</p></li>
+</ol>
+<p>The easiest way (that I can think of) to fix this is to use Python’s <code class="docutils literal notranslate"><span class="pre">if</span></code>…<code class="docutils literal notranslate"><span class="pre">else</span></code> logic.
+If <span class="math notranslate nohighlight">\(f(x,y)\neq 0\)</span>, we proceed as before. If <span class="math notranslate nohighlight">\(f(x,y)=0\)</span>, we need to do something else. We’ll deal with the exceptional case first.</p>
+<p>If <span class="math notranslate nohighlight">\(f(x,y)=0\)</span>, what sort of line should we be plotting? (Think about it for a moment.)</p>
+<p>Did you answer “vertical”? If so, good job!</p>
+<p>Let’s look more carefully at the code we are using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">domain</span> <span class="pre">=</span> <span class="pre">np.linspace(j-0.05,j+0.05,2)</span></code> creates an array with 2 points: <code class="docutils literal notranslate"><span class="pre">[j-0.05,j+0.05]</span></code>. These are the <span class="math notranslate nohighlight">\(x\)</span> coordinates for the beginning and end of the line segment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">slope</span><span class="o">*</span><span class="p">(</span><span class="n">domain</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="n">y1</span>
+    <span class="k">return</span> <span class="n">z</span>
+</pre></div>
+</div>
+<p>This calculates the <span class="math notranslate nohighlight">\(y\)</span> coordinate along a line through the point <span class="math notranslate nohighlight">\((x_1,y_1)\)</span> with slope equal to <code class="docutils literal notranslate"><span class="pre">slope</span></code>.</p>
+<p>Now look at <code class="docutils literal notranslate"><span class="pre">plt.plot(domain,fun(j,k),solid_capstyle='projecting',solid_joinstyle='bevel')</span></code>. The additional options are style options. The important part is <code class="docutils literal notranslate"><span class="pre">plt.plot(domain,fun(j,k))</span></code>. Remember that <code class="docutils literal notranslate"><span class="pre">domain</span></code> is really an array with two numbers. Since <code class="docutils literal notranslate"><span class="pre">fun(j,k)</span></code> depends on <code class="docutils literal notranslate"><span class="pre">domain</span></code>, it is also an array.</p>
+<p>So this is a command to plot a line between two points. The first two inputs are arrays: an array of <span class="math notranslate nohighlight">\(x\)</span> values, and an array of <span class="math notranslate nohighlight">\(y\)</span> values. So <code class="docutils literal notranslate"><span class="pre">plt.plot([a,b],[c,d])</span></code> is a line between two points. The <span class="math notranslate nohighlight">\(x\)</span> values are <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and the <span class="math notranslate nohighlight">\(y\)</span> values are <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(d\)</span>, so the line goes from <span class="math notranslate nohighlight">\((a,c)\)</span> to <span class="math notranslate nohighlight">\((b,d)\)</span>.</p>
+<p>In our code above, the initial point is <span class="math notranslate nohighlight">\((j-0.05, k-0.05m)\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the value of <code class="docutils literal notranslate"><span class="pre">slope</span></code>, and the final point is <span class="math notranslate nohighlight">\((j+0.05, k+0.05m)\)</span>.</p>
+<p>For a vertical line through the point <span class="math notranslate nohighlight">\((j,k)\)</span>, we can use <code class="docutils literal notranslate"><span class="pre">plt.plot([j,j],[k-0.05,k+0.05])</span></code>, since we want the same <span class="math notranslate nohighlight">\(x\)</span> coordinate at the beginning and at the end. Our modified code with no division by zero looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfield2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">],[</span><span class="n">k</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mf">0.05</span><span class="p">],</span><span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">slope</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">):</span>
+                    <span class="n">z</span> <span class="o">=</span> <span class="n">slope</span><span class="o">*</span><span class="p">(</span><span class="n">domain</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="n">y1</span>
+                    <span class="k">return</span> <span class="n">z</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Slope field for y&#39;=f(x,y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see if this version does any better:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfield2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No division by zero!</p>
+<p>But it still looks terrible. Notice how the lines with the steepest slopes are really long. Why do you think that is? (Think about this now; you will be asked to answer it later.)</p>
+<p>Here is one more version. This time, instead of using the equation of a tangent line to plot our line segments, we will use a trick from the parametric curve toolkit: if we want to draw a line through the point <span class="math notranslate nohighlight">\((a,b)\)</span> with slope <span class="math notranslate nohighlight">\(m\)</span>, we can let <span class="math notranslate nohighlight">\(\theta=\arctan(m)\)</span> (remember that <span class="math notranslate nohighlight">\(\tan\theta\)</span> gives slope), and define our line parametrically as</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y) = (a+\cos(\theta)t,b+\sin(\theta)t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is allowed to vary over some interval. If <span class="math notranslate nohighlight">\(t\in [t_0, t_0+\Delta t]\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}\Delta x &amp; = (a+\cos(\theta)(t_0+\Delta t))-(a+\cos(\theta)t_0)=\cos(\theta)\Delta t\\ \Delta y &amp; = (b+\sin(\theta)(t_0+\Delta t))-(b+\sin(\theta)t_0)=\sin(\theta)\Delta t\end{aligned}
+\end{split}\]</div>
+<p>so the length of the line segment is</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{\Delta x^2+\Delta y^2}=\sqrt{\cos^2(\theta)\Delta t^2 +\sin^2(\theta)\Delta t^2} = \sqrt{\Delta t^2} = \Delta t.
+\]</div>
+<p>This time, all of our segments have the same length, regardless of slope. Here is the code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfield</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">slope</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span> <span class="o">+</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                         <span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                         <span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Direction field for x&#39;=f(x,y),y&#39;=g(x,y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see if this version does any better:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfield</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I think we have a winner!!</p>
+<p>There is one more thing we could do: in addition to the slope <span class="math notranslate nohighlight">\(\dfrac{dy}{dx} = \dfrac{y\,'(t)}{x\,'(t)}\)</span> of a parametric curve <span class="math notranslate nohighlight">\((x(t),y(t))\)</span>, you will learn in Calculus III that you can consider the <strong>tangent vector</strong> <span class="math notranslate nohighlight">\(\vec{r}\,'(t) = \langle x\,'(t),y\,'(t)\rangle\)</span>. This vector aligns with the slope, but it also gives us a <em>direction of travel</em>. This can help us better understand how our solutions behave.</p>
+<p>To plot arrows, the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library has the <code class="docutils literal notranslate"><span class="pre">quiver</span></code> command. The syntax looks like <code class="docutils literal notranslate"><span class="pre">quiver(x,y,u,v)</span></code>, where <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are arrays, giving the coordinates where each arrow should be located, while <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> give the direction of the vector. The <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> command below takes our two one-dimensional arrays of numbers and turns them into a two-dimensional array (i.e. a matrix). Here is what our direction field looks like with arrows. Note that the code is a lot simpler: the <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> command lets us skip the two <code class="docutils literal notranslate"><span class="pre">for</span></code> loops we needed before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># If you want to add colour, add a 5th argument to quiver. Try functions of x,y,u,v.</span>
+<span class="c1"># For example, plt.quiver(x,y,u,v,np.arctan2(v,u)) assigns colour based on the angle of the vector</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<p>Finally, an exercise! Try to explain the following items. (You can double-click on this cell to edit it, if you would like to type in your answers.)</p>
+<p>(a) In the original direction field plot, why are the lines with nearly vertical slopes so much longer than the lines with nearly horizontal slopes?</p>
+<p>(b) Why do the parametric equations <span class="math notranslate nohighlight">\(x=a+\cos(\theta)t, y=b+\sin(\theta)t\)</span> define a line through the point <span class="math notranslate nohighlight">\((a,b)\)</span> with slope <span class="math notranslate nohighlight">\(m=\tan(\theta)\)</span>?</p>
+<p>(<em>Hint:</em> the parametric equations for a line are the same thing as a vector equation for a line from Math 1410.)</p>
+</section>
+</section>
+<section id="euler-s-method-for-systems">
+<h2>Euler’s Method for systems<a class="headerlink" href="#euler-s-method-for-systems" title="Permalink to this heading">#</a></h2>
+<p>We can adapt Euler’s method to systems of differential equations. For the system
+$<span class="math notranslate nohighlight">\(\begin{aligned}\frac{dx}{dt} &amp;= ax+by\\ \frac{dy}{dt}&amp;=cx+dy,\end{aligned}\)</span><span class="math notranslate nohighlight">\(
+there are three types of solutions that we can look for, given initial values \)</span>x(0)=x_0<span class="math notranslate nohighlight">\( and \)</span>y(0)=y_0$:</p>
+<ul class="simple">
+<li><p>The solution <span class="math notranslate nohighlight">\(x(t)\)</span>, giving <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p>The solution <span class="math notranslate nohighlight">\(y(t)\)</span>, giving <span class="math notranslate nohighlight">\(y\)</span> as a function of <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p>The <strong>solution curve</strong>, which is in the <span class="math notranslate nohighlight">\(xy\)</span> plane. (This implicitly defines <span class="math notranslate nohighlight">\(y\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span>.)</p></li>
+</ul>
+<p>If we have analyitic (exact solutions) for <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>, we can often <em>eliminate the parameter</em> to get an equation relating <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, which will define the solution curve. But if we are solving numerically, this isn’t an option. Fortunately, it also is not necessary. In our algorithm, we will begin with an array defining the <span class="math notranslate nohighlight">\(t\)</span> values we use as inputs. Euler’s method will return arrays for both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. We can then choose which two of these three arrays to plot together: we can plot the points <span class="math notranslate nohighlight">\((t,x)\)</span>, giving <span class="math notranslate nohighlight">\(x(t)\)</span>, or the points <span class="math notranslate nohighlight">\((t,y)\)</span>, giving <span class="math notranslate nohighlight">\(y(t)\)</span>, or the points <span class="math notranslate nohighlight">\((x,y)\)</span>, giving the solution curve.</p>
+<p>Here again is our code for Euler’s method, updated for a system of two equations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Euler2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="c1">#defines array of zeros with same length as t</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="c1">#these zeros will be rewritten below</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span> <span class="c1">#initial value for x</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span> <span class="c1">#initial value for y</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="c1">#defines next step for x</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="c1">#notice f and g do not depend on t</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now define two plotting functions. The first will plot the solution functions <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>. The second will plot the solution curve against the direction field, since both of these inhabit the <span class="math notranslate nohighlight">\(xy\)</span> plane.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xysol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">Euler2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;x(t)&#39;</span><span class="p">,</span><span class="s1">&#39;y(t)&#39;</span><span class="p">])</span>
+    <span class="c1">#plt.axis([0,10,0,10]) #uncomment to adjust viewing window</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># adjust these if necessay to change the grid for the direction field</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dfsol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">q</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">slope</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">j</span><span class="p">,</span><span class="n">j</span> <span class="o">+</span> <span class="mf">0.05</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                         <span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                         <span class="n">solid_capstyle</span><span class="o">=</span><span class="s1">&#39;projecting&#39;</span><span class="p">,</span><span class="n">solid_joinstyle</span><span class="o">=</span><span class="s1">&#39;bevel&#39;</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">Euler2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Direction field and solution curve for x&#39;=f(x,y),y&#39;=g(x,y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the results for the system we’ve been studying so far, with initial conditions <span class="math notranslate nohighlight">\(x_0=1, y_0=-1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xysol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<p>For the following systems of differential equations of the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}\frac{dx}{dt} &amp;= ax+by\\ \frac{dy}{dt}&amp;=cx+dy,\end{aligned}
+\end{split}\]</div>
+<p>use the <code class="docutils literal notranslate"><span class="pre">xysol</span></code> function above to plot approximate solutions <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>. Then use the <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> function to plot the approximate solution curve against the direction field. In each case you will need to define the functions <code class="docutils literal notranslate"><span class="pre">f(x,y)</span></code> and <code class="docutils literal notranslate"><span class="pre">g(x,y)</span></code>, as well as the array <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+<section id="part-a">
+<h4>Part (a)<a class="headerlink" href="#part-a" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(a = 0.1, b=0.05, c=0, d=-0.2, x_0 = 0.5, y_0=1\)</span></p>
+</section>
+<section id="part-b">
+<h4>Part (b)<a class="headerlink" href="#part-b" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(a = 0, b=2, c=-2, d=0, x_0=0.5, y=-0.5\)</span></p>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>for each system, include a line of the form <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">np.linspace(0,b,n)</span></code>, where <code class="docutils literal notranslate"><span class="pre">b</span></code> is the endpoint of the interval you want to use, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of steps used.</p></li>
+<li><p>values you could try: <code class="docutils literal notranslate"><span class="pre">b=2*np.pi</span></code>, (or some other multiple of <span class="math notranslate nohighlight">\(\pi\)</span>) if things look like they’re oscillating, or <code class="docutils literal notranslate"><span class="pre">b=2</span></code> (or some other single digit integer) if they don’t, and <code class="docutils literal notranslate"><span class="pre">n=100</span></code>, or <code class="docutils literal notranslate"><span class="pre">n=1000</span></code>, etc.</p></li>
+<li><p>the larger you set the <code class="docutils literal notranslate"><span class="pre">n</span></code> value, the more accurate your curves will be.</p></li>
+<li><p>in the <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> function, the values <code class="docutils literal notranslate"><span class="pre">p=np.linspace(-2,2,20)</span></code> and <code class="docutils literal notranslate"><span class="pre">q=np.linspace(-2,2,20)</span></code> set the size of the viewing window, as well as the number of lines drawn for the direction field. If you don’t like how things look, you could try redefining these.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="solving-linear-systems">
+<h2>Solving linear systems<a class="headerlink" href="#solving-linear-systems" title="Permalink to this heading">#</a></h2>
+<p>What if we want to compare our approximate solutions to the
+We can’t cover everything in one tutorial, but there are some very cool connections between systems of linear differential equations and linear algebra. Given the system</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}\frac{dx}{dt} &amp;= ax+by\\ \frac{dy}{dy}&amp;=cx+dy,\end{aligned}
+\end{split}\]</div>
+<p>consider the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}.
+\end{split}\]</div>
+<p>A if we can find a number <span class="math notranslate nohighlight">\(\lambda\)</span> and a non-zero vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> such that
+$<span class="math notranslate nohighlight">\(A\vec{v}=\lambda \vec{v},\)</span><span class="math notranslate nohighlight">\(
+we call \)</span>\lambda<span class="math notranslate nohighlight">\( an **eigenvalue** of \)</span>A<span class="math notranslate nohighlight">\(, and \)</span>\vec{v}<span class="math notranslate nohighlight">\( an **eigenvector** of \)</span>A$.</p>
+<p>(You’ve seen this already if you’ve done Math 1410. If not, don’t worry – you won’t need to know how to find eigenvalues and eigenvectors, or even how to multiply a vector by a matrix! We’ll let the computer do this.)</p>
+<p>Next, we learn how to use Python to compute eigenvalues and eigenvectors. We’ll use these to create our solution.</p>
+<p><strong>Note:</strong> many linear algebra calculations can be done quite easily using SymPy, and we get nicely formatted results, as well. (Matrices look like matrices, for example… If you are interested, see <a class="reference external" href="https://opentext.uleth.ca/Math3410/sec-sympy.html#subsec-sympy-matrix">my textbook for Math 3410</a>) But we are going to want our eigenvalues to be numbers that NumPy understands, so that we can use them to plot solutions.</p>
+<p>A matrix can be entered in NumPy using the following syntax: <code class="docutils literal notranslate"><span class="pre">np.array([[a,b],[c,d]])</span></code>, where <code class="docutils literal notranslate"><span class="pre">[a,b]</span></code> is the first row, and <code class="docutils literal notranslate"><span class="pre">[c,d]</span></code> is the second. (This of corse works for larger matrices, too.)</p>
+<p>Let’s enter the matrix for the example I’ve been using.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># for NumPy objects, print(A) produces better results than A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can obtain the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(A\)</span> using the linear algebra libarary from SciPy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
+<span class="n">x</span><span class="o">=</span><span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We notice two things. First, this is both the eigenvalues <strong>and</strong> the eigenvectors! The eigenvalues are first, in a <span class="math notranslate nohighlight">\(2\times 1\)</span> array. The eigenvectors are second, in a <span class="math notranslate nohighlight">\(2\times 2\)</span> array. Second, all the numbers are complex! To extract the eigenvalues and eigenvectors, we can do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">evals</span><span class="p">,</span><span class="n">evects</span><span class="p">)</span><span class="o">=</span><span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">evals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try asking for either <code class="docutils literal notranslate"><span class="pre">evals[0]</span></code> or <code class="docutils literal notranslate"><span class="pre">evals[1]</span></code> to confirm that this behaves as an array:</p>
+<p>We can also extract real and imaginary parts:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">evals</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">evals</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It turns out that the eigenvalues of the matrix <span class="math notranslate nohighlight">\(A\)</span> characterize the types of solutions we can expect to get:</p>
+<ul class="simple">
+<li><p>distinct real eigenvalues <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2\)</span>: <span class="math notranslate nohighlight">\(x(t)=c_1e^{\lambda_1 t}+c_2e^{\lambda_2 t}\)</span>.</p></li>
+<li><p>repeated real eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>: <span class="math notranslate nohighlight">\(x(t)=c_1e^{\lambda t}+c_2 te^{\lambda t}\)</span>.</p></li>
+<li><p>purely imaginary eigenvalues <span class="math notranslate nohighlight">\(\lambda = \pm i \omega\)</span>: <span class="math notranslate nohighlight">\(x(t)=c_1\cos(\omega t)+c_2\sin(\omega t)\)</span>.</p></li>
+<li><p>complex eigenvalues <span class="math notranslate nohighlight">\(\lambda = k+\pm i\omega\)</span>: <span class="math notranslate nohighlight">\(x(t) = c_1 e^{kt}+\cos(\omega t)+c_2 e^{kt}\sin(\omega t)\)</span>.</p></li>
+</ul>
+<p>In each case <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are constants, and the result for <span class="math notranslate nohighlight">\(y(t)\)</span> is similar. The constants are determined by initial conditions, but there are relationships between the constants for <span class="math notranslate nohighlight">\(x(t)\)</span> and the constants for <span class="math notranslate nohighlight">\(y(t)\)</span> determined by the eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>. (For further details, see the end of this notebook.)</p>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this heading">#</a></h3>
+<p>For both of the systems you used in Problem 2:</p>
+<ol class="arabic simple">
+<li><p>determine the eigenvalues of the coefficient matrix <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>decide which of the four cases above your eigenvalues correspond to.</p></li>
+<li><p>comment on whether or not the type of function for that case agrees with the graphs you found in Problem 2.</p></li>
+</ol>
+</section>
+</section>
+<section id="non-linear-systems">
+<h2>Non-linear systems<a class="headerlink" href="#non-linear-systems" title="Permalink to this heading">#</a></h2>
+<p>The numerical methods we’ve introduced in this notebook will work for non-linear systems as well, although an analytical approach is far more complicated. (The general strategy is to find the critical points for a non-linear system, and then approximate near each critical point by a linear system.)</p>
+<p>In particular, we will look at Volterra’s <strong>predator-prey</strong> model. In this model, <span class="math notranslate nohighlight">\(x(t)\)</span> is the population of a prey species (e.g. rabbits) and <span class="math notranslate nohighlight">\(y(t)\)</span> is the population of a predator species (e.g. foxes).
+For constants <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, the predator-prey model is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}\frac{dx}{dt} &amp; = ax - bxy = x(a-by)\\ \frac{dy}{dt}&amp;=-cy+dxy = y(-c+dx)\end{aligned}\end{split}\]</div>
+<section id="problem-4">
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this heading">#</a></h3>
+<p>(No code required)</p>
+<p>(a) If <span class="math notranslate nohighlight">\(y=0\)</span> (no predators), what can you say about the population <span class="math notranslate nohighlight">\(x\)</span>?</p>
+<p>(b) If <span class="math notranslate nohighlight">\(x=0\)</span> (no prey), what happens to the population <span class="math notranslate nohighlight">\(y\)</span>?</p>
+<p>(c) What is the significance of the <span class="math notranslate nohighlight">\(xy\)</span> term in each equation?</p>
+<p>Now, let’s define our predator-prey system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">b</span><span class="o">=</span><span class="mf">1.2</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">d</span><span class="o">=</span><span class="mf">0.9</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> <span class="c1"># define dx/dt=f(x,y)</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> <span class="c1"># define dy/dt=g(x,y)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then run the <code class="docutils literal notranslate"><span class="pre">xysol</span></code> and <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> programs to generate plots for this system: first, to show how the two populations change over time, and second, to show the direction field and solution curve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">xysol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1">#choosing initial values x0=1.5 and y0=0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsol</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It turns out that the solution curve above should really be a closed curve. It doesn’t appear this way due to the error involved in using Euler’s method. To improve things, try changing the definition of <code class="docutils literal notranslate"><span class="pre">t</span></code> to use a smaller step size (perhaps change 100 to 1000), and then <strong>re-run the cells.</strong></p>
+<p>What this means in terms of our population dynamic is that this particular predator-prey ecosystem is <strong>stable</strong>. The two populations go up and down over time, but they do so in a <strong>cycle</strong>.</p>
+</section>
+<section id="problem-5">
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this heading">#</a></h3>
+<p>Choose two different sets of values for <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, and then run both the <code class="docutils literal notranslate"><span class="pre">xysol</span></code> and <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> programs to create plots for each. In each case, comment on the results.</p>
+<p>(Pick your own values, and experiment a bit. If your outcome isn’t interesting, or seems unreasonable, try again with different numbers. Note that in some cases you could cause exponential growth so large that you overflow the values the system can handle, so choose carefully!)</p>
+<p><strong>Note:</strong> it should be sufficient to redefine <code class="docutils literal notranslate"><span class="pre">a,b,c,d</span></code> and then run the two programs. You don’t have to enter new definitions for <code class="docutils literal notranslate"><span class="pre">f(x,y)</span></code> and <code class="docutils literal notranslate"><span class="pre">g(x,y)</span></code>.</p>
+</section>
+</section>
+<section id="analytic-methods-for-linear-systems">
+<h2>Analytic methods for linear systems<a class="headerlink" href="#analytic-methods-for-linear-systems" title="Permalink to this heading">#</a></h2>
+<p>(For information purposes only.)</p>
+<p>Note that a system of differential equations could be written in vector form as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}x\,'(t)\\y\,'(t)\end{bmatrix}=A\begin{bmatrix}x(t)\\y(t)\end{bmatrix},
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span> is the coefficient matrix for the system.</p>
+<p>It turns out that if <span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(\vec{v}=\begin{bmatrix}v_1\\v_2\end{bmatrix}\)</span> is a corresponding eigenvector then a solution to our linear system is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}x(t)&amp;=v_1e^{\lambda t}\\y(t)&amp;=v_2e^{\lambda t}.\end{aligned}
+\end{split}\]</div>
+<p>In vector form, we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{x}(t) = e^{\lambda t}\vec{v}.
+\]</div>
+<p>This works because, on the one hand, <span class="math notranslate nohighlight">\(\vec{x}\,'(t) = \lambda e^{\lambda t}\vec{v}\)</span>, and on the other hand, <span class="math notranslate nohighlight">\(A\vec{x}(t) = A(e^{\lambda t}\vec{v})=e^{\lambda t}A\vec{v}=e^{\lambda t}\lambda \vec{v}\)</span>.</p>
+<p>In most cases we will get two different eigenvalues, with corresponding eigenvectors and the general solution will be a linear combination (or superposition) of these two solutions. That is, if <span class="math notranslate nohighlight">\(\vec{x}_1(t) = e^{\lambda_1 t}\vec{v}_1\)</span> and <span class="math notranslate nohighlight">\(\vec{x}_2(t)=e^{\lambda_2 t}\vec{v}_2\)</span>, then the general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{x}(t) = c_1\vec{x}_1(t)+c_2\vec{x}_2(t)=c_1\vec{v}_1e^{\lambda_1 t} + c_2\vec{v}_2 e^{\lambda_2 t}.
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(\lambda = u+iv\)</span> is complex, we can use Euler’s formula (yes, the same Euler) to write</p>
+<div class="math notranslate nohighlight">
+\[
+e^{\lambda t} = e^{ut+ivt} = e^{ut}(\cos(vt)+i\sin(vt)).
+\]</div>
+<p>It turns out that if <span class="math notranslate nohighlight">\(\lambda=u+iv\)</span> is an eigenvalue, the other one will be <span class="math notranslate nohighlight">\(\lambda=u-iv\)</span> (thanks to the quadratic formula), and it is possible to combine the two solutions to give an answer entirely in terms of real numbers. The general solution for a system of two linear differential equations whose coefficient matrix has eigenvalues <span class="math notranslate nohighlight">\(\lambda_\pm  = u\pm iv\)</span> looks like</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{x}(t) = c_1\vec{w}_1 e^{ut}\cos(vt) + c_2\vec{w}_2 e^{ut}\sin(vt)
+\]</div>
+<p>for some vectors <span class="math notranslate nohighlight">\(\vec{w}_1,\vec{w}_2\)</span>. (These are not the original eigenvectors, but they are related.)</p>
+<p>When we have a solution like <span class="math notranslate nohighlight">\(\vec{x}(t)=c_1\vec{v}_1 e^{\lambda_1 t}+c_2\vec{v}_2 e^{\lambda_2 t}\)</span>, and initial conditions <span class="math notranslate nohighlight">\(x(0)=x_0\)</span>, <span class="math notranslate nohighlight">\(y(0)=y_0\)</span>, we can determine the coefficiencts <span class="math notranslate nohighlight">\(c_1, c_2\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{x}(0)=\begin{bmatrix}x_0\\y_0\end{bmatrix}=c_1\vec{v}_1+c_2\vec{v}_2.
+\end{split}\]</div>
+<p>This is a system of two equations with two unknowns. The matrix whose columns are given by the two eigenvectors will be invertible, allowing us to solve for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.</p>
+<p>There are a lot of other details we’ve glossed over here, which you will learn about in a course on differential equations.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Calc2-Lab4-ODEs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 5: Differential Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Calc2-Lab6-Parametric-Curves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 7: Parametric curves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-preview-of-parametric-curves">A preview of parametric curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-fields-for-linear-systems">Direction fields for linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method-for-systems">Euler’s Method for systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a">Part (a)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b">Part (b)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-systems">Solving linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-systems">Non-linear systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4">Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5">Problem 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-methods-for-linear-systems">Analytic methods for linear systems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

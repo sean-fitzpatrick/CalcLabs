@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Intro to NumPy for calculus &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+    <title>Intro to NumPy for Calculus &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'numpy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntrotoNumPy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intro to NumPy for Calculus" href="IntrotoNumPy.html" />
-    <link rel="prev" title="Intro to SymPy for Calculus" href="IntrotoSymPy.html" />
+    <link rel="next" title="Limits and Python!" href="Calc1-Lab1-Limits.html" />
+    <link rel="prev" title="Intro to NumPy for calculus" href="numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to NumPy for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to NumPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
@@ -225,6 +225,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/IntrotoNumPy.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -250,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2Fnumpy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FIntrotoNumPy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/numpy.md" target="_blank"
+      <li><a href="_sources/IntrotoNumPy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -362,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Intro to NumPy for calculus</h1>
+    <h1>Intro to NumPy for Calculus</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,43 +418,75 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="intro-to-numpy-for-calculus">
-<h1>Intro to NumPy for calculus<a class="headerlink" href="#intro-to-numpy-for-calculus" title="Permalink to this heading">#</a></h1>
+<h1>Intro to NumPy for Calculus<a class="headerlink" href="#intro-to-numpy-for-calculus" title="Permalink to this heading">#</a></h1>
 <p>By Raheem Mir</p>
 <p>When it comes numerical computation, NumPy is the Python package / library of choice, offering performance and lots of functionality, making it a powerful tool for doing calculus.</p>
 <section id="getting-started-with-numpy">
 <h2>Getting Started With NumPy<a class="headerlink" href="#getting-started-with-numpy" title="Permalink to this heading">#</a></h2>
 <p>To begin using NumPy, we start by “importing” the library:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> loads in NumPy for us to use. We give it the shorthand name <code class="docutils literal notranslate"><span class="pre">np</span></code>, meaning every time we call something from NumPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">np.</span></code>. This is a good way to keep things organized when we are working with multiple libraries.</p>
 <p>NumPy implements many of the common mathematical functions, like trigonometric functions, logarithms and more:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">e</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">e</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>  <span class="c1">#np.log is the natural logarithm, NumPy also offers base 10 and base 2 logarithms</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>  <span class="c1">#np.log is the natural logarithm, NumPy also offers base 10 and base 2 logarithms</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="working-with-arrays">
 <h2>Working with Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this heading">#</a></h2>
 <p>The defining feature of NumPy is the NumPy array, a powerful data structure optimized for numerical computation. Think of them as the Python lists we’ve seen before (in Intro to Python for Calculus), but significantly more efficient and powerful, well suited for performing calculus tasks. Additionally, the many mathematical functions (as well as others) implemented in NumPy can be directly applied to arrays without the need for loops (less code, more functionality).</p>
 <p>Creating a NumPy array is straightforward, generally we use the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>  <span class="c1"># creating an array of prime numbers</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>  <span class="c1"># creating an array of prime numbers</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>NumPy also provides specialized functions for creating arrays, one of them being <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>, which generates a set of evenly spaced values over a given interval (inclusive). This function is particularly useful for calculus tasks, from generating <span class="math notranslate nohighlight">\(x\)</span>-values to plot a function, to defining intervals for numerical approximations like Riemann sums.</p>
 <p>The syntax is as follows:</p>
@@ -433,59 +496,103 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> is the beginning of the interval, while <code class="docutils literal notranslate"><span class="pre">b</span></code> is the end of the interval.<br />
 <code class="docutils literal notranslate"><span class="pre">N</span></code> specifies the number of values to generate in between <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p>Here we create a NumPy array of 11 evenly spaced values between 0 and 1:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
 </pre></div>
 </div>
+</div>
+</div>
 <p>Like with lists, we can access individual elements of a NumPy array by specifying their index, which <strong>starts at 0</strong> (i.e. the first element is at index 0).</p>
 <p>Here’s how we would access (and output) the first two elements of the array <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To access elements from the end of an array, we use negative indices. For instance, <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> would specify the last index of an array.</p>
 <p>Below is how we would access the last three elements of <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Using a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> inside the <code class="docutils literal notranslate"><span class="pre">[]</span></code>  allows us to select a range of elements from an array, which is known as “slicing”. For example, <code class="docutils literal notranslate"><span class="pre">x[:]</span></code> would access the entire array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:]</span> <span class="c1"># retrieves all the elements of the array</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:]</span> <span class="c1"># retrieves all the elements of the array</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To retrieve the entries after a certain index, we would place the <code class="docutils literal notranslate"><span class="pre">:</span></code> to the right of the index value inside the <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># outputs the elements from the third index onwards </span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># outputs the elements from the third index onwards </span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To retrieve the entries before a particular index, we would place the <code class="docutils literal notranslate"><span class="pre">:</span></code> to the left of the index value inside the <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="c1"># outputs the first 7 elements</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="c1"># outputs the first 7 elements</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can also explicitly state the starting and ending index of what we want to access:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># Retrieves elements from index 3 up to, but not including, index 8</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># Retrieves elements from index 3 up to, but not including, index 8</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Although we’ll most often be using <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> for our NumPy arrays, here is a brief overview of some of the other functions available:</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.arange(a,</span> <span class="pre">b,</span> <span class="pre">step)</span></code> generates a NumPy array with values starting at <code class="docutils literal notranslate"><span class="pre">a</span></code> up to, but not including, <code class="docutils literal notranslate"><span class="pre">b</span></code>. The <code class="docutils literal notranslate"><span class="pre">step</span></code> parameter let’s you control the difference between consecutive values in the array.</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.ones(N)</span></code> generates an array of only 1’s, with a length of N.</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.zeros(N)</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">np.ones()</span></code>, generating an array of only 0’s, with a length of N.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">even_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zeros</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="plotting-with-numpy-and-matplotlib">
 <h2>Plotting With NumPy and Matplotlib<a class="headerlink" href="#plotting-with-numpy-and-matplotlib" title="Permalink to this heading">#</a></h2>
 <p>We can use NumPy in conjunction with Matplotlib, the popular Python plotting library, to visualize functions.</p>
 <p>First, we have to import Matplotlib, in particular, its <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Here is the general framework for creating a basic plot:</p>
 <ol class="arabic simple">
@@ -497,39 +604,67 @@ document.write(`
 </ol>
 <p>Now let’s plot <span class="math notranslate nohighlight">\(\cos(x)\)</span> over the interval <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span>:</p>
 <p>First, let’s generate our <span class="math notranslate nohighlight">\(x\)</span>-values using <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Next, we can define <span class="math notranslate nohighlight">\(y\)</span> as a function <span class="math notranslate nohighlight">\(x\)</span> using NumPy’s <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now we can create and display our plot, passing in our <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values to the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> function, as well as calling the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> function to display it. You’ll notice that we’ve added some axis labels as well.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>  <span class="c1"># creating the plot</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>  <span class="c1"># creating the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>  
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cos(x)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># displaying the plot</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now, let’s try plotting the function <span class="math notranslate nohighlight">\(f(x) = x^3 - x^2 -x + 1\)</span> over the interval <span class="math notranslate nohighlight">\([-5, 5]\)</span>:</p>
 <p>First, let’s generate our <span class="math notranslate nohighlight">\(x\)</span>-values with <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  
 </pre></div>
 </div>
+</div>
+</div>
 <p>Next, let’s define the function we want to plot and generate our <span class="math notranslate nohighlight">\(y\)</span>-values:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To create and display the plot, we use the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> functions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>  <span class="c1"># creating the plot</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>  <span class="c1"># creating the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>  
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -566,20 +701,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="IntrotoSymPy.html"
+       href="numpy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Intro to SymPy for Calculus</p>
+        <p class="prev-next-title">Intro to NumPy for calculus</p>
       </div>
     </a>
     <a class="right-next"
-       href="IntrotoNumPy.html"
+       href="Calc1-Lab1-Limits.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to NumPy for Calculus</p>
+        <p class="prev-next-title">Limits and Python!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

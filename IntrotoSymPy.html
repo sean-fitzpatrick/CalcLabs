@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sympy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntrotoSymPy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intro to SymPy for Calculus" href="IntrotoSymPy.html" />
-    <link rel="prev" title="Intro to Python for Calculus" href="IntrotoPython.html" />
+    <link rel="next" title="Intro to NumPy for calculus" href="numpy.html" />
+    <link rel="prev" title="Intro to SymPy for Calculus" href="sympy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to SymPy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
@@ -225,6 +225,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/IntrotoSymPy.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -250,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2Fsympy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FIntrotoSymPy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/sympy.md" target="_blank"
+      <li><a href="_sources/IntrotoSymPy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -392,49 +423,88 @@ document.write(`
 <h1>Intro to SymPy for Calculus<a class="headerlink" href="#intro-to-sympy-for-calculus" title="Permalink to this heading">#</a></h1>
 <p>By Raheem Mir</p>
 <p>Python has many powerful librairies that add convenience and functionality. One of them being SymPy, a feature rich library designed for symbolic mathematics. We can use it to simplify algebraic expressions, solve equations, and perform calculus tasks like evaluating limits or computing integrals. SymPy gives us exact symbolic answers instead of numerical approximations, handling math like we would on paper, which makes it a great tool for intuitively exploring calculus concepts.</p>
-<p>If you want to try the code on this page, you can open it as an <a class="reference internal" href="IntrotoSymPy.html"><span class="doc std std-doc">interactive notebook</span></a></p>
 <section id="getting-started-with-sympy">
 <h2>Getting Started With SymPy<a class="headerlink" href="#getting-started-with-sympy" title="Permalink to this heading">#</a></h2>
 <p>To begin using SymPy we start by “importing” the library:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
 <span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span> 
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sy</span></code> loads in the SymPy library for us to use. We give it the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, so every time we call something from SymPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">sy.</span></code>. This is a good way to keep things organized when we are working with multiple libraries.</p>
 <p><code class="docutils literal notranslate"><span class="pre">sy.init_printing()</span></code> calls SymPy’s <code class="docutils literal notranslate"><span class="pre">init_printing()</span></code> function, which gets the output to be displayed as nicely formatted mathematics.</p>
 <p>A good next step is telling SymPy the variables we would like to use with the <code class="docutils literal notranslate"><span class="pre">symbols()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>  <span class="c1"># this makes x and y symbols</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>  <span class="c1"># this makes x and y symbols</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>When creating a symbol using the <code class="docutils literal notranslate"><span class="pre">symbols()</span></code> function, we can specify additional arguments that can modify SymPy’s assumptions when it’s dealing with the symbol. These assumptions determine how SymPy handles a symbol in situations like square roots, solving, simplifications, and so on. For instance, <code class="docutils literal notranslate"><span class="pre">positive=True</span></code> tells SymPy that a particular symbol is a positive number, while using <code class="docutils literal notranslate"><span class="pre">real=True</span></code> indicates that a symbol represents a real number.</p>
 <p>A common task in SymPy is creating symbolic expressions to represent functions. The syntax is no different from assigning a variable.<br />
 Let’s represent <span class="math notranslate nohighlight">\(f(x) = x^2 - 2x + 1\)</span> in SymPy!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># defining a symbolic expression</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># defining a symbolic expression</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="c1"># outputting f(x)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="c1"># outputting f(x)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>It is important to note that we are not actually creating a Python function here, which would be defined on an input/output basis, rather we are creating a symbolic representation of a function, that can be easily manipulated with algebra and/or calculus. As such, trying something like <code class="docutils literal notranslate"><span class="pre">f(5)</span></code> would return an error. To substitute values into <code class="docutils literal notranslate"><span class="pre">f</span></code>, we would use the <code class="docutils literal notranslate"><span class="pre">subs()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#substituting 4 in for x</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#substituting 4 in for x</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>SymPy also gives us a function for factoring a polynomial, <code class="docutils literal notranslate"><span class="pre">factor()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>SymPy implements many of the common mathematical functions as well:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># constants pi and e</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># constants pi and e</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># absolute value</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># absolute value</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="limits">
@@ -448,35 +518,63 @@ Let’s represent <span class="math notranslate nohighlight">\(f(x) = x^2 - 2x +
 <code class="docutils literal notranslate"><span class="pre">value</span></code> represents the value the variable is approaching. If we are dealing with limits at infinity, we can use <code class="docutils literal notranslate"><span class="pre">sy.oo</span></code> and <code class="docutils literal notranslate"><span class="pre">-sy.oo</span></code> to dentote positive and negative infinity.</p>
 <p>To compute one-sided limits, we can add a fourth argument to the function, either a <code class="docutils literal notranslate"><span class="pre">'+'</span></code> or <code class="docutils literal notranslate"><span class="pre">'-'</span></code> for a right or left hand limit.</p>
 <p>Let’s evaluate <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0}\frac{\sin(x)}{x}\)</span> with the <code class="docutils literal notranslate"><span class="pre">limit()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span>   <span class="c1"># representing the function</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span>   <span class="c1"># representing the function</span>
 <span class="n">f</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># calling the limit() function</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># calling the limit() function</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Since we set our symbolic representation equal to a variable, <code class="docutils literal notranslate"><span class="pre">f</span></code>, we could have also called <code class="docutils literal notranslate"><span class="pre">limit()</span></code> like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Note that we can also directly pass in a SymPy expression to the <code class="docutils literal notranslate"><span class="pre">limit()</span></code> function instead of using a variable.</p>
 <p>Let’s use the <code class="docutils literal notranslate"><span class="pre">limit()</span></code> function to find the value of <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0}\dfrac{\cos(x) - 1}{x}\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Let’s try adding a fourth argument in our call to <code class="docutils literal notranslate"><span class="pre">limit()</span></code>, and work with one-sided limits:<br />
 <span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0^-}\dfrac{1}{x}\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 0^+}\dfrac{1}{x}\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s explore a limit where <span class="math notranslate nohighlight">\(x\)</span> is approaching <span class="math notranslate nohighlight">\(\infty\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to \infty}\dfrac{x^2 - 1}{3 - x}\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="derivatives">
@@ -489,40 +587,64 @@ Let’s represent <span class="math notranslate nohighlight">\(f(x) = x^2 - 2x +
 <code class="docutils literal notranslate"><span class="pre">variable</span></code> is the variable with respect to which we are differentiating. This must be defined as a SymPy symbol.<br />
 <code class="docutils literal notranslate"><span class="pre">...</span></code> represents the possibility of adding further arguments, namely for higher order derivatives.</p>
 <p>Given the function <span class="math notranslate nohighlight">\(f(x) = 4x^2 + 6x - 2\)</span> let’s find <span class="math notranslate nohighlight">\(f'(x)\)</span> using the <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># defining a symbolic representation of f(x)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># defining a symbolic representation of f(x)</span>
 <span class="n">f</span>  
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># differentiating f with respect to x</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># differentiating f with respect to x</span>
 <span class="n">f_prime</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Like before, we have some freedom with the syntax when calling the <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
 <span class="n">f_prime</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now let’s differentiate <span class="math notranslate nohighlight">\(g(x) = x^2\sin(x)\)</span> with <code class="docutils literal notranslate"><span class="pre">diff()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">g_prime</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">g_prime</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function can also compute higher order derivatives, as we simply add more arguments to our function call! This is not unlike how we add a tick (or prime) to our notation when taking the next higher order derivative when working on paper.</p>
 <p>Given <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> let’s find its second and third derivatives:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">fpp</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># second derivative of f(x)</span>
 <span class="n">fppp</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># third derivative of f(x)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fpp</span><span class="p">,</span> <span class="n">fppp</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Instead of writing out a particular variable multiple times, we can also compute higher order derivatives like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fpp</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpp</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">fppp</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fpp</span><span class="p">,</span> <span class="n">fppp</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="plotting">
@@ -537,30 +659,50 @@ Let’s represent <span class="math notranslate nohighlight">\(f(x) = x^2 - 2x +
 <p><code class="docutils literal notranslate"><span class="pre">...</span></code> alludes to the many optional arguments we can use to change the plot’s appearance and behaviour.<br />
 An example would be the argument <code class="docutils literal notranslate"><span class="pre">show=False</span></code>, which stops the graph from being displayed until we use the command, <code class="docutils literal notranslate"><span class="pre">.show()</span></code>.</p>
 <p>Let’s plot <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> over the interval <span class="math notranslate nohighlight">\([-5, 5]\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># notice how we input the domain</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># notice how we input the domain</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Interestingly, we don’t need to type <code class="docutils literal notranslate"><span class="pre">p</span></code> on the next line for the plot to output, like we’d have to when using other SymPy functions. Also, we save our plot to a variable as it’s more efficient when we are manipulating/adjusting an existing plot, or wanting more control over customization.</p>
 <p>Now let’s plot <span class="math notranslate nohighlight">\(f(x) = \sin(5x)\)</span> on the interval <span class="math notranslate nohighlight">\([0, 2\pi]\)</span> and add an optional argument to change the color of the line!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>   <span class="c1"># using SymPy&#39;s built in functions for sin and pi</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>   <span class="c1"># using SymPy&#39;s built in functions for sin and pi</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Here we plot <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span> on the interval <span class="math notranslate nohighlight">\([-10, 10]\)</span>. Like with the trigonomtric functions, we’ll be using SymPy’s built in function for natural logarithms, <code class="docutils literal notranslate"><span class="pre">sy.ln()</span></code>. Remember that <span class="math notranslate nohighlight">\([-10, 10]\)</span> is the default domain so we don’t need to write it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>SymPy’s plotting functionality also gives us the ability to plot multiple functions together, allowing us to combine different plots.</p>
 <p>Let’s illustrate this with an example, by plotting the following equations:</p>
 <p><span class="math notranslate nohighlight">\(y = x\)</span>, <span class="math notranslate nohighlight">\(y = x^2\)</span> , <span class="math notranslate nohighlight">\(y = x^3\)</span>, and <span class="math notranslate nohighlight">\(y = x^4\)</span> over the interval <span class="math notranslate nohighlight">\([0, 2]\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multi_plot</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># adding a legend to our plot</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_plot</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># adding a legend to our plot</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>SymPy also lets us combine existing plots, with the <code class="docutils literal notranslate"><span class="pre">extend()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_a</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_a</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
 <span class="n">plot_b</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plot_a</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">plot_b</span><span class="p">)</span>
 <span class="n">plot_a</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Notice how we added the <code class="docutils literal notranslate"><span class="pre">show=False</span></code> parameter to our plots, so they do not output until we use <code class="docutils literal notranslate"><span class="pre">.show()</span></code>.</p>
 </section>
@@ -583,30 +725,50 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 <p><code class="docutils literal notranslate"><span class="pre">variable</span></code> is the same as with indefinite integrals, the variable of integration that must be defined as a SymPy symbol.</p>
 <p><code class="docutils literal notranslate"><span class="pre">lower_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">upper_limit</span></code> are the lower and upper bounds of integration.</p>
 <p>Let’s evaluate the indefinite integral <span class="math notranslate nohighlight">\(\int \sin(x) \ dx\)</span> with the <code class="docutils literal notranslate"><span class="pre">integrate()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indef_integral</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indef_integral</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">indef_integral</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now let’s evaluate the indefinite integral <span class="math notranslate nohighlight">\(\int x^3 \ dx\)</span> with <code class="docutils literal notranslate"><span class="pre">integrate()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indef_integral1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indef_integral1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">indef_integral1</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Next, let’s look at evaluating definite integrals with the <code class="docutils literal notranslate"><span class="pre">integrate()</span></code> function:</p>
 <p><span class="math notranslate nohighlight">\(\int_{-3}^{3} x^7 - x^3 \, dx\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">def_integral</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">7</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">def_integral</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">7</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">def_integral</span> 
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now, let’s evaluate the definite integral <span class="math notranslate nohighlight">\(\int_{1}^{2} e^x \, dx\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">def_integral1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">def_integral1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">def_integral1</span> 
 </pre></div>
 </div>
+</div>
+</div>
 <p>After computing <span class="math notranslate nohighlight">\(\int_{1}^{2} e^x \, dx\)</span> symbolically (the result is kept as an exact value), we can also find its numerical value with SymPy’s <code class="docutils literal notranslate"><span class="pre">evalf()</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_result</span> <span class="o">=</span> <span class="n">def_integral1</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_result</span> <span class="o">=</span> <span class="n">def_integral1</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 <span class="n">numerical_result</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -643,20 +805,20 @@ An example would be the argument <code class="docutils literal notranslate"><spa
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="IntrotoPython.html"
+       href="sympy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Intro to Python for Calculus</p>
+        <p class="prev-next-title">Intro to SymPy for Calculus</p>
       </div>
     </a>
     <a class="right-next"
-       href="IntrotoSymPy.html"
+       href="numpy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to SymPy for Calculus</p>
+        <p class="prev-next-title">Intro to NumPy for calculus</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

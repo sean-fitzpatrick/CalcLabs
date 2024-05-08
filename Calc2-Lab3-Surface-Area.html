@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Jupyter Labs for Lethbridge Calculus &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+    <title>Lab 4: Arc length and surface area &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
   
   
@@ -61,10 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc2-Lab3-Surface-Area';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intro to Python for calculus" href="python.html" />
+    <link rel="next" title="Introduction to Differential Equations" href="ODE-intro.html" />
+    <link rel="prev" title="Lab 3: Arc length and numerical integration" href="Calc2-Lab2-Arc-Length.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,13 +152,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Jupyter Labs for Lethbridge Calculus
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
@@ -170,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 4: Arc length and surface area</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
@@ -222,6 +225,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab3-Surface-Area.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -247,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc2-Lab3-Surface-Area.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Calc2-Lab3-Surface-Area.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -346,7 +380,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -357,11 +393,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Jupyter Labs for Lethbridge Calculus</h1>
+    <h1>Lab 4: Arc length and surface area</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arc-length-again">Arc length (again)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-reminders">Some reminders:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-area">Surface area</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,37 +423,76 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-labs-for-lethbridge-calculus">
-<h1>Jupyter Labs for Lethbridge Calculus<a class="headerlink" href="#jupyter-labs-for-lethbridge-calculus" title="Permalink to this heading">#</a></h1>
-<p>Welcome to the Calculus lab manual for University of Lethbridge.</p>
-<p>This book contains some basic details on how to use Python for calculus,
-along with Jupyter notebooks for several lab assignments.</p>
-<p>This manual was written by <a class="reference external" href="https://www.cs.uleth.ca/~fitzpat">Sean Fitzpatrick</a>.
-Some introductory material, and several labs for Calculus 1, were contributed by Raheem Mir.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-4-arc-length-and-surface-area">
+<h1>Lab 4: Arc length and surface area<a class="headerlink" href="#lab-4-arc-length-and-surface-area" title="Permalink to this heading">#</a></h1>
+<p>For this tutorial, you will do some of your work on paper, and some using the computer.</p>
+<p>(You can do it entirely on the computer if you are comfortable with typing up your work using Markdown and LaTeX.)</p>
+<section id="arc-length-again">
+<h2>Arc length (again)<a class="headerlink" href="#arc-length-again" title="Permalink to this heading">#</a></h2>
+<p>Recall that the length of a curve <span class="math notranslate nohighlight">\(y=f(x)\)</span>, <span class="math notranslate nohighlight">\(a\leq x\leq b\)</span>, is given by</p>
+<div class="math notranslate nohighlight">
+\[L = \int_a^b \sqrt{1+f'(x)^2}\,dx.\]</div>
+<p>Suppose <span class="math notranslate nohighlight">\(f\)</span> is a one-to-one function, and that our curve can also be given by <span class="math notranslate nohighlight">\(x=g(y)\)</span>, where <span class="math notranslate nohighlight">\(g=f^{-1}\)</span> is the inverse of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>In the derivation of the arc length formula, instead of writing <span class="math notranslate nohighlight">\(\Delta x^2+\Delta y^2 = \left(1+\left(\frac{\Delta y}{\Delta x}\right)^2\right)\Delta x^2\)</span>, we could have equally well written <span class="math notranslate nohighlight">\(\Delta x^2+\Delta y^2 = \left(\left(\frac{\Delta x}{\Delta y}\right)^2+1\right)\Delta y^2\)</span>.</p>
+<p>This leads to an alternate formula for arc length: if <span class="math notranslate nohighlight">\(x=g(y)\)</span>, for <span class="math notranslate nohighlight">\(c\leq y\leq d\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[L=\int_c^d\sqrt{1+g'(y)^2}\,dy.\]</div>
+<p>Before proceeding, make sure to execute the next cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
 </div>
+</div>
+</div>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<p>Consider the curve <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span>, for <span class="math notranslate nohighlight">\(0\leq x\leq 4\)</span>.</p>
+<p>(a) Set up the integral to compute the length of this curve, and explain why it’s improper.</p>
+<p>(b) Set up another integral to compute the length of the curve, by first writing <span class="math notranslate nohighlight">\(x\)</span> as a function of <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>(c) Compute the arc length exactly, using SymPy. Then use the <code class="docutils literal notranslate"><span class="pre">evalf()</span></code> function to get a decimal value for the length.</p>
+<p>(d) Using the midpoint rule program from Tutorial 3, evaluate the integral from part (a) numerically, using 100 subintervals.</p>
+<p>(e) Using the midpoint rule program from Tutorial 3, evaluate the integral from part (b) numerically, using 100 subintervals.</p>
+<p>(f) Using the Simpson’s rule program from Tutorial 3, evaluate the integral from part (b) numerically, using 100 subintervals.</p>
+<p>(g) Compare your answers from parts (d), (e), and (f) to the value from part (c). Which one is most accurate?</p>
+<p><em>Note:</em> the easiest way to compare is to subtract each estimate from the value found in part (c). For example, you might enter something like <code class="docutils literal notranslate"><span class="pre">sy.integrate(s,(y,0,2)).evalf()-midpoint(f,0,4,100)</span></code>.</p>
+<p>(h) Why can’t we use Simpson’s rule for the integral from part (a)?</p>
+</section>
+<section id="some-reminders">
+<h3>Some reminders:<a class="headerlink" href="#some-reminders" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>the syntax for integration in SymPy is <code class="docutils literal notranslate"><span class="pre">sy.integrate(f,(x,a,b))</span></code></p></li>
+<li><p>you can define a SymPy function by simply writing <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> </code>, followed by an expression in terms of x</p></li>
+<li><p>don’t forget that for SymPy you’ll need to include <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sy.symbols('x')</span></code> to define x as a symbol!</p></li>
+<li><p>for a Numpy function, you need to use the syntax <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(x):</span></code>. (The second line is indented, begins with <code class="docutils literal notranslate"><span class="pre">return</span></code>, and then gives an expression in x.) There is also the “lambda” method if you want a shortcut.</p></li>
+<li><p>click the “+” button in the toolbar to get more code cells!</p></li>
+</ul>
+</section>
+</section>
+<section id="surface-area">
+<h2>Surface area<a class="headerlink" href="#surface-area" title="Permalink to this heading">#</a></h2>
+<p>Suppose that a curve of the form <span class="math notranslate nohighlight">\(y=f(x), a\leq x\leq b\)</span> (or <span class="math notranslate nohighlight">\(x=g(y), c\leq x\leq d\)</span>) is revolved about an axis.</p>
+<p>To keep things reasonable, the axis should be either horizontal or vertical.</p>
+<p>The <strong>surface area</strong> of the surface generated in this way is given by an integral of the form</p>
+<div class="math notranslate nohighlight">
+\[S = \int_a^b 2\pi R\,ds\]</div>
+<p>where <span class="math notranslate nohighlight">\(ds\)</span> is the arc length element (either <span class="math notranslate nohighlight">\(\sqrt{1+f'(x)^2}\,dx\)</span> or <span class="math notranslate nohighlight">\(\sqrt{1+g'(y)^2}\,dy\)</span>, depending on setup), and <span class="math notranslate nohighlight">\(R\)</span> is the “radius” of the circle travelled by a point on the curve: the distance from the curve to the axis of rotation.</p>
+<img alt="Sketch of a surface generated by revolving a curve about a horizontal axis" width="40%" src="imgs/surface.svg"/>
+<p>In this sketch, we have a horizontal axis <span class="math notranslate nohighlight">\(y=h\)</span>, and <span class="math notranslate nohighlight">\(y=f(x)\)</span>, so <span class="math notranslate nohighlight">\(R(x)=f(x)-h\)</span> is the distance from the curve to the axis. You will find that in most examples, we use the <span class="math notranslate nohighlight">\(x\)</span> axis (so <span class="math notranslate nohighlight">\(h=0\)</span>), because for integrals done by hand, there is often a significant difference in difficulty between the integral of <span class="math notranslate nohighlight">\(f(x)\sqrt{1+f'(x)^2}\)</span> and <span class="math notranslate nohighlight">\(\sqrt{1+f'(x)^2}\)</span>.</p>
+<p>If we were to write <span class="math notranslate nohighlight">\(x=g(y)\)</span> for this curve (we wouldn’t, for this particular curve, because the function is not one-to-one, but hypothetically…), then <span class="math notranslate nohighlight">\(R(y)=y-h\)</span> and <span class="math notranslate nohighlight">\(ds=\sqrt{1+g'(y)^2}\,dy\)</span>.</p>
+<p>For a vertical axis <span class="math notranslate nohighlight">\(x=k\)</span>, we would have either <span class="math notranslate nohighlight">\(R(x)=x-k\)</span> or <span class="math notranslate nohighlight">\(R(y)=g(y)-k\)</span>, depending on the variable of integration.</p>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<p>Consider again the curve <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(0\leq x\leq 4\)</span>. Set up the following integrals to compute surface area:<br><br></p>
+<p>(a) When revolved about the <span class="math notranslate nohighlight">\(x\)</span> axis, using <span class="math notranslate nohighlight">\(x\)</span> as the integration variable.</p>
+<p>(b) When revolved about the <span class="math notranslate nohighlight">\(x\)</span> axis, using <span class="math notranslate nohighlight">\(y\)</span> as the integration variable.</p>
+<p>(c) When revolved about the <span class="math notranslate nohighlight">\(y\)</span> axis, using <span class="math notranslate nohighlight">\(x\)</span> as the integration variable.</p>
+<p>(d) When revolved about the <span class="math notranslate nohighlight">\(y\)</span> axis, using <span class="math notranslate nohighlight">\(y\)</span> as the integration variable.<br><br></p>
+<p>Then, use the computer to evaluate each integral (or compute the integrals by hand), and confirm that your answers for (a) and (b) are the same, and that your answers for (c) and (d) are the same.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,12 +526,21 @@ Some introductory material, and several labs for Calculus 1, were contributed by
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Calc2-Lab2-Arc-Length.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 3: Arc length and numerical integration</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="python.html"
+       href="ODE-intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Python for calculus</p>
+        <p class="prev-next-title">Introduction to Differential Equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -453,6 +553,28 @@ Some introductory material, and several labs for Calculus 1, were contributed by
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arc-length-again">Arc length (again)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-reminders">Some reminders:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-area">Surface area</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

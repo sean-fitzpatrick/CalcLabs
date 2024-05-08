@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab 8: Polar curves &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc2-Lab7-Polar-Curves';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Lab 7: Parametric curves" href="Calc2-Lab6-Parametric-Curves.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab7-Polar-Curves.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc2-Lab7-Polar-Curves.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Calc2-Lab7-Polar-Curves.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 8: Polar curves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-polar-curves">Plotting polar curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#families-of-polar-curves">Families of polar curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-8-polar-curves">
+<h1>Lab 8: Polar curves<a class="headerlink" href="#lab-8-polar-curves" title="Permalink to this heading">#</a></h1>
+<p><strong>Polar coordinates</strong> provide us with an alternative coordinate system for the plane. Instead of a rectangular grid system, we fill the plane with circles centred at the origin. We can locate any point on the plane by first specifying a circle (given by its <strong>radius</strong> <span class="math notranslate nohighlight">\(r\)</span>), and then saying where on that circle we are, using an angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p><img alt="diagram of the polar coordinate system" src="_images/polar.png" /></p>
+<p>Trigonometry gives us the relationships:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}x&amp;=r\cos(\theta) &amp; r^2&amp;=x^2+y^2\\ y&amp;=r\sin(\theta) &amp; \tan(\theta)&amp;=\frac{y}{x}\end{aligned}\end{split}\]</div>
+<p>Unlike rectangular coordinates, polar coordinates are not uniquely defined, due to the periodic nature of the sine and cosine functions. For example, the polar coordinates <span class="math notranslate nohighlight">\((4,\pi/3)\)</span>, <span class="math notranslate nohighlight">\((4,-5\pi/3)\)</span> and <span class="math notranslate nohighlight">\((4, 7\pi/3)\)</span> all decribe the same point, with rectangular coordinates <span class="math notranslate nohighlight">\((2,2\sqrt{3})\)</span>. By convention, we allow <span class="math notranslate nohighlight">\(r\)</span> to be negative, and interpret this as moving <em>backwards</em> along the line through the origin corresponding to the angle <span class="math notranslate nohighlight">\(\theta\)</span>. This is the same as rotating by an angle of <span class="math notranslate nohighlight">\(\pi\)</span> and moving forwards, so, for example, the coordinates <span class="math notranslate nohighlight">\((-4,4\pi/3)\)</span> also describe the same point as the rectangular coordinates <span class="math notranslate nohighlight">\((2,2\sqrt{3})\)</span>.</p>
+<p>Most curves are defined in polar coordinates by giving <span class="math notranslate nohighlight">\(r\)</span> as a function of <span class="math notranslate nohighlight">\(\theta\)</span> (<span class="math notranslate nohighlight">\(r=f(\theta)\)</span>).</p>
+<p>Some examples:</p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(c&gt;0\)</span> is a constant, <span class="math notranslate nohighlight">\(r=c\)</span> is a circle of radius <span class="math notranslate nohighlight">\(c\)</span>. <span class="math notranslate nohighlight">\(r=0\)</span> is the origin <span class="math notranslate nohighlight">\((0,0)\)</span>, which is the only point where no angle <span class="math notranslate nohighlight">\(\theta\)</span> can be defined</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(r=\theta\)</span>, we get further and further from the origin as <span class="math notranslate nohighlight">\(\theta\)</span> increases, and the result is a spiral</p></li>
+<li><p>the equation <span class="math notranslate nohighlight">\(r=\sin(\theta)\)</span> describes a circle! This might not be obvious at first, but if we multiply both sides of the equation by <span class="math notranslate nohighlight">\(r\)</span>, we get <span class="math notranslate nohighlight">\(r^2=r\sin(\theta)\)</span>. In rectangular coordinates, this is <span class="math notranslate nohighlight">\(x^2+y^2=y\)</span>, and by completing the square, we can write this as <span class="math notranslate nohighlight">\(x^2+\left(y-\frac12\right)^2=\frac14\)</span></p></li>
+</ul>
+<p>Many other (really cool) curves can be created using different functions of <span class="math notranslate nohighlight">\(\theta\)</span>, many of which would be difficult to describe in rectangular coordinates.</p>
+<section id="plotting-polar-curves">
+<h2>Plotting polar curves<a class="headerlink" href="#plotting-polar-curves" title="Permalink to this heading">#</a></h2>
+<p>When plotting an equation <span class="math notranslate nohighlight">\(r=f(\theta)\)</span> by hand, we try to imagine moving our pen further from (or nearer to) the origin as we vary <span class="math notranslate nohighlight">\(\theta\)</span>, depending on whether <span class="math notranslate nohighlight">\(f(\theta)\)</span> is increasing or decreasing. We can manage some limited success this way, but again it is easier to defer to the computer.</p>
+<p>Many programs (both GeoGebra and SymPy included) do not have a built in polar plotting utility. This is because any polar curve <span class="math notranslate nohighlight">\(r=f(\theta)\)</span> can be treated as a parametric curve:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}x&amp;=r\cos(\theta)=f(\theta)\cos(\theta)\\ y&amp;=r\sin(\theta)=f(\theta)\sin(\theta)\end{aligned}\end{split}\]</div>
+<p>So to plot a polar curve, we first convert it to parametric, and then use the same <code class="docutils literal notranslate"><span class="pre">plot_parametric</span></code> function from SymPy as we used in the previous tutorial.</p>
+<p>For example, to plot the curve <span class="math notranslate nohighlight">\(r=\sin(5\theta)\)</span>, with <span class="math notranslate nohighlight">\(0\leq \theta\leq \pi\)</span>, we would do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span> <span class="c1">#this will just be more convenient than typing &quot;theta&quot; all the time</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span> <span class="c1">#for later convenience</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot_parametric</span> <span class="c1">#also for later convenience</span>
+<span class="n">pp</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<p>Plot the following polar curves. In each case, you will need to decide on an appropriate interval of the form <span class="math notranslate nohighlight">\([0,k\pi]\)</span>, for some positive integer <span class="math notranslate nohighlight">\(k\)</span>, to ensure that you’ve produced the entire curve. (Note that your curve will have returned to where it started if <span class="math notranslate nohighlight">\(f(\theta+k\pi)=f(\theta)\)</span>.)</p>
+<p>(a) <span class="math notranslate nohighlight">\(r = \sin(\theta)+\sin^3(5\theta/2)\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(r = \sin(8\theta/5)\)</span></p>
+<p>(c) <span class="math notranslate nohighlight">\(r = \sin^2(4\theta)+\cos(4\theta)\)</span></p>
+</section>
+</section>
+<section id="families-of-polar-curves">
+<h2>Families of polar curves<a class="headerlink" href="#families-of-polar-curves" title="Permalink to this heading">#</a></h2>
+<p>In the textbook, you have seen that there are some common families of polar curves, with each member given by a different value for a parameter. For example, the equations <span class="math notranslate nohighlight">\(r=a\pm b\cos(\theta)\)</span> define a family of curves called <strong>limaçons</strong>.</p>
+<p>We can investigate how these curves change as we vary the parameter(s) by using some of the interactive features of a Jupyter notebook: the <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> library contains an assortment of interactive “widgets” that you can use in your notebook. For example, here is a family of limaçons, with <span class="math notranslate nohighlight">\(b=2\)</span>.</p>
+<p>You can drag the slider with your mouse, or click on the slider and then use the arrow keys on your keyboard.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">ipw</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Need to define a plotting function depending on a parameter</span>
+
+<span class="k">def</span> <span class="nf">polar_plot</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1">#define f(theta)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">7.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">)</span>
+    
+<span class="n">ipw</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">polar_plot</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">ipw</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<p>Consider the family of polar curves given by the equation <span class="math notranslate nohighlight">\(r = \dfrac{1-a\cos(\theta)}{1+a\cos(\theta)}\)</span>.</p>
+<ul class="simple">
+<li><p>Construct an interactive applet to plot this family, for integer values of <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(-5\)</span> to <span class="math notranslate nohighlight">\(5\)</span>.</p></li>
+<li><p>Investigate how the curve changes as <span class="math notranslate nohighlight">\(a\)</span> varies. In particular, identify the values of <span class="math notranslate nohighlight">\(a\)</span> for which the shape changes significantly. (You may be able to deduce what these values are from the polar equation, but you should investigate using an applet.)</p></li>
+</ul>
+<p><strong>Suggestion</strong>: use code similar to the above, but replace <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> with <code class="docutils literal notranslate"><span class="pre">IntSlider</span></code>. Use a starting value of 2, a minimum of <span class="math notranslate nohighlight">\(-5\)</span>, and a maximum of 5. (You can use the default step of 1. You could also stick with <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> if you want to experiment with a smaller step size.) You will need to adjust the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> ranges for the viewing window as well.</p>
+</section>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this heading">#</a></h3>
+<p>Consider the family of curves given by the polar equation <span class="math notranslate nohighlight">\(r=1+c\sin(n\theta)\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is a real number, and <span class="math notranslate nohighlight">\(n\)</span> is a positive integer.</p>
+<p>(Note that this is a <strong>two</strong> parameter family: we have a real number parameter <span class="math notranslate nohighlight">\(c\)</span>, and a natural number parameter <span class="math notranslate nohighlight">\(n\)</span>.)</p>
+<ul class="simple">
+<li><p>Construct an applet to plot these curves using two sliders: a <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> for <span class="math notranslate nohighlight">\(c\)</span>, with range <span class="math notranslate nohighlight">\(-3\)</span> to <span class="math notranslate nohighlight">\(3\)</span>, and step <span class="math notranslate nohighlight">\(0.2\)</span>, and an <code class="docutils literal notranslate"><span class="pre">IntSlider</span></code> for <span class="math notranslate nohighlight">\(n\)</span>, with range <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(12\)</span>.</p></li>
+<li><p>How does the curve change as <span class="math notranslate nohighlight">\(n\)</span> increases? How does it change as <span class="math notranslate nohighlight">\(c\)</span> changes?</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Calc2-Lab6-Parametric-Curves.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 7: Parametric curves</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-polar-curves">Plotting polar curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#families-of-polar-curves">Families of polar curves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

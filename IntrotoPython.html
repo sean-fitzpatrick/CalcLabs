@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Intro to Python for calculus &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+    <title>Intro to Python for Calculus &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'python';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntrotoPython';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intro to Python for Calculus" href="IntrotoPython.html" />
-    <link rel="prev" title="Jupyter Labs for Lethbridge Calculus" href="intro.html" />
+    <link rel="next" title="Intro to SymPy for Calculus" href="sympy.html" />
+    <link rel="prev" title="Intro to Python for calculus" href="python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to Python for calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to Python for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
@@ -225,6 +225,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/IntrotoPython.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -250,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2Fpython.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FIntrotoPython.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/python.md" target="_blank"
+      <li><a href="_sources/IntrotoPython.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -362,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Intro to Python for calculus</h1>
+    <h1>Intro to Python for Calculus</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,14 +404,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-arithmetic-operations">Basic arithmetic operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-arrays">Lists and arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists"><strong>Lists</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-lists">Operations with lists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions"><strong>Functions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops"><strong>Loops</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -393,7 +424,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="intro-to-python-for-calculus">
-<h1>Intro to Python for calculus<a class="headerlink" href="#intro-to-python-for-calculus" title="Permalink to this heading">#</a></h1>
+<h1>Intro to Python for Calculus<a class="headerlink" href="#intro-to-python-for-calculus" title="Permalink to this heading">#</a></h1>
 <p>In this section, we’ll review some of the elements of core Python that feature in our notebooks.
 If you’re an experienced Python programmer, you’ll no doubt find some omissions and shortcomings in our documentation.
 Suggestions are welcome! These labs have been written by mathematicians with no formal training in programming,
@@ -406,7 +437,6 @@ If you’re a student at the University of Lethbridge, you don’t have to insta
 We have a cloud-based Jupyter <em>hub</em> located at <a class="reference external" href="https://uleth.syzygy.ca">uleth.syzygy.ca</a>.
 Log in with your University of Lethbridge credentials, and click on the button to open a new Python notebook:</p>
 <p><img alt="screenshot of jupyter lab page showing python notebook button" src="_images/jupyter.png" /></p>
-<p>In particular, this page can be opened as an <a class="reference internal" href="IntrotoPython.html"><span class="doc std std-doc">interactive notebook</span></a> if you want to try out the code.</p>
 <section id="basic-arithmetic-operations">
 <h2>Basic arithmetic operations<a class="headerlink" href="#basic-arithmetic-operations" title="Permalink to this heading">#</a></h2>
 <p>One thing to keep in mind, if you’re coming from a C++ background, is that most of the time in Python,
@@ -422,6 +452,48 @@ If you ask for <code class="docutils literal notranslate"><span class="pre">4/3<
 <li><p>Division: <code class="docutils literal notranslate"><span class="pre">4/3</span></code></p></li>
 <li><p>Exponentiation: <code class="docutils literal notranslate"><span class="pre">4**3</span></code> (Caution: Python will not understand <code class="docutils literal notranslate"><span class="pre">4^3</span></code>, even if that’s what you’re used to.)</p></li>
 </ul>
+<p>Try it out!</p>
+<p>Addition and Subtraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">+</span> <span class="mi">37</span> <span class="o">-</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiplication:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">15</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Division:</p>
+<p>Note that the result of dividing any two numbers in Python, integers or otherwise, will always return a float, or floating point number, which is a real number in decimal form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">72</span> <span class="o">/</span> <span class="mi">9</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exponents:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use parentheses in our expressions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>It’s a good idea to do some playing around; in particular, do some experiments with order of operation,
 and determine for yourself when parentheses are (and aren’t) needed.
 (Of course, a few extra parentheses won’t hurt.)</p>
@@ -434,29 +506,51 @@ but this will not be understood by Python. You must enter <code class="docutils 
 <p>With multi-step calculations, it is often useful to assign variable names.
 This is also useful if we want to later change the numbers in our calculuations.</p>
 <p>For example, instead of computing the sum <code class="docutils literal notranslate"><span class="pre">4+3</span></code> directly, we could enter the information as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If you run this code in a Jupyter code cell, nothing will happen.
 Well, nothing that you can see. The computer has stored this information, but you haven’t asked it to do anything with it.
 If you want to see the result of the addition, you need to use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In a Jupyter notebook, you can also just put <code class="docutils literal notranslate"><span class="pre">c</span></code> as your last line of code, and it will print.</p>
-<p>Note that if we put <code class="docutils literal notranslate"><span class="pre">4+3</span></code> in a code cell and run it, we get the output immediately.</p>
-<p>You can also declare multiple variables together on the same line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>Note that if we put <code class="docutils literal notranslate"><span class="pre">4+3</span></code> in a code cell and run it, we get the output immediately.</p>
+<p>You can also declare multiple variables together on the same line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>    
+</pre></div>
+</div>
+</div>
+</div>
 <p>We can store and print string variables in a similar fashion:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string_var</span> <span class="o">=</span> <span class="s2">&quot;Hey, I&#39;m a string!&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_var</span> <span class="o">=</span> <span class="s2">&quot;Hey, I&#39;m a string!&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_var</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>will produce the output <code class="docutils literal notranslate"><span class="pre">Hey,</span> <span class="pre">I'm</span> <span class="pre">a</span> <span class="pre">string!</span></code>.</p>
+</div>
+</div>
 <p><strong>Caution</strong>: running an operation like <code class="docutils literal notranslate"><span class="pre">4+3</span></code> will automatically produce output.
 But in a Jupyter notebook, this is only true if it’s the last (or only) line in your cell.
 If you enter</p>
@@ -465,21 +559,37 @@ If you enter</p>
 <span class="mi">4</span><span class="o">-</span><span class="mi">3</span>
 </pre></div>
 </div>
-<p>and run it, the only output you’ll get is <code class="docutils literal notranslate"><span class="pre">1</span></code> (the result of doing <code class="docutils literal notranslate"><span class="pre">4-3</span></code>).
-If you want to get all three outputs from a single cell, you can use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command.
+<p>and run it, the only output you’ll get is <code class="docutils literal notranslate"><span class="pre">1</span></code> (the result of doing <code class="docutils literal notranslate"><span class="pre">4-3</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span>
+<span class="mi">4</span><span class="o">*</span><span class="mi">3</span>
+<span class="mi">4</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to get all three outputs from a single cell, you can use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command.
 See what happens if you do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>You can also enter a list of operations, and the output will be an ordered list:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">-</span><span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">-</span><span class="mi">3</span>
 </pre></div>
 </div>
-</section>
-<section id="lists-and-arrays">
-<h2>Lists and arrays<a class="headerlink" href="#lists-and-arrays" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<section id="lists">
+<h3><strong>Lists</strong><a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
 <p>Most of the time, we won’t be interested in evaluating a function at a single point.
 Instead, we’ll want to evaluate a function on a whole list of points,
 and produce a list of output values as a result.
@@ -496,35 +606,52 @@ Arrays come from libraries like NumPy and aren’t built into Python.)</p>
 </ul>
 <p>In particular, we can start with an empty list and then populate it.
 Some examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;Hello world&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 <span class="n">integer_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Note that lists are always denoted by square brackets.</p>
+</section>
 <section id="operations-with-lists">
 <h3>Operations with lists<a class="headerlink" href="#operations-with-lists" title="Permalink to this heading">#</a></h3>
 <p>One of the simplest things we can do with a list is get its length.
 Try running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">empty_list</span><span class="p">))</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">empty_list</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mixed_list</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> command will give the data type of a list, but this is unlikely to be needed in a calculus lab.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">append</span></code> command is quite useful, as this lets us add items to a list.
 For example, if we run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">empty_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>the output will be <code class="docutils literal notranslate"><span class="pre">[3]</span></code>.</p>
 <p>Often this is done as part of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. If we want to append our list 10 times, we can do the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">empty_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Again note the importance of the indentation for the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.
 The output of the above will be <code class="docutils literal notranslate"><span class="pre">[0,1,2,3,4,5,6,7,8,9]</span></code>. We asked for 10 steps,
@@ -544,25 +671,34 @@ the list <code class="docutils literal notranslate"><span class="pre">L[1:]</spa
 If you want left endpoints, you would use the list <code class="docutils literal notranslate"><span class="pre">L[:-1]</span></code>, which consists of everything except the last point.</p>
 <p>We can access individual elements of a list by specifying their index in the list, which <strong>starts at 0</strong> (i.e. the first element is at index 0).</p>
 <p>Here’s how we would access (and output) the first three elements of a list <code class="docutils literal notranslate"><span class="pre">primes</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">primes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">primes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To access elements from the end of a list, we can use negative indices. For instance, <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> would specify the last index of a list.</p>
 <p>Below is how we would access the last two elements of <code class="docutils literal notranslate"><span class="pre">primes</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">primes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>For more documentation on operations with lists and other sequences in Python (i.e. arrays), see the <a class="reference internal" href="numpy.html"><span class="doc std std-doc">Intro to NumPy for Calculus</span></a> page!
 And of course, you can find plenty of <a class="reference external" href="https://www.w3schools.com/python/python_lists.asp">help online</a>.</p>
 </section>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2><strong>Functions</strong><a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <p>A <em>function</em> in Python is just like a function in mathematics: you define it by saying what it should do to a given input.
-Then, if you give your function an input, it will provide you with the corresponding output.
-The syntax for defining a function is as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
+Then, if you give your function an input, it will provide you with the corresponding output.</p>
+<p>Functions can be thought of as reusable blocks of code that can be called over and over again with varied inputs.</p>
+<p>Here is the general syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
     <span class="c1"># code to be executed</span>
 </pre></div>
 </div>
@@ -577,9 +713,14 @@ but it is still good practice to include comments in your code to explain what v
 <li><p>In the function’s body, you could find a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, this outputs or “returns” a particular value when the function is executed.</p></li>
 </ul>
 <p>For an example of a function, we can define a function of a parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function that returns the square of a given number, plus 4</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>This defines the function <span class="math notranslate nohighlight">\(f(x)=x^2+4\)</span>. But note that Python will not communicate your function to you in this way.
 Indeed, if you try running the command <code class="docutils literal notranslate"><span class="pre">print(f(x))</span></code>, you will get an error,
@@ -587,16 +728,45 @@ since we haven’t told the computer what <code class="docutils literal notransl
 The command <code class="docutils literal notranslate"><span class="pre">print(f)</span></code> is no better: you’ll get an output like <code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">f</span> <span class="pre">at</span> <span class="pre">0x7f27cd037880&gt;</span></code> that is probably not very illuminating.</p>
 <p>However, your function <em>has</em> been defined, and it <em>will</em> give you output, as long as you first give it input.
 Enter <code class="docutils literal notranslate"><span class="pre">f(2)</span></code> and you’ll get the output <code class="docutils literal notranslate"><span class="pre">8</span></code>, which is indeed the value of <span class="math notranslate nohighlight">\(2^2+4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># calling the function </span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Below is a function that operates on a list, finding the mean (average) of a list of numbers. It utilizes two built-in functions, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> which returns the sum of a sequence of numbers, and <code class="docutils literal notranslate"><span class="pre">len()</span></code> which returns the length of a sequence of numbers.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">calculate_mean</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="c1"># sum adds the entries in the list, and len gives the number of entries  </span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>    <span class="c1"># sum adds the entries in the list, and len gives the number of entries</span>
 
 <span class="n">calculate_mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> the indentation above is an essential part of Python syntax!
+</div>
+</div>
+<p>Lines that start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol are known as comments, and are ignored when the code is run. Comments explain what your code is doing, making it easier for others to understand what is going on, and for yourself when revisiting it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function that finds the slope from two points</span>
+<span class="k">def</span> <span class="nf">slope</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># calling the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python has many other built-in functions, such as the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function seen before, and quite a few more from different packages / libraries, such as NumPy or SymPy.</p>
+<p><strong>Note:</strong> the indentation in the definition of a function is an essential part of Python syntax!
 Your function definition won’t work without it.
 Fortunately, when you’re working in a Jupyter notebook,
 as long as you remember the colon at the end of the first line,
@@ -604,17 +774,21 @@ the computer will add the indentation for you as soon as you hit enter.</p>
 <p>A quicker way to define a function is to use Python’s <code class="docutils literal notranslate"><span class="pre">lambda</span></code> syntax.
 This is especially useful if you need to define a function inline as part of a larger program.
 Instead of the function definition we did above, an equivalent syntax is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span>
 </pre></div>
 </div>
-<p>The lambda syntax is faster, but until you get used to it, I’m not sure it is any easier to remember!</p>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> syntax is faster, but until you get used to it, I’m not sure it is any easier to remember!</p>
 <p>In general, the syntax is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">function_name</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">parameters</span><span class="p">:</span> <span class="k">return</span> <span class="n">values</span>
 </pre></div>
 </div>
 </section>
 <section id="conditional-statements">
-<h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
 <p>There are instances that arise in programming when we only want to execute a particular block of code if a certain condition is true. For this scenario, Python has <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, which have the following syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
     <span class="c1"># code to execute if condition is true</span>
@@ -655,7 +829,9 @@ Instead of the function definition we did above, an equivalent syntax is:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">x</span></code>: Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 <p>Let’s start with a simple example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c is negative&#39;</span><span class="p">)</span>
@@ -665,33 +841,53 @@ Instead of the function definition we did above, an equivalent syntax is:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c is positive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Here we define a function that only computes the square root if the input is non-negative:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_root</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_root</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.5</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Cannot take the square root of a negative number&#39;</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can call it as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">square_root</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square_root</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If and else statements can also help us to easily implement piece-wise functions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Another common operator we see in Python, is the modulo operator <code class="docutils literal notranslate"><span class="pre">%</span></code>, which returns the remainder from the division of two numbers:</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> returns the remainder when <code class="docutils literal notranslate"><span class="pre">x</span></code> is divided by <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <p>The modulo operator can be quite useful in different situations, like determining if a number is even or odd:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is even!&#39;</span><span class="p">)</span>
@@ -699,9 +895,11 @@ Instead of the function definition we did above, an equivalent syntax is:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is odd!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 </section>
 <section id="loops">
-<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h2>
+<h2><strong>Loops</strong><a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h2>
 <p>When programming, there are often times where we want to repeatedly perform a specfic action while updating certain parameters, like counting, or performing operations on elements of a list. In these situations, we use loops.</p>
 <p>In particular, <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. They have the following structure:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
@@ -712,20 +910,30 @@ Instead of the function definition we did above, an equivalent syntax is:</p>
 <code class="docutils literal notranslate"><span class="pre">sequence</span></code> represents what is being iterated over (list, range, etc.), and indicates how many iterations the loop will have.  This is followed by a <code class="docutils literal notranslate"><span class="pre">:</span></code>.<br />
 Indented below is the body of the loop, containing the code that is executed each time.</p>
 <p>Here is an example that computes the square root of each number in a list:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Now let’s print out every number in a range that is divisible by 3:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="c1"># the &quot;end=...&quot; prints everything on a single line</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we can implement a function that computes factorials:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="c1"># using *= is the same as `result = result * n`</span>
@@ -733,8 +941,14 @@ Indented below is the body of the loop, containing the code that is executed eac
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Many of the tools we will need for Calculus come from Python libraries such as NumPy and SymPy.
 Continue reading for details on how to use these!</p>
@@ -773,20 +987,20 @@ Continue reading for details on how to use these!</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Jupyter Labs for Lethbridge Calculus</p>
+        <p class="prev-next-title">Intro to Python for calculus</p>
       </div>
     </a>
     <a class="right-next"
-       href="IntrotoPython.html"
+       href="sympy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Python for Calculus</p>
+        <p class="prev-next-title">Intro to SymPy for Calculus</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -809,14 +1023,14 @@ Continue reading for details on how to use these!</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-arithmetic-operations">Basic arithmetic operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-arrays">Lists and arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-print-statements">Variables and print statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists"><strong>Lists</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-lists">Operations with lists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions"><strong>Functions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops"><strong>Loops</strong></a></li>
 </ul>
   </nav></div>
 

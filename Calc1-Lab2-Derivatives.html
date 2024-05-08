@@ -1,0 +1,975 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Derivatives, Derivatives, and Derivatives! &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc1-Lab2-Derivatives';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plotting and Approximating!" href="Calc1-Lab3-Approximations.html" />
+    <link rel="prev" title="Limits and Python!" href="Calc1-Lab1-Limits.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab3-Approximations.html">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc1-Lab2-Derivatives.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc1-Lab2-Derivatives.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Calc1-Lab2-Derivatives.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Derivatives, Derivatives, and Derivatives!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-python-and-sympy">Getting Started with Python and SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-derivatives-with-sympy">Computing Derivatives with SymPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-higher-order-derivatives">Exploring Higher Order Derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-finding-the-bisection-method">Root Finding: The Bisection Method</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="derivatives-derivatives-and-derivatives">
+<h1>Derivatives, Derivatives, and Derivatives!<a class="headerlink" href="#derivatives-derivatives-and-derivatives" title="Permalink to this heading">#</a></h1>
+<p>By Raheem Mir</p>
+<p>As the title suggests, in this notebook we are going to be working with Derivatives… <strong>Let’s Begin!</strong></p>
+<p><strong>First, what’s been covered so far?</strong></p>
+<ul class="simple">
+<li><p>Rates of Change</p></li>
+<li><p>Finding the Derivative at a Point</p></li>
+<li><p>Tangent Lines</p></li>
+</ul>
+<p>And of course, the <strong>limit definition of the Derivative</strong>:</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function that is defined on an open interval (a,b). The derivative of <span class="math notranslate nohighlight">\(f(x)\)</span>, written as <span class="math notranslate nohighlight">\(f'(x)\)</span>, is defined by the limit</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},
+\]</div>
+<p>as long as the limit exists. If the limit exists for a certain value <span class="math notranslate nohighlight">\(x=c\)</span>, we say that <span class="math notranslate nohighlight">\(f\)</span> is <strong>differentiable</strong> at <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p><strong>Now for a quick example! (found in your textbook)</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(f(x) = 3x^2 + 5x - 7\)</span>. To find <span class="math notranslate nohighlight">\(f'(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f'(x) &amp;= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+&amp;= \lim_{h \to 0} \frac{3(x+h)^2 + 5(x+h) - 7 - (3x^2 +5x -7)}{h} \\
+&amp;= \lim_{h \to 0} \frac{3h^2 + 6xh + 5h}{h} \\
+&amp;= \lim_{h \to 0} 3h + 6x + 5 \\
+&amp;= 6x + 5
+\end{aligned}
+\end{split}\]</div>
+<p>With an example like this, using the limit definition to compute the derivative is all well and good. However, when we start working with more complex and intricate functions, computing derivatives this way becomes increasingly more inefficient and awkward (not to mention ugly!).</p>
+<p>In your next class, you’ll learn some much easier and more efficient ways of taking derivatives by hand.</p>
+<p><strong>But for now, let’s compute our derivatives using Python, more specifically, SymPy!</strong></p>
+<section id="getting-started-with-python-and-sympy">
+<h2>Getting Started with Python and SymPy<a class="headerlink" href="#getting-started-with-python-and-sympy" title="Permalink to this heading">#</a></h2>
+<p>As you may recall from our last Python notebook a couple weeks ago, to access the functionality from the SymPy library, we need to import it:<br />
+→ Run the code cell(s) by hitting <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> or by using the play button at the top.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure to run this cell!</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>       
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A Quick Refresher:</strong></p>
+<p>The line: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sy</span></code> loads in the SymPy library for us to use. We give it the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, so every time we call something from SymPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">sy.</span></code>. This is a good way to keep things organized, especially when we are working with multiple libraries.</p>
+<p>The next line: <code class="docutils literal notranslate"><span class="pre">sy.init_printing()</span></code> calls SymPy’s <code class="docutils literal notranslate"><span class="pre">init_printing()</span></code> function, which gets the output to be displayed as nicely formatted mathematics.</p>
+<p>Now is a good time to tell Sympy that we want to use <span class="math notranslate nohighlight">\(x\)</span> as variable. This is done by using the <code class="docutils literal notranslate"><span class="pre">symbols()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>    <span class="c1"># this makes x a symbol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Next, let’s represent a function in SymPy:</strong></p>
+<p>We can use the example seen at the begining, <span class="math notranslate nohighlight">\(f(x) = 3x^2 + 5x - 7\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span><span class="mi">7</span>     <span class="c1"># Notice how multiplication is represented by a single &#39;*&#39;, and exponents with two &#39;**&#39;</span>
+<span class="n">f</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember with SymPy we are not creating “functions” per se, that are defined on an input/output basis, rather we are defining symbolic expressions, intended to be easily manipulated with algebra and/or calculus. If you were to do something like calling <code class="docutils literal notranslate"><span class="pre">f(3)</span></code>, instead of getting an output of <span class="math notranslate nohighlight">\(35\)</span>, an error would be returned instead.</p>
+<p>To input a value into your SymPy expression, you can use the <code class="docutils literal notranslate"><span class="pre">subs()</span></code> function, where you substitute a value in for <span class="math notranslate nohighlight">\(x\)</span> or whichever variable the function is using.<br />
+Let’s see this in action by evaluating the function when <span class="math notranslate nohighlight">\(x = 5\)</span>, also written as <span class="math notranslate nohighlight">\(f(5)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s also important to note that when we create our SymPy expressions, like <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">...</span></code>, we don’t have to use the names <code class="docutils literal notranslate"><span class="pre">f</span></code> or <code class="docutils literal notranslate"><span class="pre">g</span></code>. Since we are just storing the expressions to a variable, the name can be anything of our choosing. The naming convention of this notebook, uses the names <code class="docutils literal notranslate"><span class="pre">f</span></code> or <code class="docutils literal notranslate"><span class="pre">g</span></code>, except we add a 2 or 3 etc. to ensure clarity and that the code runs smoothly.</p>
+</section>
+<section id="computing-derivatives-with-sympy">
+<h2>Computing Derivatives with SymPy<a class="headerlink" href="#computing-derivatives-with-sympy" title="Permalink to this heading">#</a></h2>
+<p><strong>Alright, now that we’ve reviewed some SymPy basics, and run a couple of cells, its time to compute derivatives!</strong></p>
+<p>Taking derivatives with SympPy is very convenient and time efficient. We simply use the <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function!</p>
+<p>Let’s continue with our existing example, <code class="docutils literal notranslate"><span class="pre">f</span></code>, which represents the function <span class="math notranslate nohighlight">\(f(x) = 3x^2 + 5x - 7\)</span>.<br />
+We can find <span class="math notranslate nohighlight">\(f'(x)\)</span> as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>       <span class="c1"># The &#39;x&#39; inbetween the &#39;()&#39; means we are differentiating with respect to x</span>
+<span class="n">f_prime</span>                   <span class="c1"># Also notice that we are using a variable to store the result of using the diff() function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a look at the output… is it what you were expecting? Does it match the <span class="math notranslate nohighlight">\(f'(x)\)</span> calculated at the top?<br />
+<strong>Double-click</strong> on the empty markdown cell below to type your answer! Hit <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> once you’re done.</p>
+<p>Now let’s try to evaluate <span class="math notranslate nohighlight">\(f'(x)\)</span> when <span class="math notranslate nohighlight">\(x = 3\)</span>. This can simply be done by tagging on a call to the <code class="docutils literal notranslate"><span class="pre">subs()</span></code> function to our existing code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
+<p>For the function <span class="math notranslate nohighlight">\(f\)</span> above, use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">subs</span></code> commands to write the equation of the tangent line to <span class="math notranslate nohighlight">\(y=f(x)\)</span> at <span class="math notranslate nohighlight">\(x=2\)</span>. You will need to edit the cell below. We’ve added one line to start you off: you need to declare <span class="math notranslate nohighlight">\(y\)</span> as a symbol before you can use it in an equation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Let’s look at some more examples!</strong></p>
+<p>Consider the function, <span class="math notranslate nohighlight">\(f(x) = \displaystyle\frac{1}{x+1}\)</span> (Example 2.1.23. in your <a class="reference external" href="https://opentext.uleth.ca/apex-standard/sec_derivative.html#ex_deriv2">textbook</a>), what does it’s derivative look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, we represent g(x) in SymPy</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>     <span class="c1"># using brackets is a good idea with fractions</span>
+<span class="n">f2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking the derivative with respect to x</span>
+<span class="n">f_prime2</span> <span class="o">=</span> <span class="n">f2</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f_prime2</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets’s try differentiating <span class="math notranslate nohighlight">\(g(x) = \displaystyle \sqrt{x}\)</span>. To do this we can use the built in <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> function from SymPy!<br />
+Trigonometric functions are also implemented by SymPy which you’ll see in following examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_prime</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g_prime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Now for some trigonometric examples…</strong></p>
+<p>Let’s find the derivative of the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<p>Before we use SymPy, what do you think the derivative will be? And how do you know?<br />
+<strong>Double-click</strong> on the empty markdown cell below to type your answer! Hit <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> once you’re done.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_prime3</span> <span class="o">=</span> <span class="n">f3</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f_prime3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interesting! The derivative of the sine function, is the cosine function, or when <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>, <span class="math notranslate nohighlight">\(f'(x) = \cos(x)\)</span>.<br />
+Why might this be the case? Provide an explanation in the empty cell below.<br />
+When crafting your answer, think of the behaviour of <span class="math notranslate nohighlight">\(\sin(x)\)</span> and <span class="math notranslate nohighlight">\(\cos(x)\)</span>, and even have a look at Example 2.1.24. from your <a class="reference external" href="https://opentext.uleth.ca/apex-standard/sec_derivative.html">textbook</a>.</p>
+<p>Now let’s consider the function <span class="math notranslate nohighlight">\(g(x) = \cos(x)\)</span> and find it’s derivative!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g_prime2</span> <span class="o">=</span> <span class="n">g2</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  
+<span class="n">g_prime2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Were you expecting the derivative to be equal to <span class="math notranslate nohighlight">\(\sin(x)\)</span> as opposed to <span class="math notranslate nohighlight">\(-\sin(x)\)</span>?  Regardless, it’s clear that a relationship exists here.</p>
+<p>Let’s keep exploring, but this time you get to write the code!</p>
+<p>Find the derivative of the function <span class="math notranslate nohighlight">\(f(x) = -\sin(x)\)</span> using the code cell below!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! Look at previous examples if you get stuck</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Give another one a try! Find the derivative of the function <span class="math notranslate nohighlight">\(g(x) = -\cos(x)\)</span> using the code cell below!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! Look at previous examples if you get stuck</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Let’s work on some more exercises!</strong></p>
+<p><strong>For each given function <span class="math notranslate nohighlight">\(f(x)\)</span>, find <span class="math notranslate nohighlight">\(f'(x)\)</span> using SymPy, good luck!</strong></p>
+<p><strong>Exercise #1:
+<span class="math notranslate nohighlight">\(f(x) = x^7\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! Look at previous examples if you get stuck</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise #2:
+<span class="math notranslate nohighlight">\(f(x) = 4x^3 - 2x^2 + 6\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise #3:
+<span class="math notranslate nohighlight">\(f(x) = 5e^x\)</span></strong><br />
+Tip: To represent the <span class="math notranslate nohighlight">\(e^x\)</span> in SymPy we simply use the <code class="docutils literal notranslate"><span class="pre">exp()</span></code> function. For example, to represent <span class="math notranslate nohighlight">\(y = e^x\)</span>, we’d type <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">sy.exp(x)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise #4:
+<span class="math notranslate nohighlight">\(f(x) = x^2\sin(x)\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise #5:
+<span class="math notranslate nohighlight">\(f(x) = (2x^2 + 1)(3x^2 - 1)\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise #6:
+<span class="math notranslate nohighlight">\(f(x) =\displaystyle\frac{x^2 - 4}{x + 2}\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exploring-higher-order-derivatives">
+<h2>Exploring Higher Order Derivatives<a class="headerlink" href="#exploring-higher-order-derivatives" title="Permalink to this heading">#</a></h2>
+<p>When we take the derivative of a given function, we get its instantaneous rate of change, but what if we wanted to know the rate of change of that rate of change? This is where higher order derivatives come in. Remember that the derivative of a function is also a function itself, so it’s derivative can be found as well!</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f(x)\)</span>, we know that it’s derivative, <span class="math notranslate nohighlight">\(f'(x)\)</span> is also a function, meaning we can take it’s derivative, which is known as the second derivative of <span class="math notranslate nohighlight">\(f\)</span> and denoted as <span class="math notranslate nohighlight">\(f''(x)\)</span>. If we were to take another successive derivative, it would be known as the third derivative, written as <span class="math notranslate nohighlight">\(f'''(x)\)</span>.</p>
+<p><strong>Now let’s compute higher order derivatives using SymPy, first illustrating with an example!</strong></p>
+<p><strong>Find the first three derivatives of the function, <span class="math notranslate nohighlight">\(f(x) = 9x^2\)</span></strong></p>
+<p><strong>Method 1:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># &#39;fp&#39; refers to &quot;f prime&quot;</span>
+<span class="n">fpp</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">fppp</span> <span class="o">=</span> <span class="n">fpp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fp</span><span class="p">,</span> <span class="n">fpp</span><span class="p">,</span> <span class="n">fppp</span>   <span class="c1"># Outputting the first three derivatives</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Method 2: Computing the higher order derivatives directly</strong><br />
+Much like how we add a tick (or prime) to our notation when taking the next higher order derivative, we simply add an argument to the <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>      <span class="c1"># gives us the second derivative</span>
+<span class="n">fppp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>   <span class="c1"># gives us the third derivative</span>
+<span class="n">fpp</span><span class="p">,</span> <span class="n">fppp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Let’s try some exercises! Compute the specified higher order derivative using SymPy.</strong></p>
+<p><strong>Exercise 1:<br />
+Find the second derivative of the function, <span class="math notranslate nohighlight">\(f(x) = 3x^4\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 2:<br />
+Find the third derivative of the function, <span class="math notranslate nohighlight">\(g(x) = \cos(x)\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="root-finding-the-bisection-method">
+<h2>Root Finding: The Bisection Method<a class="headerlink" href="#root-finding-the-bisection-method" title="Permalink to this heading">#</a></h2>
+<p>Let’s consider the function, <span class="math notranslate nohighlight">\(f(x) = x -\cos(x)\)</span> on the interval <span class="math notranslate nohighlight">\(\left[0, \displaystyle\frac{\pi}{2}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> is a continuous function, can you explain why?</p>
+<p><strong>Double-click</strong> on the empty markdown cell below to type your answer! Hit <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> once you’re done.</p>
+<p>First, we can evaluate <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span> and <span class="math notranslate nohighlight">\(x = \displaystyle\frac{\pi}{2}\)</span>, the endpoints of our interval:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since <span class="math notranslate nohighlight">\(f\)</span> changes from negative to positive, by the Intermediate Value Theorem, we know that <span class="math notranslate nohighlight">\(f(c) = 0\)</span>, for some <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\(\left(0, \displaystyle\frac{\pi}{2}\right)\)</span>.</p>
+<p>Except, we can’t solve for it! We instead have to approximate it, using the Bisection Method of root finding.</p>
+<p>The goal is to continuously cut our interval in half, we know <span class="math notranslate nohighlight">\(c\)</span> exists, but we dont know where exactly. We start by computing <span class="math notranslate nohighlight">\(f\)</span> at the midpoint of the interval, if the result is zero, or sufficiently close to it, we’ve found our root, otherwise we halve our interval depending on the sign of <span class="math notranslate nohighlight">\(f\)</span> at the midpoint, and repeat until a specified level of precision (or length of the interval) is reached.</p>
+<p>Our goal is to eventually find an interval of length <span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{32}\)</span> that contains the root.</p>
+<p>The midpoint of our interval is <span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{4}\)</span>, so let’s compute <span class="math notranslate nohighlight">\(f\left(\displaystyle\frac{\pi}{4}\right)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also get a decimal approximation for <span class="math notranslate nohighlight">\(f\left(\displaystyle\frac{\pi}{4}\right)\)</span> using the <code class="docutils literal notranslate"><span class="pre">evalf()</span></code> function.<br />
+This will be more helpful, since we are only concerned with the signs of our results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see <span class="math notranslate nohighlight">\(f\left(\displaystyle\frac{\pi}{4}\right) &gt; 0\)</span>, so our new sub-interval is <span class="math notranslate nohighlight">\(\left[0, \displaystyle\frac{\pi}{4}\right]\)</span>. The length of this interval is <span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{4} - 0 = \displaystyle\frac{\pi}{4}\)</span></p>
+<p>Let’s evaluate <span class="math notranslate nohighlight">\(f(x)\)</span> at the new midpoint, <span class="math notranslate nohighlight">\(x = \displaystyle\frac{\pi}{8}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(f\left(\displaystyle\frac{\pi}{8}\right) &lt; 0\)</span>, so our new sub-interval is <span class="math notranslate nohighlight">\(\left[\displaystyle\frac{\pi}{8}, \displaystyle\frac{\pi}{4}\right]\)</span>. The length of this interval is <span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{4} - \displaystyle\frac{\pi}{8} = \displaystyle\frac{\pi}{8}  \)</span></p>
+<p>Let’s evaluate <span class="math notranslate nohighlight">\(f(x)\)</span> at the new midpoint, <span class="math notranslate nohighlight">\(x = \displaystyle\frac{3\pi}{16}\)</span>, <strong>but this time it’s your turn!</strong></p>
+<p><strong>Continue with the Bisection Method until you find an interval of length <span class="math notranslate nohighlight">\(\displaystyle\frac{\pi}{32}\)</span> containing the root. Use the code cells below.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! Look at previous cells/steps if you get stuck</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may also be interested in automating this process. Can we write a program to do it for us?</p>
+<p>Maybe we can’t… but Patrick Walls at UBC can! Here is a program from his website.</p>
+<p>Basically, we first check that <span class="math notranslate nohighlight">\(f(a)f(b)&lt;0\)</span> (opposite signs at the two endpoints).</p>
+<p>Then we compute <span class="math notranslate nohighlight">\(f(m)\)</span> and check the sign, where <span class="math notranslate nohighlight">\(m=\dfrac{a+b}{2}\)</span> is the midpoint of <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(f(a)f(m)&lt;0\)</span>, repeat the process on <span class="math notranslate nohighlight">\((a,m)\)</span>. If <span class="math notranslate nohighlight">\(f(m)f(b)&lt;0\)</span>, repeat on <span class="math notranslate nohighlight">\((m,b)\)</span>.</p>
+<p>We also have to tell the computer how many steps to take, so it knows when to stop!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisection</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection method fails.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">a_n</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">b_n</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">m_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">a_n</span> <span class="o">+</span> <span class="n">b_n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">f_m_n</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">m_n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a_n</span><span class="p">)</span><span class="o">*</span><span class="n">f_m_n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">a_n</span> <span class="o">=</span> <span class="n">a_n</span>
+            <span class="n">b_n</span> <span class="o">=</span> <span class="n">m_n</span>
+        <span class="k">elif</span> <span class="n">f</span><span class="p">(</span><span class="n">b_n</span><span class="p">)</span><span class="o">*</span><span class="n">f_m_n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">a_n</span> <span class="o">=</span> <span class="n">m_n</span>
+            <span class="n">b_n</span> <span class="o">=</span> <span class="n">b_n</span>
+        <span class="k">elif</span> <span class="n">f_m_n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found exact solution.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">m_n</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection method fails.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a_n</span> <span class="o">+</span> <span class="n">b_n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To use the program, you will first have to define a function, <strong>using NumPy</strong> (do you remember how to do that from the first lab?).</p>
+<p>Then you can call the program using the syntax <code class="docutils literal notranslate"><span class="pre">bisection(f,a,b,n)</span></code>, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is the function you define, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are the endpoints of your interval, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of steps to use.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Calc1-Lab1-Limits.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Limits and Python!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Calc1-Lab3-Approximations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plotting and Approximating!</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-python-and-sympy">Getting Started with Python and SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-derivatives-with-sympy">Computing Derivatives with SymPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-higher-order-derivatives">Exploring Higher Order Derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-finding-the-bisection-method">Root Finding: The Bisection Method</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

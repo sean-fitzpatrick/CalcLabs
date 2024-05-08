@@ -1,0 +1,1023 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Plotting and Approximating! &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Calc1-Lab3-Approximations';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Riemann Sums and Taylor Polynomials" href="Calc1-Lab4-Integration.html" />
+    <link rel="prev" title="Derivatives, Derivatives, and Derivatives!" href="Calc1-Lab2-Derivatives.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Jupyter Labs for Lethbridge Calculus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Intro to Python for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoPython.html">Intro to Python for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sympy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoSymPy.html">Intro to SymPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Intro to NumPy for calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IntrotoNumPy.html">Intro to NumPy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab1-Limits.html">Limits and Python!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab2-Derivatives.html">Derivatives, Derivatives, and Derivatives!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plotting and Approximating!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc1-Lab4-Integration.html">Riemann Sums and Taylor Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab0-Review-of-Python.html">Lab 0: Numpy and Sympy for Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab1-Partial-Fractions.html">Lab 2: Partial Fractions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical-integration-example.html">Math 2565 coding example: Using NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab2-Arc-Length.html">Lab 3: Arc length and numerical integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab3-Surface-Area.html">Lab 4: Arc length and surface area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ODE-intro.html">Introduction to Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab4-ODEs.html">Lab 5: Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab5-ODE-systems.html">Tutorial 6: Systems of differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab6-Parametric-Curves.html">Lab 7: Parametric curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calc2-Lab7-Polar-Curves.html">Lab 8: Polar curves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc1-Lab3-Approximations.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sean-fitzpatrick/CalcLabs/issues/new?title=Issue%20on%20page%20%2FCalc1-Lab3-Approximations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Calc1-Lab3-Approximations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plotting and Approximating!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-sympy">Getting Started with SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-sympy">Plotting with SymPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-let-s-look-at-a-simple-example"><strong>Now let’s look at a simple example:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-another-one"><strong>Let’s try another one!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-to-the-next-curve"><strong>On to the next curve!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-s-an-interesting-one"><strong>Here’s an interesting one!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-it-s-your-turn"><strong>Now it’s your turn!</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-multiple-functions"><strong>Plotting Multiple Functions</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-function-and-its-derivative"><strong>Visualizing a Function and its Derivative</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Now it’s your turn!</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-numpy">Plotting with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-numpy"><strong>Getting Started with NumPy</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-walkthrough"><strong>Plotting Walkthrough</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-newton-s-method">Exploring Newton’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-newton-s-method-in-python"><strong>Implementing Newton’s Method in Python</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-let-s-do-an-example"><strong>Now let’s do an example!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-another-example"><strong>Let’s try another example!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-answer-here">Write Your Answer Here!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Now it’s your turn!</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-and-approximating">
+<h1>Plotting and Approximating!<a class="headerlink" href="#plotting-and-approximating" title="Permalink to this heading">#</a></h1>
+<p>By Raheem Mir</p>
+<p>As the title suggests, in this notebook we are going to be exploring how we can plot functions with SymPy and NumPy.</p>
+<p>We’ll also delve into some numerical approximations when we use and implement Newton’s Method in Python!</p>
+<section id="getting-started-with-sympy">
+<h2>Getting Started with SymPy<a class="headerlink" href="#getting-started-with-sympy" title="Permalink to this heading">#</a></h2>
+<p>Before we get started, just like with previous notebooks, we first have to “import” (or load in) the SymPy library, to access its functionality:</p>
+<p><strong>→ Run the code cell(s) by selecting and hitting <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> or by using the play button in the toolbar at the top.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure to run this cell!</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="n">sy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Recap on Importing Python Libraries:</strong></p>
+<p>The line: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sympy</span> <span class="pre">as</span> <span class="pre">sy</span></code> loads in the SymPy library for us to use. We give it the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, so every time we call something from SymPy, we prefix it with <code class="docutils literal notranslate"><span class="pre">sy.</span></code>. This is a good way to keep things organized and to prevent confusion, especially when we are working with multiple Python libraries.</p>
+<p>The next line: <code class="docutils literal notranslate"><span class="pre">sy.init_printing()</span></code> calls SymPy’s <code class="docutils literal notranslate"><span class="pre">init_printing()</span></code> function, which gets the output to be displayed as nicely formatted mathematics.</p>
+<p>Now is a good time to tell Sympy that we want to use <span class="math notranslate nohighlight">\(x\)</span> as a variable. This is done by using the <code class="docutils literal notranslate"><span class="pre">symbols()</span></code> function.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>    <span class="c1"># this makes x a symbol</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-with-sympy">
+<h2>Plotting with SymPy<a class="headerlink" href="#plotting-with-sympy" title="Permalink to this heading">#</a></h2>
+<p>The way we plot functions using SymPy is actually quite similar to how you would graph something with a TI-84/TI-83 calculator.</p>
+<p>We simply use the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">f</span></code> represents the function (or functions) we are visualizing, which can be written explicitly or passed in as a variable.<br />
+<code class="docutils literal notranslate"><span class="pre">domain</span></code> refers to the interval we are the plotting the function(s) over, the default is <span class="math notranslate nohighlight">\([-10, 10]\)</span>.<br />
+<code class="docutils literal notranslate"><span class="pre">...</span></code> alludes to the many optional arguments we can use to change the plot’s appearance and behaviour.<br />
+An example would be the argument <code class="docutils literal notranslate"><span class="pre">show=False</span></code>, which stops the graph from being displayed until we use the command, <code class="docutils literal notranslate"><span class="pre">.show()</span></code>.</p>
+<p>Assigning our plot(s) to a variable is also a good idea, as it’s more efficient when we are manipulating/adjusting an existing plot, or wanting more control over customization.</p>
+<section id="now-let-s-look-at-a-simple-example">
+<h3><strong>Now let’s look at a simple example:</strong><a class="headerlink" href="#now-let-s-look-at-a-simple-example" title="Permalink to this heading">#</a></h3>
+<p>Consider <span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p>
+<p>Using SymPy, we can visualize <span class="math notranslate nohighlight">\(f(x)\)</span> over the interval <span class="math notranslate nohighlight">\([-5, 5]\)</span></p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>   <span class="c1"># notice how we input the domain</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You might notice that we don’t need to type <code class="docutils literal notranslate"><span class="pre">p</span></code> on the next line under <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">sy.plot(x**2,</span> <span class="pre">(x,</span> <span class="pre">-5,</span> <span class="pre">5))</span></code>, for the plot to output, like we had to when representing functions with SymPy in the last notebook.</p>
+</section>
+<section id="let-s-try-another-one">
+<h3><strong>Let’s try another one!</strong><a class="headerlink" href="#let-s-try-another-one" title="Permalink to this heading">#</a></h3>
+<p>Consider <span class="math notranslate nohighlight">\(f(x) = \cos(2x)\)</span> on the interval <span class="math notranslate nohighlight">\([0, 2\pi]\)</span></p>
+<p>And while we’re at it, let’s change the color of the line!</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>   <span class="c1"># Remember to use SymPy&#39;s built in functions for trig</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="on-to-the-next-curve">
+<h3><strong>On to the next curve!</strong><a class="headerlink" href="#on-to-the-next-curve" title="Permalink to this heading">#</a></h3>
+<p>Consider <span class="math notranslate nohighlight">\(f(x) = \ln(x^2)\)</span> on the interval <span class="math notranslate nohighlight">\([-10, 10]\)</span></p>
+<p>Just like with the trigonometric functions, we’ll be using SymPy’s built in function for natural logarithms, <code class="docutils literal notranslate"><span class="pre">sy.ln()</span></code></p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>   <span class="c1"># [-10, 10] is the default domain so we don&#39;t need to write it</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="here-s-an-interesting-one">
+<h3><strong>Here’s an interesting one!</strong><a class="headerlink" href="#here-s-an-interesting-one" title="Permalink to this heading">#</a></h3>
+<p>Consider <span class="math notranslate nohighlight">\(f(x) = x\sin(3x)\)</span> on the interval <span class="math notranslate nohighlight">\([-4\pi, 4\pi ]\)</span></p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">sy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>  
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">4</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-it-s-your-turn">
+<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#now-it-s-your-turn" title="Permalink to this heading">#</a></h3>
+<p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
+<p><strong>Exercise 1: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = \sin(2x) - 2\sin(x)\)</span> on the interval <span class="math notranslate nohighlight">\([-4\pi,4\pi]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 2: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = x^3 - 3x^2 + 6x + 8\)</span> on the interval <span class="math notranslate nohighlight">\([-2,4]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting-multiple-functions">
+<h4><strong>Plotting Multiple Functions</strong><a class="headerlink" href="#plotting-multiple-functions" title="Permalink to this heading">#</a></h4>
+<p>SymPy’s plotting functionality also gives us the ability to plot multiple functions together, essentially combining different plots.</p>
+<p>Let’s illustrate this with an example, by plotting the following quadratic equations:</p>
+<p><span class="math notranslate nohighlight">\(y = (x+2)^2\)</span> , <span class="math notranslate nohighlight">\(y = (x-2)^2\)</span>, and <span class="math notranslate nohighlight">\(y = x^2\)</span> over the interval <span class="math notranslate nohighlight">\([-12, 12]\)</span></p>
+<p>Plotting multiple functions together is straightforward, as all we need to do is add additional arguments in our call to the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_plot</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># adding a legend to our plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-a-function-and-its-derivative">
+<h4><strong>Visualizing a Function and its Derivative</strong><a class="headerlink" href="#visualizing-a-function-and-its-derivative" title="Permalink to this heading">#</a></h4>
+<p>Now that we know how to plot multiple functions together, one exciting application we can explore is visualizaing a function alongside its derivative:</p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x) = e^{-x^2}\)</span> on the interval <span class="math notranslate nohighlight">\([-3,3]\)</span></p>
+<p>Let’s plot <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(f'(x)\)</span> together! We can utilize SymPy’s <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function (seen in the last notebook) to compute our derivative.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># representing our function in SymPy</span>
+<span class="n">f_prime</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># taking the derivative with respect to x</span>
+
+<span class="n">p4</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
+<p><strong>Exercise 3: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = x^3 - 3x^2\)</span> and <span class="math notranslate nohighlight">\(f'(x)\)</span> on the interval <span class="math notranslate nohighlight">\([0,3]\)</span><br />
+Hint: Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> using the <code class="docutils literal notranslate"><span class="pre">.diff()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 4: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> and <span class="math notranslate nohighlight">\(f'(x)\)</span> on the interval <span class="math notranslate nohighlight">\([2\pi,2\pi]\)</span><br />
+Hint: Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> using the <code class="docutils literal notranslate"><span class="pre">.diff()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="plotting-with-numpy">
+<h2>Plotting with NumPy<a class="headerlink" href="#plotting-with-numpy" title="Permalink to this heading">#</a></h2>
+<p><strong>Remember in our first notebook when we were first introduced to the Python library, NumPy?</strong></p>
+<p>So far in this notebook (and the previous one), we have been using the SymPy library, which is great for symbolic manipulations like representing functions, and taking derivatives. NumPy on the other hand is the library of choice when it comes to doing numerical computations. It implements many mathmatical functions, like trigonmetric functions, logarithms, and more.</p>
+<p>When NumPy is used in conjunction with Matplotlib, the popular Python plotting library that SymPy’s plotting functionality is based on, we have a powerful framework to create more flexible and customizable plots, that wouldn’t neccessarily be done with SymPy.</p>
+<section id="getting-started-with-numpy">
+<h3><strong>Getting Started with NumPy</strong><a class="headerlink" href="#getting-started-with-numpy" title="Permalink to this heading">#</a></h3>
+<p>Just as before, to access the functionality of the libraries NumPy and Matplotlib, we have to “import” or load them in:</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to how we gave SymPy the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, when we call functions from NumPy, we use the prefix <code class="docutils literal notranslate"><span class="pre">np</span></code>, and the shorthand <code class="docutils literal notranslate"><span class="pre">plt</span></code> when we use functions from Matplotlib.</p>
+<section id="plotting-walkthrough">
+<h4><strong>Plotting Walkthrough</strong><a class="headerlink" href="#plotting-walkthrough" title="Permalink to this heading">#</a></h4>
+<p>Let’s plot the graph <span class="math notranslate nohighlight">\(y = \tan(x)\)</span> on the interval <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span></p>
+<p>Given its periodic nature and vertical asymptotes at values such as <span class="math notranslate nohighlight">\(x = \dfrac{\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(x = \dfrac{3\pi}{2}\)</span>, this will be an interesting curve to explore. Plotting functions with asymptotes can be a challenge for many plotting tools, so let’s see how a numerical plotting approach handles things…</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> function to produce a set of evenly spaced <span class="math notranslate nohighlight">\(x\)</span>-values. In the cell below we are setting <span class="math notranslate nohighlight">\(1000\)</span> points in between <span class="math notranslate nohighlight">\(-2\pi\)</span> and <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we define our <span class="math notranslate nohighlight">\(y\)</span> by setting it equal to the <code class="docutils literal notranslate"><span class="pre">tan()</span></code> function from NumPy.<br />
+<strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">ylim()</span></code> function, to set the limits of the <span class="math notranslate nohighlight">\(y\)</span>-axis, just like setting the windows on a TI-84 graphing calculator!<br />
+In our second line, we finally get to plotting, calling Matplotlib’s <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function and passing in our <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values.</p>
+<p><strong>→ Run the code cell below to plot <span class="math notranslate nohighlight">\(\tan(x)\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># think of this line as adjusting our windows on a graphing calculator</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm, is the output what you were expecting? If not, what’s wrong with it? Why might this be the case?</p>
+<p>The vertical lines we see in the plot are a result of <span class="math notranslate nohighlight">\(\tan(x)\)</span> having very large positive values to the left of the asymptotes, and very large negative values present immediately to the right of the same asymptotes. Since we are plotting numerically, values near asymptotes aren’t taken into consideration, leading to these peculiar joining lines.</p>
+<p>To address this, we can apply a common solution using Numpy, that adjusts for <span class="math notranslate nohighlight">\(y\)</span>-values around the asymptotes, and then plot our updated values.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>    <span class="c1"># this line helps adjust for values near the asymptotes </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="exploring-newton-s-method">
+<h2>Exploring Newton’s Method<a class="headerlink" href="#exploring-newton-s-method" title="Permalink to this heading">#</a></h2>
+<p>There are many occasions where we cannot solve equations by using algebraic methods. In these instances, we can utilize numerical methods to approximate solutions. In the last notebook, we saw the Bisection method for root finding, this time around, we will be working with a different technique, known as Newton’s Method.</p>
+<p>Newton’s Method is based on tangent lines.
+The method starts with an initial guess of where the root of a function <span class="math notranslate nohighlight">\(f(x)\)</span> is, which we’ll call <span class="math notranslate nohighlight">\(x_{0}\)</span>. Given this data, we construct the tangent line to <span class="math notranslate nohighlight">\(y=f(x)\)</span> at the point <span class="math notranslate nohighlight">\((x_0,f(x_0))\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y=f(x_0)+f'(x_0)(x-x_0)\]</div>
+<p>We want the point where this line meets the <span class="math notranslate nohighlight">\(x\)</span> axis. Setting <span class="math notranslate nohighlight">\(y=0\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[x = x_0-\frac{f(x_0)}{f'(x_0)}.\]</div>
+<p><img alt="The first step in Newton's method: the tangent at (x_0,y_0) meets the x axis at (x_1,0)." src="https://opentext.uleth.ca/apex-calculus/generated/latex-image/img_newt1a.svg" /></p>
+<p>Note that it is very important that <span class="math notranslate nohighlight">\(x_0\)</span> is <strong>not a critical point</strong>! (Why?)</p>
+<p>We call the value we just found <span class="math notranslate nohighlight">\(x_1\)</span>, and then repeat. In most cases, Newton’s Method converges quickly to a root of our function. (In some cases, a poor choice of <span class="math notranslate nohighlight">\(x_0\)</span> can lead to results getting further and further away.)</p>
+<p>We then repeat the process and see where the tangent line at the point <span class="math notranslate nohighlight">\((x_{1}, f(x))\)</span> meets the <span class="math notranslate nohighlight">\(x\)</span>-axis, which can be called <span class="math notranslate nohighlight">\(x_{2}\)</span>. This proccess continues until a certain tolerance level (i.e. accuracy to a specified number of decimal places) or maximum number of iterations is reached.</p>
+<p>The formula for Newton’s Method is as follows:
+$<span class="math notranslate nohighlight">\(
+x_{n + 1} = x_{n} - \dfrac{f(x_{n})}{f'(x_{n})}
+\)</span><span class="math notranslate nohighlight">\( 
+where \)</span>x_{n + 1}$ is our next iteration.</p>
+<p>Now, we could repeatedly do the neccessary computations by hand to approximate a solution for a given equation… or we can use Python to do it all for us!</p>
+<p>Let’s translate the formula for Newton’s Method into a Python function!</p>
+<section id="implementing-newton-s-method-in-python">
+<h3><strong>Implementing Newton’s Method in Python</strong><a class="headerlink" href="#implementing-newton-s-method-in-python" title="Permalink to this heading">#</a></h3>
+<p>Defined in the code cell below is a Python function that performs Newton’s Method for approximating solutions, it implements the entire process, from the formula above, to all of the neccessary iterations.</p>
+<p>Since it has already been created, we can call it like we would any other function, and get right into using it to solve equations!</p>
+<p>We can call it like so:</p>
+<p><code class="docutils literal notranslate"><span class="pre">NewtonsMethod(f,</span> <span class="pre">fprime</span> <span class="pre">x0,</span> <span class="pre">tolerance)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">f</span></code> represents the function we are inputting and trying to solve. Importantly, this is a traditional Python function, made with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword and defined on an input/output basis, not like the symbolic representations with SymPy we’ve been using up to this point.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fprime</span></code> represents the derivative of the previous function <code class="docutils literal notranslate"><span class="pre">f</span></code>. It too is a Python function, that we have to create using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword.</p>
+<p><code class="docutils literal notranslate"><span class="pre">x0</span></code> represents the initial estimate of the root, our starting point.</p>
+<p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code> represents the level of accuracy we want (usually a small decimal value like 0.0001), it also partially determines how many iterations our function will perform.</p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NewtonsMethod</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fprime</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">oldx</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">fprime</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">iteration</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">oldx</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span>
+        
+    <span class="k">return</span> <span class="s2">&quot;Did not converge after 100 iterations&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-let-s-do-an-example">
+<h3><strong>Now let’s do an example!</strong><a class="headerlink" href="#now-let-s-do-an-example" title="Permalink to this heading">#</a></h3>
+<p><strong>Let’s approximate the root of <span class="math notranslate nohighlight">\(x^3 - x^2 - 1 = 0\)</span> using Newton’s Method, accurate to three decimal places, with an initial guess of <span class="math notranslate nohighlight">\(x_{0} = 1\)</span></strong></p>
+<p>First, we have to define the two Python functions we’ll need to input into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f(x)</span></code> for the equation <span class="math notranslate nohighlight">\(x^3 - x^2 - 1\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fprime(x)</span></code> for the previous equation’s dervative, <span class="math notranslate nohighlight">\(3x^2 - 2x\)</span></p></li>
+</ul>
+<p><strong>→ Run the code cells below! Notice how we used the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword and the format (or syntax) used to define functions.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fprime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Now that we’ve defined our inputs, let’s call the <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> function!</strong></p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NewtonsMethod</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fprime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> took in our inputs, and printed out each iteration of applying Newton’s Method along with the final result!</p>
+</section>
+<section id="let-s-try-another-example">
+<h3><strong>Let’s try another example!</strong><a class="headerlink" href="#let-s-try-another-example" title="Permalink to this heading">#</a></h3>
+<p><strong>Let’s approximate the root of <span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span> using Newton’s Method, accurate to 4 decimal places, with an initial approximation of <span class="math notranslate nohighlight">\(x_{0} = 1.5\)</span></strong></p>
+<p>Just as before, let’s define the Python functions we’ll be passing into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f2(x)</span></code> for the function <span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2prime(x)</span></code> for the previous function’s dervative, <span class="math notranslate nohighlight">\(f'(x) = -sin(x)\)</span></p></li>
+</ul>
+<p>You’ll notice we’ve added a “2” at the end of the function’s names to prevent confusion and to ensure everything runs smoothly.</p>
+<p><strong>→ Run the code cells below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># using NumPy&#39;s built in cosine function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># using NumPy&#39;s built in sine function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Now that we’ve defined everything we need, let’s call <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> along with our other inputs!</strong></p>
+<p><strong>→ Run the code cell below!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NewtonsMethod</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">f2prime</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.00001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the root of <span class="math notranslate nohighlight">\(\cos(x) = 0\)</span> is known, namely <span class="math notranslate nohighlight">\(\dfrac{\pi}{2}\)</span>, how does it compare to the result of our approximation using Newton’s Method?</p>
+<p><strong>→ Write your answer in the markdown cell below! (Double-click to edit)</strong></p>
+</section>
+<section id="write-your-answer-here">
+<h3>Write Your Answer Here!<a class="headerlink" href="#write-your-answer-here" title="Permalink to this heading">#</a></h3>
+<p>Double-click on this cell to edit it and type your answer!</p>
+<section id="id2">
+<h4><strong>Now it’s your turn!</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
+<p><strong>Exercise 5:<br />
+Using Newton’s Method, approximate the solution to <span class="math notranslate nohighlight">\(f(x) = x^5 + x + 1\)</span> to three decimal places, with an initial approximation of <span class="math notranslate nohighlight">\(x_{0} = -1\)</span></strong></p>
+<p><strong>→ Write your answer in the code cells below! The functions you’ll need to pass into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> are already done for you.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f3prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the rest of the code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 6:<br />
+Using Newton’s Method, approximate the solution to <span class="math notranslate nohighlight">\(f(x) = x^2 -2\)</span> to four decimal places, with an initial approximation of <span class="math notranslate nohighlight">\(x_{0} = 1.5\)</span></strong></p>
+<p><strong>→ Write your answer in the code cells below! The functions you’ll need to pass into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> are already done for you.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f4prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the rest of the code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Calc1-Lab2-Derivatives.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Derivatives, Derivatives, and Derivatives!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Calc1-Lab4-Integration.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Riemann Sums and Taylor Polynomials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-sympy">Getting Started with SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-sympy">Plotting with SymPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-let-s-look-at-a-simple-example"><strong>Now let’s look at a simple example:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-another-one"><strong>Let’s try another one!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-to-the-next-curve"><strong>On to the next curve!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-s-an-interesting-one"><strong>Here’s an interesting one!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-it-s-your-turn"><strong>Now it’s your turn!</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-multiple-functions"><strong>Plotting Multiple Functions</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-function-and-its-derivative"><strong>Visualizing a Function and its Derivative</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Now it’s your turn!</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-numpy">Plotting with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-numpy"><strong>Getting Started with NumPy</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-walkthrough"><strong>Plotting Walkthrough</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-newton-s-method">Exploring Newton’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-newton-s-method-in-python"><strong>Implementing Newton’s Method in Python</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-let-s-do-an-example"><strong>Now let’s do an example!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-try-another-example"><strong>Let’s try another example!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-answer-here">Write Your Answer Here!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Now it’s your turn!</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sean Fitzpatrick
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
