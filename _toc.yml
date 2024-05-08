@@ -5,15 +5,22 @@ format: jb-book
 root: intro
 chapters:
 - file: python.md
+- file: IntrotoPython.ipynb
 - file: sympy.md
+- file: IntrotoSymPy.ipynb
 - file: numpy.md
-- file: Lab1-Intro-to-Python.ipynb
-- file: Lab2-Partial-Fractions.ipynb
+- file: IntrotoNumPy.ipynb
+- file: Calc1-Lab1-Limits.ipynb
+- file: Calc1-Lab2-Derivatives.ipynb
+- file: Calc1-Lab3-Approximations.ipynb
+- file: Calc1-Lab4-Integration.ipynb
+- file: Calc2-Lab0-Review-of-Python.ipynb
+- file: Calc2-Lab1-Partial-Fractions.ipynb
 - file: numerical-integration-example.ipynb
-- file: Lab3-Arc-Length.ipynb
-- file: Lab4-Surface-Area.ipynb
+- file: Calc2-Lab2-Arc-Length.ipynb
+- file: Calc2-Lab3-Surface-Area.ipynb
 - file: ODE-intro.ipynb
-- file: Lab5-ODEs.ipynb
-- file: Lab6-ODE-systems.ipynb
-- file: Lab7-Parametric-Curves.ipynb
-- file: Lab8-Polar-Curves.ipynb
+- file: Calc2-Lab4-ODEs.ipynb
+- file: Calc2-Lab5-ODE-systems.ipynb
+- file: Calc2-Lab6-Parametric-Curves.ipynb
+- file: Calc2-Lab7-Polar-Curves.ipynb
