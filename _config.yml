@@ -3,6 +3,7 @@
 
 title: Jupyter Labs for University of Lethbridge Calculus
 author: Sean Fitzpatrick
+copyright: "2024"
 logo: imgs/fiatlux.jpg
 
 # Force re-execution of notebooks on each build.
