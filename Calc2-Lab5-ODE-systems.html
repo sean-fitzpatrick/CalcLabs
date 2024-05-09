@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab5-ODE-systems.ipynb&branch=main" target="_blank"
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc2-Lab5-ODE-systems.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,7 +455,7 @@ for constants \)</span>a,b,c,d<span class="math notranslate nohighlight">\(. (In
 <p>For example, we can generate the unit circle <span class="math notranslate nohighlight">\(x^2+y^2=1\)</span> as the set of points <span class="math notranslate nohighlight">\((\cos(t),\sin(t))\)</span>, <span class="math notranslate nohighlight">\(t\in [0,2\pi]\)</span>.</p>
 <p>One of the facts that we will learn later in the course is that the slope of the tangent line to a parametric curve at a point <span class="math notranslate nohighlight">\((x_0,y_0)=(f(t_0),g(t_0))\)</span> is given by
 $<span class="math notranslate nohighlight">\(
-m = \frac{dy}{dx} = \frac{y\,'(t)}{x\,'(t)}.
+m = \frac{dy}{dx} = \frac{y'(t)}{x'(t)}.
 \)</span>$</p>
 </section>
 <section id="direction-fields-for-linear-systems">
@@ -628,7 +628,7 @@ If <span class="math notranslate nohighlight">\(f(x,y)\neq 0\)</span>, we procee
 </div>
 </div>
 <p>I think we have a winner!!</p>
-<p>There is one more thing we could do: in addition to the slope <span class="math notranslate nohighlight">\(\dfrac{dy}{dx} = \dfrac{y\,'(t)}{x\,'(t)}\)</span> of a parametric curve <span class="math notranslate nohighlight">\((x(t),y(t))\)</span>, you will learn in Calculus III that you can consider the <strong>tangent vector</strong> <span class="math notranslate nohighlight">\(\vec{r}\,'(t) = \langle x\,'(t),y\,'(t)\rangle\)</span>. This vector aligns with the slope, but it also gives us a <em>direction of travel</em>. This can help us better understand how our solutions behave.</p>
+<p>There is one more thing we could do: in addition to the slope <span class="math notranslate nohighlight">\(\dfrac{dy}{dx} = \dfrac{y'(t)}{x'(t)}\)</span> of a parametric curve <span class="math notranslate nohighlight">\((x(t),y(t))\)</span>, you will learn in Calculus III that you can consider the <strong>tangent vector</strong> <span class="math notranslate nohighlight">\(\vec{r}{{\,}}'(t) = \langle x'(t),y'(t)\rangle\)</span>. This vector aligns with the slope, but it also gives us a <em>direction of travel</em>. This can help us better understand how our solutions behave.</p>
 <p>To plot arrows, the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library has the <code class="docutils literal notranslate"><span class="pre">quiver</span></code> command. The syntax looks like <code class="docutils literal notranslate"><span class="pre">quiver(x,y,u,v)</span></code>, where <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are arrays, giving the coordinates where each arrow should be located, while <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> give the direction of the vector. The <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> command below takes our two one-dimensional arrays of numbers and turns them into a two-dimensional array (i.e. a matrix). Here is what our direction field looks like with arrows. Note that the code is a lot simpler: the <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> command lets us skip the two <code class="docutils literal notranslate"><span class="pre">for</span></code> loops we needed before.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,7 +909,7 @@ For constants <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, the
 <p>Note that a system of differential equations could be written in vector form as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{bmatrix}x\,'(t)\\y\,'(t)\end{bmatrix}=A\begin{bmatrix}x(t)\\y(t)\end{bmatrix},
+\begin{bmatrix}x{\,}'(t)\\y{\,}'(t)\end{bmatrix}=A\begin{bmatrix}x(t)\\y(t)\end{bmatrix},
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span> is the coefficient matrix for the system.</p>
 <p>It turns out that if <span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(A\)</span>, and <span class="math notranslate nohighlight">\(\vec{v}=\begin{bmatrix}v_1\\v_2\end{bmatrix}\)</span> is a corresponding eigenvector then a solution to our linear system is given by</p>
@@ -922,7 +922,7 @@ For constants <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, the
 \[
 \vec{x}(t) = e^{\lambda t}\vec{v}.
 \]</div>
-<p>This works because, on the one hand, <span class="math notranslate nohighlight">\(\vec{x}\,'(t) = \lambda e^{\lambda t}\vec{v}\)</span>, and on the other hand, <span class="math notranslate nohighlight">\(A\vec{x}(t) = A(e^{\lambda t}\vec{v})=e^{\lambda t}A\vec{v}=e^{\lambda t}\lambda \vec{v}\)</span>.</p>
+<p>This works because, on the one hand, <span class="math notranslate nohighlight">\(\vec{x}{\,}'(t) = \lambda e^{\lambda t}\vec{v}\)</span>, and on the other hand, <span class="math notranslate nohighlight">\(A\vec{x}(t) = A(e^{\lambda t}\vec{v})=e^{\lambda t}A\vec{v}=e^{\lambda t}\lambda \vec{v}\)</span>.</p>
 <p>In most cases we will get two different eigenvalues, with corresponding eigenvectors and the general solution will be a linear combination (or superposition) of these two solutions. That is, if <span class="math notranslate nohighlight">\(\vec{x}_1(t) = e^{\lambda_1 t}\vec{v}_1\)</span> and <span class="math notranslate nohighlight">\(\vec{x}_2(t)=e^{\lambda_2 t}\vec{v}_2\)</span>, then the general solution is</p>
 <div class="math notranslate nohighlight">
 \[

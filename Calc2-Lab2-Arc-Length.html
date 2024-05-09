@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab2-Arc-Length.ipynb&branch=main" target="_blank"
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc2-Lab2-Arc-Length.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -448,6 +448,7 @@ document.write(`
 \[f'(c_i) = \frac{f(x_{i+1})-f(x_i)}{x_{i+1}-x_i},\]</div>
 <p>giving us <span class="math notranslate nohighlight">\(\Delta L_i = \Delta x_i \sqrt{1+(f'(c_i))^2}\)</span>. Putting this into a Riemann sum, we get our formula.</p>
 <p>The trouble is that for all but the most carefully chosen curves, the arc length formula results in an integral that is impossible to evaluate symbolically. (Have a look at the functions that appear <a class="reference external" href="https://opentext.uleth.ca/apex-accelerated/sec_arc_length.html#exercisegroup-146">in the exercises for Section 7.4</a>!)</p>
+<p>To begin, make sure to run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
@@ -465,6 +466,14 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\text{double-click to edit. delete this text and enter your equation here. keep the dollar signs}\]</div>
 <p>(c) Use SymPy to calculate the length of the curve <span class="math notranslate nohighlight">\(y=x^2\)</span> from <span class="math notranslate nohighlight">\(x=0\)</span> to <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The command to integrate f from a to b is sy.integrate(f,(x,a,b))</span>
+<span class="c1"># You&#39;re computing arc length. Be sure to use the correct function in your integral!</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="problem-2">
 <h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h2>
@@ -528,7 +537,49 @@ document.write(`
 <p>You can run this by simply entering <code class="docutils literal notranslate"><span class="pre">simps(f,a,b,N)</span></code>, where <code class="docutils literal notranslate"><span class="pre">a,b,N</span></code> are values you choose, and <code class="docutils literal notranslate"><span class="pre">f</span></code> is the function you want to integrate. For example, you might run <code class="docutils literal notranslate"><span class="pre">simps(f,0,2,50)</span></code> to integrate a function <code class="docutils literal notranslate"><span class="pre">f</span></code> from 0 to 2 using 50 subintervals.</p>
 <p><strong>Caution</strong>: this will not work if <code class="docutils literal notranslate"><span class="pre">f</span></code> is a SymPy function! You can either redefine the function <code class="docutils literal notranslate"><span class="pre">f</span></code> you want to integrate (and this needs to be the arc length expression, not the function whose length you’re computing), or convert the function from Problem 2 into a NumPy function. If you want to know how to do this, see the <a class="reference internal" href="numerical-integration-example.html"><span class="doc std std-doc">numerical integration example</span></a> I prepared.</p>
 <p>Compute the integral for the arc length of <span class="math notranslate nohighlight">\(y=1/x\)</span> from 1 to 2 using Simpson’s rule, with 10, 50, and 100 subintervals.</p>
-<p>How well do your results compare to what you found in Problem 2? (You don’t have to answer.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use SymPy to calculate the arc length function s(x)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define s(x) as a NumPy function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simpson&#39;s with 10 subintervals</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simpson&#39;s with 50 subintervals</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simpson&#39;s with 100 subintervals</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How well do your results compare to what you found in Problem 2?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the difference of each answer above with the evalf() value from Problem 2</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="problem-4">
 <h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this heading">#</a></h2>
@@ -543,22 +594,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
-</pre></div>
-</div>
-</div>
 </div>
 <p>You should see an array consisting of the numbers from 0 to 10. Python has a “colon syntax” for accessing parts of an array. To see the full array <code class="docutils literal notranslate"><span class="pre">P</span></code>, you can enter <code class="docutils literal notranslate"><span class="pre">P[:]</span></code>. Try it:</p>
 <p>If you want all the entries after a certain point in the index, you can place a colon to the right of the index value. For example, <code class="docutils literal notranslate"><span class="pre">P[3:]</span></code> will give everything after (and including) the third index position. Try it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 1., 2.])
 </pre></div>
 </div>
 </div>
@@ -574,21 +615,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">=</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="n">R</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
 </pre></div>
 </div>
 </div>

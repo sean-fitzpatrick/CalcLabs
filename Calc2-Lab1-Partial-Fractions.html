@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=tree/CalcLabs/Calc2-Lab1-Partial-Fractions.ipynb&branch=main" target="_blank"
+      <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc2-Lab1-Partial-Fractions.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,9 +403,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-document-how-to-manipulate-rational-functions-using-sympy">1. Research and document how to manipulate rational functions using Sympy.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrate-how-this-works-with-the-following-examples">2. Demonstrate how this works with the following examples.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irreducible-factors-and-complex-roots">3. Irreducible factors and complex roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-rational-functions-using-sympy">Manipulating rational functions using Sympy.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-demonstrate-how-things-work-with-the-following-examples">Exercise 1. Demonstrate how things work with the following examples.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-irreducible-factors-and-complex-roots">Exercise 2. Irreducible factors and complex roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-finding-formulas-for-the-coefficients">Exercise 3. Finding formulas for the coefficients</a></li>
 </ul>
             </nav>
         </div>
@@ -419,14 +420,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-2-lab-1-partial-fractions">
 <h1>Calculus 2, Lab 1: Partial Fractions<a class="headerlink" href="#calculus-2-lab-1-partial-fractions" title="Permalink to this heading">#</a></h1>
-<p>The method of partial fraction decomposition is a useful tool for evaluating integrals of rational functions, and it comes up in other contexts as well, such as the method of Laplace transforms for differential equations.</p>
+<p>The method of partial fraction decomposition is a useful tool for evaluating integrals of rational functions, and it comes up in other contexts as well, such as the method of Laplace transforms for differential equations. Partial fraction decomposition will also come in handy when you get to sequences and series: a partial fraction decomposition can reveal that a particular series is “telescoping”: parts of each term cancel with other terms.</p>
 <p>A problem (which one quickly discovers) is that determining the coefficients for a partial fraction decomposition can be an exercise that is both tedious and error-prone. The brute force method (equating coefficients and solving a system of equations) is not particularly efficient.</p>
 <p>If it turns out that partial fractions are going to be a part of your life, then you’d like to be able to handle them quickly and accurately. You have two options:</p>
 <ol class="arabic simple">
 <li><p>Let the computer do it for you</p></li>
 <li><p>Develop systematic methods (formulas, even!) to get the job done</p></li>
 </ol>
-<p>I’ll describe the second option in a handout. In this tutorial, we’ll see how the computer implements those methods for us.</p>
+<p>In this tutorial, we’ll see how the computer implements these methods for us, and you’ll have a chance to explore where they come from.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
@@ -436,47 +437,179 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="research-and-document-how-to-manipulate-rational-functions-using-sympy">
-<h2>1. Research and document how to manipulate rational functions using Sympy.<a class="headerlink" href="#research-and-document-how-to-manipulate-rational-functions-using-sympy" title="Permalink to this heading">#</a></h2>
+<section id="manipulating-rational-functions-using-sympy">
+<h2>Manipulating rational functions using Sympy.<a class="headerlink" href="#manipulating-rational-functions-using-sympy" title="Permalink to this heading">#</a></h2>
 <p>First, take a minute to search online (try search terms like “sympy partial fraction”).</p>
 <p>You’ll probably discover some documentation, including details on the <code class="docutils literal notranslate"><span class="pre">apart()</span></code> command. Other commands that you might find useful include <code class="docutils literal notranslate"><span class="pre">factor()</span></code> and <code class="docutils literal notranslate"><span class="pre">simplify()</span></code>.</p>
 <p>(Note that “simplify” can take on many meanings, depending on the context. It does not always give you what you want.)</p>
-<p>You don’t have to submit anything for this question, but make sure you know how to use the <code class="docutils literal notranslate"><span class="pre">extension</span></code> option in cases where you do not have rational roots. For example, to factor <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span>, we would need to run a command like <code class="docutils literal notranslate"><span class="pre">f.factor(extension=sy.sqrt(2))</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">factor()</span></code> command does exactly what you think: it attempts to factor any polynomial or rational expression you provide. The <code class="docutils literal notranslate"><span class="pre">apart()</span></code> command performs partial fraction decomposition.</p>
+<p>By default, these commands assume <em>rational roots</em>. You will want make sure you know how to use the <code class="docutils literal notranslate"><span class="pre">extension</span></code> option in cases where you do not have rational roots. For example, to factor <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span>, we would need to run a command like <code class="docutils literal notranslate"><span class="pre">f.factor(extension=sy.sqrt(2))</span></code>.</p>
 </section>
-<section id="demonstrate-how-this-works-with-the-following-examples">
-<h2>2. Demonstrate how this works with the following examples.<a class="headerlink" href="#demonstrate-how-this-works-with-the-following-examples" title="Permalink to this heading">#</a></h2>
+<section id="exercise-1-demonstrate-how-things-work-with-the-following-examples">
+<h2>Exercise 1. Demonstrate how things work with the following examples.<a class="headerlink" href="#exercise-1-demonstrate-how-things-work-with-the-following-examples" title="Permalink to this heading">#</a></h2>
 <p>For each example, first use the <code class="docutils literal notranslate"><span class="pre">factor</span></code> command to determine the factors of the denominator (just for information purposes), and then use the <code class="docutils literal notranslate"><span class="pre">apart</span></code> command to perform the decomposition.</p>
 <p>We’re working with <strong>SymPy</strong>, so you can enter a function using the syntax <code class="docutils literal notranslate"><span class="pre">f=expr(x)</span></code>, where <code class="docutils literal notranslate"><span class="pre">expr(x)</span></code> is whatever expression in x defines the function. Remember that you need to use <code class="docutils literal notranslate"><span class="pre">**</span></code> for exponents, and <code class="docutils literal notranslate"><span class="pre">*</span></code> for multiplication, even by a coefficient.</p>
-<p>a) For the function <span class="math notranslate nohighlight">\(f(x)=\dfrac{3x^2-2x+1}{x^4+2x^3+2x^2+2x+1}\)</span></p>
+<p>(a) For the function <span class="math notranslate nohighlight">\(f(x)=\dfrac{3x^2-2x+1}{x^4+2x^3+2x^2+2x+1}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, define your function</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>b) For the function <span class="math notranslate nohighlight">\(g(x)=\dfrac{2x+1}{x^3+2x^2-3x-6}\)</span>. (You may need to add an <code class="docutils literal notranslate"><span class="pre">extension</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now, factor using the factor() command</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>c) For the function <span class="math notranslate nohighlight">\(h(x)=\dfrac{1}{(x^2-a^2)(x-b)^3}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finally, use the apart() command to get the partial fraction decomposition.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(b) For the function <span class="math notranslate nohighlight">\(g(x)=\dfrac{2x+1}{x^3+2x^2-3x-6}\)</span>. (You may need to add an <code class="docutils literal notranslate"><span class="pre">extension</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># factor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get partial fractions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(c) For the function <span class="math notranslate nohighlight">\(h(x)=\dfrac{1}{(x^2-a^2)(x-b)^3}\)</span></p>
 <p>(Don’t forget to define <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> as symbols! You will also need to specify that <span class="math notranslate nohighlight">\(x\)</span> is the variable in the <code class="docutils literal notranslate"><span class="pre">apart</span></code> command.)</p>
-<p>d) For the function <span class="math notranslate nohighlight">\(r(x) = \dfrac{1}{ax^2+bx+1}\)</span>. (Example from <a class="reference external" href="https://stackoverflow.com/questions/39816638/partial-fraction-from-apart">Stack Overflow</a>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the function</span>
+<span class="c1"># first you will need to define symbols a and b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># factor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get partial fractions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(d) For the function <span class="math notranslate nohighlight">\(r(x) = \dfrac{1}{ax^2+bx+1}\)</span>. (Example from <a class="reference external" href="https://stackoverflow.com/questions/39816638/partial-fraction-from-apart">Stack Overflow</a>.)</p>
 <p>(You might need to invoke <code class="docutils literal notranslate"><span class="pre">full=True</span></code> here, and append with <code class="docutils literal notranslate"><span class="pre">.doit()</span></code> to get a human-readable result. The only reason this example is here is because the result is hilariously awful.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jump straight to the partial fractions, just to see what you get!</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="irreducible-factors-and-complex-roots">
-<h2>3. Irreducible factors and complex roots<a class="headerlink" href="#irreducible-factors-and-complex-roots" title="Permalink to this heading">#</a></h2>
+<section id="exercise-2-irreducible-factors-and-complex-roots">
+<h2>Exercise 2. Irreducible factors and complex roots<a class="headerlink" href="#exercise-2-irreducible-factors-and-complex-roots" title="Permalink to this heading">#</a></h2>
 <p>The formulas we derived on the assignment deal with factors of the form <span class="math notranslate nohighlight">\((x-a)^k\)</span>. What if there is an irreducible factor? It turns out these are only irreducible if we work over the real numbers. With complex numbers, we can factor any polynomial. For example, the factor <span class="math notranslate nohighlight">\(x^2+1\)</span> in question 2(a) above can be factored as <span class="math notranslate nohighlight">\((x-i)(x+i)\)</span>, where <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span>. In SymPy, we can call the complex number <span class="math notranslate nohighlight">\(i\)</span> using <code class="docutils literal notranslate"><span class="pre">sy.I</span></code>.</p>
 <p>Try running the <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">apart</span></code> commands for the function <span class="math notranslate nohighlight">\(f(x)=\dfrac{3x^2-2x+1}{x^4+2x^3+2x^2+2x+1}\)</span> from question 2(a) again, but this time, include the option <code class="docutils literal notranslate"><span class="pre">extension=sy.I</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># factor, including the complex extention</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the partial fraction decomposition</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>You may need to apply the <code class="docutils literal notranslate"><span class="pre">simplify</span></code> command to get reaonable-looking complex expressions.</p>
 <p>Finally, you might want to check that the two complex terms combine to give you the same thing as before. The output of the <code class="docutils literal notranslate"><span class="pre">apart</span></code> command above should contain two terms with complex numbers in the denominator. In the code cell below, enter these two terms, naming them <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enter the first term with complex numbers</span>
+
+<span class="c1"># enter the second term with complex numbers</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now, we want to combine these two terms into a single term with a common denominator. If you have two rational terms <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> that you would like to combine in this way, you can use the command <code class="docutils literal notranslate"><span class="pre">together(u+v)</span></code>. Try this, and confirm that the result is the same as the term from 2(a) with the irreducible quadratic in the denominator.</p>
+</section>
+<section id="exercise-3-finding-formulas-for-the-coefficients">
+<h2>Exercise 3. Finding formulas for the coefficients<a class="headerlink" href="#exercise-3-finding-formulas-for-the-coefficients" title="Permalink to this heading">#</a></h2>
+<p>This problem involves some pencil-and-paper work. You can type up your results in this notebook (learning to do so can be very valuable!), or submit this work separately.</p>
+<p><strong>(a)</strong> To warm up, consider <span class="math notranslate nohighlight">\(f(x) = \dfrac{2x}{(x-1)(x-3)}\)</span>. We seek a decomposition of the form <span class="math notranslate nohighlight">\(f(x)=\dfrac{A}{x-1}+\dfrac{B}{x-3}\)</span>.</p>
+<p>Show the following: for <span class="math notranslate nohighlight">\(x\neq 1\)</span>, <span class="math notranslate nohighlight">\((x-1)f(x) = A+B\dfrac{x-1}{x-3}\)</span>. It follows that <span class="math notranslate nohighlight">\(A = \lim\limits_{x\to 1}(x-1)f(x)\)</span>.</p>
+<p>Use this to compute the value of <span class="math notranslate nohighlight">\(A\)</span>, and then derive a similar result to find the value of <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p><strong>(b)</strong> Suppose that <span class="math notranslate nohighlight">\(f(x) = \dfrac{p(x)}{(x-a)q(x)}\)</span>, where the degree of <span class="math notranslate nohighlight">\(q(x)\)</span> is less than or equal to the degree of <span class="math notranslate nohighlight">\(p(x)\)</span>, and <span class="math notranslate nohighlight">\(q(a)\neq 0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(A\)</span> is the coefficient of <span class="math notranslate nohighlight">\(\dfrac{1}{x-a}\)</span> in the partial fraction decomposition of <span class="math notranslate nohighlight">\(f(x)\)</span>, show that
+$<span class="math notranslate nohighlight">\(A = \lim_{x\to a}(x-a)f(x) = \dfrac{p(a)}{q(a)}.\)</span>$</p>
+<p><strong>(c)</strong> Now suppose that <span class="math notranslate nohighlight">\(f(x) = \dfrac{p(x)}{(x-a)^kq(x)}\)</span>, where <span class="math notranslate nohighlight">\(\deg(q(x))+k&gt;\deg(p(x))\)</span>, and <span class="math notranslate nohighlight">\(q(a)\neq 0\)</span>.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(f(x)\)</span> has a partial fraction decomposition of the form
+$<span class="math notranslate nohighlight">\(f(x) = \frac{A_0}{(x-a)^k}+\frac{A_1}{(x-a)^{k-1}}+\cdots+\frac{A_{k-2}}{(x-a)^2}+\frac{A_{k-1}}{(x-a)}+\frac{r(x)}{q(x)},\)</span><span class="math notranslate nohighlight">\(
+where \)</span>r(x)$ is a remainder function.</p>
+<p>Let <span class="math notranslate nohighlight">\(g(x) = (x-a)^kf(x) = \dfrac{p(x)}{q(x)}\)</span>, and show that <span class="math notranslate nohighlight">\(A_j = \dfrac{g^{(j)}(a)}{j!}\)</span> for <span class="math notranslate nohighlight">\(j=0,1,,\ldots, k-1\)</span>.</p>
+<p><strong>(d)</strong> Let <span class="math notranslate nohighlight">\(f(x) = \dfrac{x^2+3x+2}{(x-2)^4(x+1)}\)</span>. First, determine the partial fraction decomposition of <span class="math notranslate nohighlight">\(f(x)\)</span> using the <code class="docutils literal notranslate"><span class="pre">apart()</span></code> command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the decomposition</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Second, use SymPy, and the formulas from parts (b) and (c), to compute the coefficients of the partial fraction decomposition, and confirm that your results agree with the ones obtained from the <code class="docutils literal notranslate"><span class="pre">apart()</span></code> command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># several code cells are provided; add more if you need them!</span>
+<span class="c1"># remember that f.diff() computes a derivative, and f.subs(x,a) will substitute x with the number a.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -547,9 +680,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-document-how-to-manipulate-rational-functions-using-sympy">1. Research and document how to manipulate rational functions using Sympy.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrate-how-this-works-with-the-following-examples">2. Demonstrate how this works with the following examples.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#irreducible-factors-and-complex-roots">3. Irreducible factors and complex roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-rational-functions-using-sympy">Manipulating rational functions using Sympy.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-demonstrate-how-things-work-with-the-following-examples">Exercise 1. Demonstrate how things work with the following examples.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-irreducible-factors-and-complex-roots">Exercise 2. Irreducible factors and complex roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-finding-formulas-for-the-coefficients">Exercise 3. Finding formulas for the coefficients</a></li>
 </ul>
   </nav></div>
 
