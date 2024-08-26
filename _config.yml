@@ -33,5 +33,5 @@ html:
   use_repository_button: true
 
 launch_buttons:
-  notebook_interface: "jupyterlab" # can also use "classic"
+  notebook_interface: "classic" # can also use "classic"
   jupyterhub_url: "https://uleth.syzygy.ca/jupyter/"
