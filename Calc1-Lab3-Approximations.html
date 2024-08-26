@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculus 1, Lab 3: Plotting and Approximating! &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Calc1-Lab3-Approximations';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc1-Lab3-Approximations.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -363,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -443,15 +468,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-1-lab-3-plotting-and-approximating">
-<h1>Calculus 1, Lab 3: Plotting and Approximating!<a class="headerlink" href="#calculus-1-lab-3-plotting-and-approximating" title="Permalink to this heading">#</a></h1>
+<h1>Calculus 1, Lab 3: Plotting and Approximating!<a class="headerlink" href="#calculus-1-lab-3-plotting-and-approximating" title="Link to this heading">#</a></h1>
 <p>By Raheem Mir</p>
 <p>As the title suggests, in this notebook we are going to be exploring how we can plot functions with SymPy and NumPy.</p>
 <p>We’ll also delve into some numerical approximations when we use and implement Newton’s Method in Python!</p>
 <section id="getting-started-with-sympy">
-<h2>Getting Started with SymPy<a class="headerlink" href="#getting-started-with-sympy" title="Permalink to this heading">#</a></h2>
+<h2>Getting Started with SymPy<a class="headerlink" href="#getting-started-with-sympy" title="Link to this heading">#</a></h2>
 <p>Before we get started, just like with previous notebooks, we first have to “import” (or load in) the SymPy library, to access its functionality:</p>
 <p><strong>→ Run the code cell(s) by selecting and hitting <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code> or by using the play button in the toolbar at the top.</strong></p>
 <div class="cell docutils container">
@@ -477,7 +502,7 @@ document.write(`
 </div>
 </section>
 <section id="plotting-with-sympy">
-<h2>Plotting with SymPy<a class="headerlink" href="#plotting-with-sympy" title="Permalink to this heading">#</a></h2>
+<h2>Plotting with SymPy<a class="headerlink" href="#plotting-with-sympy" title="Link to this heading">#</a></h2>
 <p>The way we plot functions using SymPy is actually quite similar to how you would graph something with a TI-84/TI-83 calculator.</p>
 <p>We simply use the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function, like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
@@ -489,7 +514,7 @@ document.write(`
 An example would be the argument <code class="docutils literal notranslate"><span class="pre">show=False</span></code>, which stops the graph from being displayed until we use the command, <code class="docutils literal notranslate"><span class="pre">.show()</span></code>.</p>
 <p>Assigning our plot(s) to a variable is also a good idea, as it’s more efficient when we are manipulating/adjusting an existing plot, or wanting more control over customization.</p>
 <section id="now-let-s-look-at-a-simple-example">
-<h3><strong>Now let’s look at a simple example:</strong><a class="headerlink" href="#now-let-s-look-at-a-simple-example" title="Permalink to this heading">#</a></h3>
+<h3><strong>Now let’s look at a simple example:</strong><a class="headerlink" href="#now-let-s-look-at-a-simple-example" title="Link to this heading">#</a></h3>
 <p>Consider <span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p>
 <p>Using SymPy, we can visualize <span class="math notranslate nohighlight">\(f(x)\)</span> over the interval <span class="math notranslate nohighlight">\([-5, 5]\)</span></p>
 <p><strong>→ Run the code cell below!</strong></p>
@@ -503,7 +528,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 <p>You might notice that we don’t need to type <code class="docutils literal notranslate"><span class="pre">p</span></code> on the next line under <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">sy.plot(x**2,</span> <span class="pre">(x,</span> <span class="pre">-5,</span> <span class="pre">5))</span></code>, for the plot to output, like we had to when representing functions with SymPy in the last notebook.</p>
 </section>
 <section id="let-s-try-another-one">
-<h3><strong>Let’s try another one!</strong><a class="headerlink" href="#let-s-try-another-one" title="Permalink to this heading">#</a></h3>
+<h3><strong>Let’s try another one!</strong><a class="headerlink" href="#let-s-try-another-one" title="Link to this heading">#</a></h3>
 <p>Consider <span class="math notranslate nohighlight">\(f(x) = \cos(2x)\)</span> on the interval <span class="math notranslate nohighlight">\([0, 2\pi]\)</span></p>
 <p>And while we’re at it, let’s change the color of the line!</p>
 <p><strong>→ Run the code cell below!</strong></p>
@@ -516,7 +541,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="on-to-the-next-curve">
-<h3><strong>On to the next curve!</strong><a class="headerlink" href="#on-to-the-next-curve" title="Permalink to this heading">#</a></h3>
+<h3><strong>On to the next curve!</strong><a class="headerlink" href="#on-to-the-next-curve" title="Link to this heading">#</a></h3>
 <p>Consider <span class="math notranslate nohighlight">\(f(x) = \ln(x^2)\)</span> on the interval <span class="math notranslate nohighlight">\([-10, 10]\)</span></p>
 <p>Just like with the trigonometric functions, we’ll be using SymPy’s built in function for natural logarithms, <code class="docutils literal notranslate"><span class="pre">sy.ln()</span></code></p>
 <p><strong>→ Run the code cell below!</strong></p>
@@ -529,7 +554,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="here-s-an-interesting-one">
-<h3><strong>Here’s an interesting one!</strong><a class="headerlink" href="#here-s-an-interesting-one" title="Permalink to this heading">#</a></h3>
+<h3><strong>Here’s an interesting one!</strong><a class="headerlink" href="#here-s-an-interesting-one" title="Link to this heading">#</a></h3>
 <p>Consider <span class="math notranslate nohighlight">\(f(x) = x\sin(3x)\)</span> on the interval <span class="math notranslate nohighlight">\([-4\pi, 4\pi ]\)</span></p>
 <p><strong>→ Run the code cell below!</strong></p>
 <div class="cell docutils container">
@@ -542,7 +567,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="now-it-s-your-turn">
-<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#now-it-s-your-turn" title="Permalink to this heading">#</a></h3>
+<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#now-it-s-your-turn" title="Link to this heading">#</a></h3>
 <p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
 <p><strong>Exercise 1: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = \sin(2x) - 2\sin(x)\)</span> on the interval <span class="math notranslate nohighlight">\([-4\pi,4\pi]\)</span></p>
 <div class="cell docutils container">
@@ -561,7 +586,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </div>
 </div>
 <section id="plotting-multiple-functions">
-<h4><strong>Plotting Multiple Functions</strong><a class="headerlink" href="#plotting-multiple-functions" title="Permalink to this heading">#</a></h4>
+<h4><strong>Plotting Multiple Functions</strong><a class="headerlink" href="#plotting-multiple-functions" title="Link to this heading">#</a></h4>
 <p>SymPy’s plotting functionality also gives us the ability to plot multiple functions together, essentially combining different plots.</p>
 <p>Let’s illustrate this with an example, by plotting the following quadratic equations:</p>
 <p><span class="math notranslate nohighlight">\(y = (x+2)^2\)</span> , <span class="math notranslate nohighlight">\(y = (x-2)^2\)</span>, and <span class="math notranslate nohighlight">\(y = x^2\)</span> over the interval <span class="math notranslate nohighlight">\([-12, 12]\)</span></p>
@@ -576,7 +601,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="visualizing-a-function-and-its-derivative">
-<h4><strong>Visualizing a Function and its Derivative</strong><a class="headerlink" href="#visualizing-a-function-and-its-derivative" title="Permalink to this heading">#</a></h4>
+<h4><strong>Visualizing a Function and its Derivative</strong><a class="headerlink" href="#visualizing-a-function-and-its-derivative" title="Link to this heading">#</a></h4>
 <p>Now that we know how to plot multiple functions together, one exciting application we can explore is visualizaing a function alongside its derivative:</p>
 <p>Consider the function <span class="math notranslate nohighlight">\(f(x) = e^{-x^2}\)</span> on the interval <span class="math notranslate nohighlight">\([-3,3]\)</span></p>
 <p>Let’s plot <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(f'(x)\)</span> together! We can utilize SymPy’s <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function (seen in the last notebook) to compute our derivative.</p>
@@ -594,7 +619,7 @@ An example would be the argument <code class="docutils literal notranslate"><spa
 </section>
 </section>
 <section id="id1">
-<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><strong>Now it’s your turn!</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
 <p><strong>Exercise 3: Using SymPy, plot the function:</strong> <span class="math notranslate nohighlight">\(f(x) = x^3 - 3x^2\)</span> and <span class="math notranslate nohighlight">\(f'(x)\)</span> on the interval <span class="math notranslate nohighlight">\([0,3]\)</span><br />
 Hint: Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> using the <code class="docutils literal notranslate"><span class="pre">.diff()</span></code> function</p>
@@ -617,12 +642,12 @@ Hint: Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> usin
 </section>
 </section>
 <section id="plotting-with-numpy">
-<h2>Plotting with NumPy<a class="headerlink" href="#plotting-with-numpy" title="Permalink to this heading">#</a></h2>
+<h2>Plotting with NumPy<a class="headerlink" href="#plotting-with-numpy" title="Link to this heading">#</a></h2>
 <p><strong>Remember in our first notebook when we were first introduced to the Python library, NumPy?</strong></p>
 <p>So far in this notebook (and the previous one), we have been using the SymPy library, which is great for symbolic manipulations like representing functions, and taking derivatives. NumPy on the other hand is the library of choice when it comes to doing numerical computations. It implements many mathmatical functions, like trigonmetric functions, logarithms, and more.</p>
 <p>When NumPy is used in conjunction with Matplotlib, the popular Python plotting library that SymPy’s plotting functionality is based on, we have a powerful framework to create more flexible and customizable plots, that wouldn’t neccessarily be done with SymPy.</p>
 <section id="getting-started-with-numpy">
-<h3><strong>Getting Started with NumPy</strong><a class="headerlink" href="#getting-started-with-numpy" title="Permalink to this heading">#</a></h3>
+<h3><strong>Getting Started with NumPy</strong><a class="headerlink" href="#getting-started-with-numpy" title="Link to this heading">#</a></h3>
 <p>Just as before, to access the functionality of the libraries NumPy and Matplotlib, we have to “import” or load them in:</p>
 <p><strong>→ Run the code cell below!</strong></p>
 <div class="cell docutils container">
@@ -635,7 +660,7 @@ Hint: Calculate <span class="math notranslate nohighlight">\(f'(x)\)</span> usin
 </div>
 <p>Similar to how we gave SymPy the shorthand name <code class="docutils literal notranslate"><span class="pre">sy</span></code>, when we call functions from NumPy, we use the prefix <code class="docutils literal notranslate"><span class="pre">np</span></code>, and the shorthand <code class="docutils literal notranslate"><span class="pre">plt</span></code> when we use functions from Matplotlib.</p>
 <section id="plotting-walkthrough">
-<h4><strong>Plotting Walkthrough</strong><a class="headerlink" href="#plotting-walkthrough" title="Permalink to this heading">#</a></h4>
+<h4><strong>Plotting Walkthrough</strong><a class="headerlink" href="#plotting-walkthrough" title="Link to this heading">#</a></h4>
 <p>Let’s plot the graph <span class="math notranslate nohighlight">\(y = \tan(x)\)</span> on the interval <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span></p>
 <p>Given its periodic nature and vertical asymptotes at values such as <span class="math notranslate nohighlight">\(x = \dfrac{\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(x = \dfrac{3\pi}{2}\)</span>, this will be an interesting curve to explore. Plotting functions with asymptotes can be a challenge for many plotting tools, so let’s see how a numerical plotting approach handles things…</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> function to produce a set of evenly spaced <span class="math notranslate nohighlight">\(x\)</span>-values. In the cell below we are setting <span class="math notranslate nohighlight">\(1000\)</span> points in between <span class="math notranslate nohighlight">\(-2\pi\)</span> and <span class="math notranslate nohighlight">\(2\pi\)</span>.</p>
@@ -684,7 +709,7 @@ In our second line, we finally get to plotting, calling Matplotlib’s <code cla
 </section>
 </section>
 <section id="exploring-newton-s-method">
-<h2>Exploring Newton’s Method<a class="headerlink" href="#exploring-newton-s-method" title="Permalink to this heading">#</a></h2>
+<h2>Exploring Newton’s Method<a class="headerlink" href="#exploring-newton-s-method" title="Link to this heading">#</a></h2>
 <p>There are many occasions where we cannot solve equations by using algebraic methods. In these instances, we can utilize numerical methods to approximate solutions. In the last notebook, we saw the Bisection method for root finding, this time around, we will be working with a different technique, known as Newton’s Method.</p>
 <p>Newton’s Method is based on tangent lines.
 The method starts with an initial guess of where the root of a function <span class="math notranslate nohighlight">\(f(x)\)</span> is, which we’ll call <span class="math notranslate nohighlight">\(x_{0}\)</span>. Given this data, we construct the tangent line to <span class="math notranslate nohighlight">\(y=f(x)\)</span> at the point <span class="math notranslate nohighlight">\((x_0,f(x_0))\)</span>:</p>
@@ -705,7 +730,7 @@ where \)</span>x_{n + 1}$ is our next iteration.</p>
 <p>Now, we could repeatedly do the neccessary computations by hand to approximate a solution for a given equation… or we can use Python to do it all for us!</p>
 <p>Let’s translate the formula for Newton’s Method into a Python function!</p>
 <section id="implementing-newton-s-method-in-python">
-<h3><strong>Implementing Newton’s Method in Python</strong><a class="headerlink" href="#implementing-newton-s-method-in-python" title="Permalink to this heading">#</a></h3>
+<h3><strong>Implementing Newton’s Method in Python</strong><a class="headerlink" href="#implementing-newton-s-method-in-python" title="Link to this heading">#</a></h3>
 <p>Defined in the code cell below is a Python function that performs Newton’s Method for approximating solutions, it implements the entire process, from the formula above, to all of the neccessary iterations.</p>
 <p>Since it has already been created, we can call it like we would any other function, and get right into using it to solve equations!</p>
 <p>We can call it like so:</p>
@@ -733,7 +758,7 @@ where \)</span>x_{n + 1}$ is our next iteration.</p>
 </div>
 </section>
 <section id="now-let-s-do-an-example">
-<h3><strong>Now let’s do an example!</strong><a class="headerlink" href="#now-let-s-do-an-example" title="Permalink to this heading">#</a></h3>
+<h3><strong>Now let’s do an example!</strong><a class="headerlink" href="#now-let-s-do-an-example" title="Link to this heading">#</a></h3>
 <p><strong>Let’s approximate the root of <span class="math notranslate nohighlight">\(x^3 - x^2 - 1 = 0\)</span> using Newton’s Method, accurate to three decimal places, with an initial guess of <span class="math notranslate nohighlight">\(x_{0} = 1\)</span></strong></p>
 <p>First, we have to define the two Python functions we’ll need to input into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code>:</p>
 <ul class="simple">
@@ -769,7 +794,7 @@ where \)</span>x_{n + 1}$ is our next iteration.</p>
 <p>Great! <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code> took in our inputs, and printed out each iteration of applying Newton’s Method along with the final result!</p>
 </section>
 <section id="let-s-try-another-example">
-<h3><strong>Let’s try another example!</strong><a class="headerlink" href="#let-s-try-another-example" title="Permalink to this heading">#</a></h3>
+<h3><strong>Let’s try another example!</strong><a class="headerlink" href="#let-s-try-another-example" title="Link to this heading">#</a></h3>
 <p><strong>Let’s approximate the root of <span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span> using Newton’s Method, accurate to 4 decimal places, with an initial approximation of <span class="math notranslate nohighlight">\(x_{0} = 1.5\)</span></strong></p>
 <p>Just as before, let’s define the Python functions we’ll be passing into <code class="docutils literal notranslate"><span class="pre">NewtonsMethod()</span></code>:</p>
 <ul class="simple">
@@ -807,10 +832,10 @@ where \)</span>x_{n + 1}$ is our next iteration.</p>
 <p><strong>→ Write your answer in the markdown cell below! (Double-click to edit)</strong></p>
 </section>
 <section id="write-your-answer-here">
-<h3>Write Your Answer Here!<a class="headerlink" href="#write-your-answer-here" title="Permalink to this heading">#</a></h3>
+<h3>Write Your Answer Here!<a class="headerlink" href="#write-your-answer-here" title="Link to this heading">#</a></h3>
 <p>Double-click on this cell to edit it and type your answer!</p>
 <section id="id2">
-<h4><strong>Now it’s your turn!</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4><strong>Now it’s your turn!</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p><strong>Complete the following exercises! Take a look at the previous examples if you get stuck.</strong></p>
 <p><strong>Exercise 5:<br />
 Using Newton’s Method, approximate the solution to <span class="math notranslate nohighlight">\(f(x) = x^5 + x + 1\)</span> to three decimal places, with an initial approximation of <span class="math notranslate nohighlight">\(x_{0} = -1\)</span></strong></p>
@@ -894,11 +919,10 @@ Using Newton’s Method, approximate the solution to <span class="math notransla
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Calc1-Lab2-Derivatives.html"
@@ -918,10 +942,7 @@ Using Newton’s Method, approximate the solution to <span class="math notransla
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -929,6 +950,7 @@ Using Newton’s Method, approximate the solution to <span class="math notransla
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -988,6 +1010,7 @@ By Sean Fitzpatrick
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024.
@@ -1014,8 +1037,8 @@ By Sean Fitzpatrick
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

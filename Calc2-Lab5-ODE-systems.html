@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculus 2, Lab 5: Systems of differential equations &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Calc2-Lab5-ODE-systems';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc2-Lab5-ODE-systems.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -363,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -435,10 +460,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-2-lab-5-systems-of-differential-equations">
-<h1>Calculus 2, Lab 5: Systems of differential equations<a class="headerlink" href="#calculus-2-lab-5-systems-of-differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Calculus 2, Lab 5: Systems of differential equations<a class="headerlink" href="#calculus-2-lab-5-systems-of-differential-equations" title="Link to this heading">#</a></h1>
 <p>Today’s activity takes us a bit beyond what is covered in the textbook, but not too much beyond!</p>
 <p>As side benefits, we get an early introduction to parametric curves, and some reminders about the utility of linear algebra.</p>
 <p>Our focus will be <strong>coupled systems of autonomous differential equations</strong>. The context is the following: we have two variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that both depend on an independent variable <span class="math notranslate nohighlight">\(t\)</span> (our parameter, which in many contexts can be viewed as time).</p>
@@ -450,7 +475,7 @@ $<span class="math notranslate nohighlight">\(
 for constants \)</span>a,b,c,d<span class="math notranslate nohighlight">\(. (In a more general linear system, \)</span>a,b,c,d<span class="math notranslate nohighlight">\( could be functions of \)</span>t$, but we will stick to the time-independent case to keep things simple.)</p>
 <p>We will end with a classic example: a <strong>predator-prey</strong> model, where we have two animal populations: a prey species, that if left untouched would experience exponential population growth, and a predator species, whose population growth (or decline) depends on the size of the prey population. This is a <strong>non-linear</strong> system, and we will not be able to understand all the details at this point, but we can still explore it both graphically and numerically.</p>
 <section id="a-preview-of-parametric-curves">
-<h2>A preview of parametric curves<a class="headerlink" href="#a-preview-of-parametric-curves" title="Permalink to this heading">#</a></h2>
+<h2>A preview of parametric curves<a class="headerlink" href="#a-preview-of-parametric-curves" title="Link to this heading">#</a></h2>
 <p>Later in the course, we will study <strong>parametric curves</strong>: sets of points in the plane of the form <span class="math notranslate nohighlight">\((x,y)=(f(t),g(t))\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are functions of a parameter <span class="math notranslate nohighlight">\(t\)</span> defined in some domain <span class="math notranslate nohighlight">\([a,b]\)</span>. As <span class="math notranslate nohighlight">\(t\)</span> increases from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, we can imagine a point that moves in “time”, tracing out a curve.</p>
 <p>For example, we can generate the unit circle <span class="math notranslate nohighlight">\(x^2+y^2=1\)</span> as the set of points <span class="math notranslate nohighlight">\((\cos(t),\sin(t))\)</span>, <span class="math notranslate nohighlight">\(t\in [0,2\pi]\)</span>.</p>
 <p>One of the facts that we will learn later in the course is that the slope of the tangent line to a parametric curve at a point <span class="math notranslate nohighlight">\((x_0,y_0)=(f(t_0),g(t_0))\)</span> is given by
@@ -459,7 +484,7 @@ m = \frac{dy}{dx} = \frac{y'(t)}{x'(t)}.
 \)</span>$</p>
 </section>
 <section id="direction-fields-for-linear-systems">
-<h2>Direction fields for linear systems<a class="headerlink" href="#direction-fields-for-linear-systems" title="Permalink to this heading">#</a></h2>
+<h2>Direction fields for linear systems<a class="headerlink" href="#direction-fields-for-linear-systems" title="Link to this heading">#</a></h2>
 <p>We can modify the direction field code from our last tutorial to work for a system of two differential equations. For the <code class="docutils literal notranslate"><span class="pre">dfield</span></code> program from last week, we were given a differential equation <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span>, and we defined the slope using the function <span class="math notranslate nohighlight">\(f(x,y)\)</span>. Given a system
 $<span class="math notranslate nohighlight">\(
 \begin{aligned}\frac{dx}{dt}&amp;=f(x,y)\\ \frac{dy}{dt}&amp;=g(x,y)\end{aligned}
@@ -644,7 +669,7 @@ If <span class="math notranslate nohighlight">\(f(x,y)\neq 0\)</span>, we procee
 </div>
 </div>
 <section id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Link to this heading">#</a></h3>
 <p>Finally, an exercise! Try to explain the following items. (You can double-click on this cell to edit it, if you would like to type in your answers.)</p>
 <p>(a) In the original direction field plot, why are the lines with nearly vertical slopes so much longer than the lines with nearly horizontal slopes?</p>
 <p>(b) Why do the parametric equations <span class="math notranslate nohighlight">\(x=a+\cos(\theta)t, y=b+\sin(\theta)t\)</span> define a line through the point <span class="math notranslate nohighlight">\((a,b)\)</span> with slope <span class="math notranslate nohighlight">\(m=\tan(\theta)\)</span>?</p>
@@ -652,7 +677,7 @@ If <span class="math notranslate nohighlight">\(f(x,y)\neq 0\)</span>, we procee
 </section>
 </section>
 <section id="euler-s-method-for-systems">
-<h2>Euler’s Method for systems<a class="headerlink" href="#euler-s-method-for-systems" title="Permalink to this heading">#</a></h2>
+<h2>Euler’s Method for systems<a class="headerlink" href="#euler-s-method-for-systems" title="Link to this heading">#</a></h2>
 <p>We can adapt Euler’s method to systems of differential equations. For the system
 $<span class="math notranslate nohighlight">\(\begin{aligned}\frac{dx}{dt} &amp;= ax+by\\ \frac{dy}{dt}&amp;=cx+dy,\end{aligned}\)</span><span class="math notranslate nohighlight">\(
 there are three types of solutions that we can look for, given initial values \)</span>x(0)=x_0<span class="math notranslate nohighlight">\( and \)</span>y(0)=y_0$:</p>
@@ -746,7 +771,7 @@ there are three types of solutions that we can look for, given initial values \)
 </div>
 </div>
 <section id="problem-2">
-<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Link to this heading">#</a></h3>
 <p>For the following systems of differential equations of the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -754,11 +779,11 @@ there are three types of solutions that we can look for, given initial values \)
 \end{split}\]</div>
 <p>use the <code class="docutils literal notranslate"><span class="pre">xysol</span></code> function above to plot approximate solutions <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>. Then use the <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> function to plot the approximate solution curve against the direction field. In each case you will need to define the functions <code class="docutils literal notranslate"><span class="pre">f(x,y)</span></code> and <code class="docutils literal notranslate"><span class="pre">g(x,y)</span></code>, as well as the array <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
 <section id="part-a">
-<h4>Part (a)<a class="headerlink" href="#part-a" title="Permalink to this heading">#</a></h4>
+<h4>Part (a)<a class="headerlink" href="#part-a" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(a = 0.1, b=0.05, c=0, d=-0.2, x_0 = 0.5, y_0=1\)</span></p>
 </section>
 <section id="part-b">
-<h4>Part (b)<a class="headerlink" href="#part-b" title="Permalink to this heading">#</a></h4>
+<h4>Part (b)<a class="headerlink" href="#part-b" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(a = 0, b=2, c=-2, d=0, x_0=0.5, y=-0.5\)</span></p>
 <p><strong>Notes:</strong></p>
 <ul class="simple">
@@ -771,7 +796,7 @@ there are three types of solutions that we can look for, given initial values \)
 </section>
 </section>
 <section id="solving-linear-systems">
-<h2>Solving linear systems<a class="headerlink" href="#solving-linear-systems" title="Permalink to this heading">#</a></h2>
+<h2>Solving linear systems<a class="headerlink" href="#solving-linear-systems" title="Link to this heading">#</a></h2>
 <p>What if we want to compare our approximate solutions to the
 We can’t cover everything in one tutorial, but there are some very cool connections between systems of linear differential equations and linear algebra. Given the system</p>
 <div class="math notranslate nohighlight">
@@ -837,7 +862,7 @@ we call \)</span>\lambda<span class="math notranslate nohighlight">\( an **eigen
 </ul>
 <p>In each case <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> are constants, and the result for <span class="math notranslate nohighlight">\(y(t)\)</span> is similar. The constants are determined by initial conditions, but there are relationships between the constants for <span class="math notranslate nohighlight">\(x(t)\)</span> and the constants for <span class="math notranslate nohighlight">\(y(t)\)</span> determined by the eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>. (For further details, see the end of this notebook.)</p>
 <section id="problem-3">
-<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this heading">#</a></h3>
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Link to this heading">#</a></h3>
 <p>For both of the systems you used in Problem 2:</p>
 <ol class="arabic simple">
 <li><p>determine the eigenvalues of the coefficient matrix <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
@@ -847,14 +872,14 @@ we call \)</span>\lambda<span class="math notranslate nohighlight">\( an **eigen
 </section>
 </section>
 <section id="non-linear-systems">
-<h2>Non-linear systems<a class="headerlink" href="#non-linear-systems" title="Permalink to this heading">#</a></h2>
+<h2>Non-linear systems<a class="headerlink" href="#non-linear-systems" title="Link to this heading">#</a></h2>
 <p>The numerical methods we’ve introduced in this notebook will work for non-linear systems as well, although an analytical approach is far more complicated. (The general strategy is to find the critical points for a non-linear system, and then approximate near each critical point by a linear system.)</p>
 <p>In particular, we will look at Volterra’s <strong>predator-prey</strong> model. In this model, <span class="math notranslate nohighlight">\(x(t)\)</span> is the population of a prey species (e.g. rabbits) and <span class="math notranslate nohighlight">\(y(t)\)</span> is the population of a predator species (e.g. foxes).
 For constants <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, the predator-prey model is given by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}\frac{dx}{dt} &amp; = ax - bxy = x(a-by)\\ \frac{dy}{dt}&amp;=-cy+dxy = y(-c+dx)\end{aligned}\end{split}\]</div>
 <section id="problem-4">
-<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this heading">#</a></h3>
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Link to this heading">#</a></h3>
 <p>(No code required)</p>
 <p>(a) If <span class="math notranslate nohighlight">\(y=0\)</span> (no predators), what can you say about the population <span class="math notranslate nohighlight">\(x\)</span>?</p>
 <p>(b) If <span class="math notranslate nohighlight">\(x=0\)</span> (no prey), what happens to the population <span class="math notranslate nohighlight">\(y\)</span>?</p>
@@ -897,14 +922,14 @@ For constants <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, the
 <p>What this means in terms of our population dynamic is that this particular predator-prey ecosystem is <strong>stable</strong>. The two populations go up and down over time, but they do so in a <strong>cycle</strong>.</p>
 </section>
 <section id="problem-5">
-<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this heading">#</a></h3>
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Link to this heading">#</a></h3>
 <p>Choose two different sets of values for <span class="math notranslate nohighlight">\(a,b,c,d\)</span>, and then run both the <code class="docutils literal notranslate"><span class="pre">xysol</span></code> and <code class="docutils literal notranslate"><span class="pre">dfsol</span></code> programs to create plots for each. In each case, comment on the results.</p>
 <p>(Pick your own values, and experiment a bit. If your outcome isn’t interesting, or seems unreasonable, try again with different numbers. Note that in some cases you could cause exponential growth so large that you overflow the values the system can handle, so choose carefully!)</p>
 <p><strong>Note:</strong> it should be sufficient to redefine <code class="docutils literal notranslate"><span class="pre">a,b,c,d</span></code> and then run the two programs. You don’t have to enter new definitions for <code class="docutils literal notranslate"><span class="pre">f(x,y)</span></code> and <code class="docutils literal notranslate"><span class="pre">g(x,y)</span></code>.</p>
 </section>
 </section>
 <section id="analytic-methods-for-linear-systems">
-<h2>Analytic methods for linear systems<a class="headerlink" href="#analytic-methods-for-linear-systems" title="Permalink to this heading">#</a></h2>
+<h2>Analytic methods for linear systems<a class="headerlink" href="#analytic-methods-for-linear-systems" title="Link to this heading">#</a></h2>
 <p>(For information purposes only.)</p>
 <p>Note that a system of differential equations could be written in vector form as</p>
 <div class="math notranslate nohighlight">
@@ -974,11 +999,10 @@ e^{\lambda t} = e^{ut+ivt} = e^{ut}(\cos(vt)+i\sin(vt)).
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Calc2-Lab4-ODEs.html"
@@ -998,10 +1022,7 @@ e^{\lambda t} = e^{ut+ivt} = e^{ut}(\cos(vt)+i\sin(vt)).
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1009,6 +1030,7 @@ e^{\lambda t} = e^{ut+ivt} = e^{ut}(\cos(vt)+i\sin(vt)).
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1060,6 +1082,7 @@ By Sean Fitzpatrick
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024.
@@ -1086,8 +1109,8 @@ By Sean Fitzpatrick
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

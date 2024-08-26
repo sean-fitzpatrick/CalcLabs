@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculus 2 example: Introduction to Differential Equations &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ODE-intro';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/ODE-intro.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -363,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -439,25 +464,25 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-2-example-introduction-to-differential-equations">
-<h1>Calculus 2 example: Introduction to Differential Equations<a class="headerlink" href="#calculus-2-example-introduction-to-differential-equations" title="Permalink to this heading">#</a></h1>
+<h1>Calculus 2 example: Introduction to Differential Equations<a class="headerlink" href="#calculus-2-example-introduction-to-differential-equations" title="Link to this heading">#</a></h1>
 <section id="graphical-and-numerical-solutions">
-<h2>Graphical and Numerical Solutions<a class="headerlink" href="#graphical-and-numerical-solutions" title="Permalink to this heading">#</a></h2>
+<h2>Graphical and Numerical Solutions<a class="headerlink" href="#graphical-and-numerical-solutions" title="Link to this heading">#</a></h2>
 </section>
 <section id="differential-equations">
-<h2>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h2>
+<h2>Differential Equations<a class="headerlink" href="#differential-equations" title="Link to this heading">#</a></h2>
 <p>A <strong>differential equation</strong> is any equation relating a (typically unknown) function and one or more of its derivatives. The goal is to find the function(s) that satisfy the equation.</p>
 <p>Typically the function in a differential equation will be assigned to some <em>dependent variable</em> and depend on one or more <em>independent variables</em>.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[y ' = 4\cos(x)+2\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(y\)</span> is the dependent variable, <span class="math notranslate nohighlight">\(x\)</span> is the independent variable, and a <em>solution</em> is given by <span class="math notranslate nohighlight">\(y = 4\sin(x)+2x\)</span>.</p>
 </section>
 <section id="terminology">
-<h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h3>
+<h3>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h3>
 <p>The <strong>order</strong> of a differential equation is the highest derivative that appears.</p>
 <p>An <strong>ordinary differential equation</strong> (ODE) involves only one independent variable.</p>
 <p>A <strong>partial differential equation</strong> (PDE) involves two or more independent variables (and partial derivatives).</p>
@@ -478,7 +503,7 @@ document.write(`
 \[\frac{1}{i\hbar}\frac{\partial^2 \psi}{\partial x^2} + V(x,t) = \frac{\partial \psi}{\partial t}\]</div>
 </section>
 <section id="initial-value-problems">
-<h3>Initial Value Problems<a class="headerlink" href="#initial-value-problems" title="Permalink to this heading">#</a></h3>
+<h3>Initial Value Problems<a class="headerlink" href="#initial-value-problems" title="Link to this heading">#</a></h3>
 <p>A solution to a differential equation typically involves one or more undetermined parameters.</p>
 <p>For example, <span class="math notranslate nohighlight">\(y=4\sin(x)+2x\)</span> is a solution to <span class="math notranslate nohighlight">\(y' = 4\cos(x)+2\)</span>, but so is <span class="math notranslate nohighlight">\(y=4\sin(x)+2x+C\)</span> for any constant <span class="math notranslate nohighlight">\(C\)</span>.</p>
 <p>The number of parameters is equal to the order of the differential equation.</p>
@@ -487,7 +512,7 @@ document.write(`
 <p>E.g. we can ask for <span class="math notranslate nohighlight">\(y'=4\cos(x)+2x\)</span>, where <span class="math notranslate nohighlight">\(y(0)=2\)</span>.</p>
 </section>
 <section id="verifying-solutions">
-<h3>Verifying Solutions<a class="headerlink" href="#verifying-solutions" title="Permalink to this heading">#</a></h3>
+<h3>Verifying Solutions<a class="headerlink" href="#verifying-solutions" title="Link to this heading">#</a></h3>
 <p>To verify that <span class="math notranslate nohighlight">\(y=f(x)\)</span> solves a differential equation, simply plug it in and confirm that it works.</p>
 <p>Examples:</p>
 <ol class="arabic simple">
@@ -498,14 +523,14 @@ document.write(`
 </section>
 </section>
 <section id="graphical-methods">
-<h2>Graphical Methods<a class="headerlink" href="#graphical-methods" title="Permalink to this heading">#</a></h2>
+<h2>Graphical Methods<a class="headerlink" href="#graphical-methods" title="Link to this heading">#</a></h2>
 <p>Many differential equations can be studied <em>qualitatively</em> in cases where they can’t be studied analytically.</p>
 <p>(Finding exact solutions to real-world differential equation models is rare.)</p>
 <p><strong>Phase portraits</strong> are an important tool for the study of dynamical systems. (These are especially useful for nonlinear ODEs and systems of ODEs.)</p>
 <p>Using phase portraits we can understand systems in terms of sinks, sources, stable and unstable equlibria, etc.</p>
 <p><strong>Direction fields</strong> capture some of the same ideas, and are easier to understand at the introductory level.</p>
 <section id="phase-diagrams-for-autonomous-first-order-odes">
-<h3>Phase diagrams for autonomous first order ODEs<a class="headerlink" href="#phase-diagrams-for-autonomous-first-order-odes" title="Permalink to this heading">#</a></h3>
+<h3>Phase diagrams for autonomous first order ODEs<a class="headerlink" href="#phase-diagrams-for-autonomous-first-order-odes" title="Link to this heading">#</a></h3>
 <p>Most phase diagrams are higher-dimensional and correspond to systems of coupled first-order ODEs.</p>
 <p>They’re also really cool, but beyond this course.</p>
 <p>We can do something similar for equations of the form</p>
@@ -515,7 +540,7 @@ document.write(`
 <p>Here, we can determine whether <span class="math notranslate nohighlight">\(x(t)\)</span> is increasing or decreasing simply by whether <span class="math notranslate nohighlight">\(f(x)\)</span> is positive or negative. (Sign diagrams!)</p>
 </section>
 <section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
 <p><strong>Logistic model</strong>:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dP}{dt} = kP\left(1-\frac{P}{M}\right)\]</div>
@@ -527,17 +552,17 @@ document.write(`
 <p>This has one critical point for <span class="math notranslate nohighlight">\(k\leq 0\)</span>, and three, for <span class="math notranslate nohighlight">\(k&gt;0\)</span>.</p>
 </section>
 <section id="direction-fields">
-<h3>Direction fields<a class="headerlink" href="#direction-fields" title="Permalink to this heading">#</a></h3>
+<h3>Direction fields<a class="headerlink" href="#direction-fields" title="Link to this heading">#</a></h3>
 <p>The idea is simple: most first-order ODEs can be put in the form <span class="math notranslate nohighlight">\(y' = f(x,y)\)</span> for some function <span class="math notranslate nohighlight">\(f\)</span> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>A solution <span class="math notranslate nohighlight">\(y=g(x)\)</span> would satisfy <span class="math notranslate nohighlight">\(g'(x) = f(x,g(x))\)</span>. So <span class="math notranslate nohighlight">\(f(x,y)\)</span> gives the <strong>slope</strong> of the tangent line to <span class="math notranslate nohighlight">\(y=g(x)\)</span> at <span class="math notranslate nohighlight">\((x,y)\)</span>.</p>
 <p>To construct a direction field, just evaluate <span class="math notranslate nohighlight">\(f(x,y)\)</span> at a sample of points, and plot a short line segment through <span class="math notranslate nohighlight">\((x,y)\)</span> with slope <span class="math notranslate nohighlight">\(m=f(x,y)\)</span>.</p>
 </section>
 <section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Plot a direction field for the differential equation <span class="math notranslate nohighlight">\(y' = x-y\)</span>.</p>
 </section>
 <section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Plot a direction field for the differential equation <span class="math notranslate nohighlight">\(y' = x\sin(y)\)</span>.</p>
 <p>Maybe we don’t want to plot this by hand. Let’s <a class="reference external" href="http://firsttimeprogrammer.blogspot.com/2014/09/generate-slope-fields-in-r-and-python.html">borrow some simple code</a> to do it. The code is set up for the equation <span class="math notranslate nohighlight">\(y'=x-y\)</span>. You’ll need to change the definition of <code class="docutils literal notranslate"><span class="pre">f(x,y)</span></code> to do the <span class="math notranslate nohighlight">\(y'=x\sin(y)\)</span> example.</p>
 <div class="cell docutils container">
@@ -659,12 +684,12 @@ document.write(`
 </section>
 </section>
 <section id="numerical-methods">
-<h2>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Permalink to this heading">#</a></h2>
+<h2>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h2>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">odeint</span></code> function from SciPy does not give us a function in the sense you’re used to.</p>
 <p>Instead, for a set of possible <span class="math notranslate nohighlight">\(x\)</span> values, it determines corresponding <span class="math notranslate nohighlight">\(y\)</span> values numerically.</p>
 <p>There are some very sophisticated methods for doing this. We’ll look at one of the most basic.</p>
 <section id="euler-s-method">
-<h3>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Permalink to this heading">#</a></h3>
+<h3>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Essentially a numerical counterpart to slope fields.</p></li>
 <li><p>Recall the linear approximation</p></li>
@@ -685,7 +710,7 @@ document.write(`
 <p>etc.</p>
 </section>
 <section id="error-analysis">
-<h3>Error analysis<a class="headerlink" href="#error-analysis" title="Permalink to this heading">#</a></h3>
+<h3>Error analysis<a class="headerlink" href="#error-analysis" title="Link to this heading">#</a></h3>
 <p>Euler’s method is simple, but imprecise.</p>
 <ul class="simple">
 <li><p>Using linear approximation introduces truncation error.</p></li>
@@ -694,9 +719,9 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h3>Example<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Use Euler’s method to approximate the solution to <span class="math notranslate nohighlight">\(y'=x-y\)</span>, with initial condition <span class="math notranslate nohighlight">\(y(0)=1\)</span>, step size of <span class="math notranslate nohighlight">\(0.1\)</span>, and 10 steps.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(i\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x_i\)</span></p></th>
@@ -722,10 +747,11 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>We might need a code cell as a calculator.</p>
 </section>
 <section id="code-for-euler-s-method">
-<h3>Code for Euler’s Method<a class="headerlink" href="#code-for-euler-s-method" title="Permalink to this heading">#</a></h3>
+<h3>Code for Euler’s Method<a class="headerlink" href="#code-for-euler-s-method" title="Link to this heading">#</a></h3>
 <p>The following is borrowed from <a class="reference external" href="https://www.math.ubc.ca/~pwalls/math-python/differential-equations/first-order/">Patrick Walls at UBC</a>. We define a function called odeEuler that implements the steps outlined above.</p>
 <p>Input is an ODE of the form <span class="math notranslate nohighlight">\(y'=f(y,t)\)</span>. Syntax is <code class="docutils literal notranslate"><span class="pre">odeEuler(f,y0,t)</span></code>, where:</p>
 <ul class="simple">
@@ -760,7 +786,7 @@ The next cell will print the sample <span class="math notranslate nohighlight">\
 </div>
 </div>
 <section id="checking-the-solution">
-<h4>Checking the solution<a class="headerlink" href="#checking-the-solution" title="Permalink to this heading">#</a></h4>
+<h4>Checking the solution<a class="headerlink" href="#checking-the-solution" title="Link to this heading">#</a></h4>
 <p>How well does our algorithm work? We can plot our values against the exact ones.<br>
 The equation</p>
 <div class="math notranslate nohighlight">
@@ -786,7 +812,7 @@ The general solution is</p>
 </section>
 </section>
 <section id="symbolic-solving-with-sympy">
-<h3>Symbolic solving with SymPy<a class="headerlink" href="#symbolic-solving-with-sympy" title="Permalink to this heading">#</a></h3>
+<h3>Symbolic solving with SymPy<a class="headerlink" href="#symbolic-solving-with-sympy" title="Link to this heading">#</a></h3>
 <p>Another option is the SymPy library for symbolic manipulation. SymPy can handle most derivatives and integrals that Maple (or Wolfram Alpha) can, as well as ODEs. The diffrerence with SymPy is that it does <em>not</em> use numerical methods: it tries to give exact symbolic expressions. (And the <code class="docutils literal notranslate"><span class="pre">init_printing()</span></code> function enables nicely-formatted output.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,11 +880,10 @@ The general solution is</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Calc2-Lab3-Surface-Area.html"
@@ -878,10 +903,7 @@ The general solution is</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -889,6 +911,7 @@ The general solution is</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -944,6 +967,7 @@ By Sean Fitzpatrick
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024.
@@ -970,8 +994,8 @@ By Sean Fitzpatrick
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

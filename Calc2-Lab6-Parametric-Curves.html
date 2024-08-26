@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculus 2, Lab 6: Parametric curves &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Calc2-Lab6-Parametric-Curves';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc2-Lab6-Parametric-Curves.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -363,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -426,10 +451,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-2-lab-6-parametric-curves">
-<h1>Calculus 2, Lab 6: Parametric curves<a class="headerlink" href="#calculus-2-lab-6-parametric-curves" title="Permalink to this heading">#</a></h1>
+<h1>Calculus 2, Lab 6: Parametric curves<a class="headerlink" href="#calculus-2-lab-6-parametric-curves" title="Link to this heading">#</a></h1>
 <p>Recall that a <strong>parametric curve</strong> is given by equations <span class="math notranslate nohighlight">\(x=f(t), y=g(t)\)</span>, for <span class="math notranslate nohighlight">\(t\)</span> in some domain (often a closed interval <span class="math notranslate nohighlight">\([a,b]\)</span>).</p>
 <p>Using parametric equations allows us to define a wide variety of curves that would be impossible to define using the graph of a function, or an implicitly-defined function.</p>
 <p>The main things we are interested in with parametric curves are:</p>
@@ -442,7 +467,7 @@ document.write(`
 </ol>
 <p>In this notebook you will learn how to plot parametric curves using SymPy and GeoGebra, and you will calculate arc length symbolically (using SymPy) and numerically (using NumPy).</p>
 <section id="plotting-parametric-curves-with-sympy">
-<h2>Plotting Parametric curves with SymPy<a class="headerlink" href="#plotting-parametric-curves-with-sympy" title="Permalink to this heading">#</a></h2>
+<h2>Plotting Parametric curves with SymPy<a class="headerlink" href="#plotting-parametric-curves-with-sympy" title="Link to this heading">#</a></h2>
 <p>The basic syntax for plotting a parametric curve in SymPy is <code class="docutils literal notranslate"><span class="pre">plot_parametric((expr_x,expr_y),range)</span></code>, where <code class="docutils literal notranslate"><span class="pre">expr_x</span></code> is an expression that defines <span class="math notranslate nohighlight">\(x\)</span> in terms of our parametric (most likely <code class="docutils literal notranslate"><span class="pre">t</span></code>), <code class="docutils literal notranslate"><span class="pre">expr_y</span></code> is an expression that defines <span class="math notranslate nohighlight">\(y\)</span> in terms of the parameter, and <code class="docutils literal notranslate"><span class="pre">range</span></code> defines the domain for the parameter, using the same syntax as for integrals. For example, for <span class="math notranslate nohighlight">\(t\in [1,3]\)</span> we would use <code class="docutils literal notranslate"><span class="pre">(t,1,3)</span></code> for the range.</p>
 <p>You can plot more than one curve on the same set of axes by including an ordered list of curves: for two curves, you would have something like <code class="docutils literal notranslate"><span class="pre">plot_parametric((expr_x1,expr_y1),(expr_x2,expr_y2),range)</span></code> if the range is the same, or <code class="docutils literal notranslate"><span class="pre">plot_parametric((expr_x1,expr_y1,range1),(expr_x2,expr_y2,range2))</span></code> for different ranges.</p>
 <p>Optional arguments include <code class="docutils literal notranslate"><span class="pre">line_color</span></code> for the colour of the curve, <code class="docutils literal notranslate"><span class="pre">label</span></code>, <code class="docutils literal notranslate"><span class="pre">xlabel</span></code>, and <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> to label the plot, <span class="math notranslate nohighlight">\(x\)</span> axis, and <span class="math notranslate nohighlight">\(y\)</span> axis, respectively, and <code class="docutils literal notranslate"><span class="pre">xlim</span></code>, <code class="docutils literal notranslate"><span class="pre">ylim</span></code> to set the bounds for the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes (equal to an ordered pair).</p>
@@ -488,7 +513,7 @@ document.write(`
 </div>
 </div>
 <section id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Link to this heading">#</a></h3>
 <p>Plot the following parametric curves. (You probably want to plot each on its own set of axes.)</p>
 <p>If you don’t want to type out <code class="docutils literal notranslate"><span class="pre">sy.plot_parametric</span></code> every time, you could add a line like <code class="docutils literal notranslate"><span class="pre">pp=sy.plot_parametric</span></code>.</p>
 <p>(a) <span class="math notranslate nohighlight">\(x=t^3-2t, y=t^2-t, t\in [-1,2]\)</span></p>
@@ -497,13 +522,13 @@ document.write(`
 </section>
 </section>
 <section id="plotting-parametric-curves-with-geogebra">
-<h2>Plotting parametric curves with GeoGebra<a class="headerlink" href="#plotting-parametric-curves-with-geogebra" title="Permalink to this heading">#</a></h2>
+<h2>Plotting parametric curves with GeoGebra<a class="headerlink" href="#plotting-parametric-curves-with-geogebra" title="Link to this heading">#</a></h2>
 <p>Sometimes you want something a little simpler to use than a Jupyter notebook. Fortunately, there are some great free software programs out there, such as Desmos, and <a class="reference external" href="https://geogebra.org">GeoGebra</a>. GeoGebra can do derivatives, integrals, geometry, statistics, and more. And the interface involves a little more pointing and clicking, if you like that sort of thing.</p>
 <p>We will use <a class="reference external" href="https://www.geogebra.org/classic">GeoGebra classic</a>. Choose graphing mode to create your plot.</p>
 <p>You can create plots using the input box, which is next to the <span class="math notranslate nohighlight">\(+\)</span> sign at the top-left.</p>
 <p>The syntax for a parametric curve is: <code class="docutils literal notranslate"><span class="pre">Curve(Expression,Expression,Parameter</span> <span class="pre">Variable,Start</span> <span class="pre">value,End</span> <span class="pre">value)</span></code>. For example, you could plot the unit circle using <code class="docutils literal notranslate"><span class="pre">Curve(cos(t),sin(t),t,0,2*pi)</span></code>.</p>
 <section id="problem-2">
-<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this heading">#</a></h3>
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Link to this heading">#</a></h3>
 <p>Use GeoGebra to plot the curve <span class="math notranslate nohighlight">\(x=\cos(t+\cos(2t)),y=\sin(t+\sin(4t)), t\in[0,2\pi]\)</span>.</p>
 <p>When you are happy with your plot, click on the menu button in the top-right corner, and choose Export Image.</p>
 <p>Then, double-click the markdown cell below, and add your image. You should be able to just copy it to the clipboard, and then use <code class="docutils literal notranslate"><span class="pre">Ctrl-V</span></code> to paste the image into the cell.</p>
@@ -511,26 +536,26 @@ document.write(`
 <p><strong>Double-click this text</strong> to add your image, and hit <code class="docutils literal notranslate"><span class="pre">Ctrl-Enter</span></code> when you’re done.</p>
 </section>
 <section id="problem-3">
-<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this heading">#</a></h3>
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Link to this heading">#</a></h3>
 <p>Use parametric curves to generate an emoji of your choice.</p>
 <p><strong>Note</strong>: you will need more than one curve. Unless you are feeling ambitious, I recommend sticking to the classic smiley face.</p>
 </section>
 </section>
 <section id="arc-length-for-parametric-curves">
-<h2>Arc length for parametric curves<a class="headerlink" href="#arc-length-for-parametric-curves" title="Permalink to this heading">#</a></h2>
+<h2>Arc length for parametric curves<a class="headerlink" href="#arc-length-for-parametric-curves" title="Link to this heading">#</a></h2>
 <p>The formula for arc length for parametric curves is a fairly straightforward extension of the one we learned earlier. For a graph <span class="math notranslate nohighlight">\(y=f(x)\)</span>, we started with <span class="math notranslate nohighlight">\(\Delta s = \sqrt{\Delta x^2+\Delta y^2}\)</span> and factored out the <span class="math notranslate nohighlight">\(\Delta x\)</span> to get <span class="math notranslate nohighlight">\(\Delta s = \sqrt{1+\left(\frac{\Delta y}{\Delta x}\right)^2}\Delta x\)</span>. Taking the limit gave us <span class="math notranslate nohighlight">\(ds = \sqrt{1+f'(x)^2}dx\)</span>.</p>
 <p>Now, given <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>, we have <span class="math notranslate nohighlight">\(dx = x'(t)\,dt\)</span> and <span class="math notranslate nohighlight">\(dy = y'(t)\,dt\)</span>. The same sort of argument gives us</p>
 <div class="math notranslate nohighlight">
 \[ds = \sqrt{x'(t)^2+y'(t)^2}\,dt.\]</div>
 <section id="problem-4">
-<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this heading">#</a></h3>
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Link to this heading">#</a></h3>
 <p>For the curve given by <span class="math notranslate nohighlight">\(x=\dfrac{t}{1+t}, y=\ln(1+t), t\in [0,2]\)</span>:</p>
 <p>(a) Set up the integral using SymPy, and display the integral. (To display an integral without evaluating it, use <code class="docutils literal notranslate"><span class="pre">Integral</span></code> instead of <code class="docutils literal notranslate"><span class="pre">integrate</span></code>.) You will need to define the expressions for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and compute their derivatives before setting up the integral.</p>
 <p>(b) Evaluate the integral using SymPy.</p>
 <p><strong>Note</strong>: if SymPy fails to evaluate the integral, try using the change of variables <span class="math notranslate nohighlight">\(u=t+1\)</span>, and see if it succeeds with the resulting integral. Don’t forget to adjust the bounds!</p>
 </section>
 <section id="problem-5">
-<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this heading">#</a></h3>
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Link to this heading">#</a></h3>
 <p>The equations
 $<span class="math notranslate nohighlight">\(\begin{aligned}x&amp;=11\cos(t)-4\cos(11t/2)\\y&amp;=11\sin(t)-4\sin(11t/2)\end{aligned}\)</span>$
 define a curve called the <strong>epitrochoid</strong>.</p>
@@ -565,11 +590,10 @@ define a curve called the <strong>epitrochoid</strong>.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Calc2-Lab5-ODE-systems.html"
@@ -589,10 +613,7 @@ define a curve called the <strong>epitrochoid</strong>.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -600,6 +621,7 @@ define a curve called the <strong>epitrochoid</strong>.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -642,6 +664,7 @@ By Sean Fitzpatrick
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024.
@@ -668,8 +691,8 @@ By Sean Fitzpatrick
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculus 1, Lab 1: Limits and Python! &#8212; Jupyter Labs for University of Lethbridge Calculus</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Calc1-Lab1-Limits';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/fiatlux.jpg" class="logo__image only-light" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>
+    <script>document.write(`<img src="_static/fiatlux.jpg" class="logo__image only-dark" alt="Jupyter Labs for University of Lethbridge Calculus - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://uleth.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A//github.com/sean-fitzpatrick/CalcLabs&urlpath=lab/tree/CalcLabs/Calc1-Lab1-Limits.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -363,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -424,18 +449,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="calculus-1-lab-1-limits-and-python">
-<h1>Calculus 1, Lab 1: Limits and Python!<a class="headerlink" href="#calculus-1-lab-1-limits-and-python" title="Permalink to this heading">#</a></h1>
+<h1>Calculus 1, Lab 1: Limits and Python!<a class="headerlink" href="#calculus-1-lab-1-limits-and-python" title="Link to this heading">#</a></h1>
 <p>By Raheem Mir</p>
 <section id="welcome">
-<h2>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h2>
+<h2>Welcome!<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h2>
 <p>We are going to be using some Python to explore and work through calculus concepts. Now don’t worry, you don’t need to be a seasoned programmer or have any previous experience. We’ll just be writing some simple code and make use of powerful libraries that do the heavy lifting for us!</p>
-<p>For a review of basic Python syntax, see <a class="reference internal" href="python.html"><span class="doc std std-doc">the introduction</span></a>.</p>
+<p>For a review of basic Python syntax, see <a class="reference internal" href="python.html"><span class="std std-doc">the introduction</span></a>.</p>
 </section>
 <section id="using-sympy-and-numpy">
-<h2>Using SymPy and NumPy<a class="headerlink" href="#using-sympy-and-numpy" title="Permalink to this heading">#</a></h2>
+<h2>Using SymPy and NumPy<a class="headerlink" href="#using-sympy-and-numpy" title="Link to this heading">#</a></h2>
 <p>Python has many powerful librairies that add convenience and functionality. Two great libraries that we’ll be using for doing calculus with Python, are SymPy and NumPy.</p>
 <p>SymPy is a feature rich library designed for symbolic mathematics. We can use it to do symbolic calculations and manipulations, meaning, it deals with math like we do on paper. It can simplify algebraic expressions, solve equations, perform calculus tasks like evaluating limits or computing integrals and a plethora of other mathematical operations. SymPy gives us exact symbolic answers instead of numerical approximations, making it a great tool for intuitively exploring calculus concepts.</p>
 <p>To begin using SymPy we start by “importing” the library:</p>
@@ -467,7 +492,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We will provide you with the tools you need for this lab assignment, but an <a class="reference internal" href="sympy.html"><span class="doc std std-doc">overview of SymPy</span></a> is available if you’d like to take a look at what’s available.</p>
+<p>We will provide you with the tools you need for this lab assignment, but an <a class="reference internal" href="sympy.html"><span class="std std-doc">overview of SymPy</span></a> is available if you’d like to take a look at what’s available.</p>
 <p>While SymPy is great for symbolic manipulation, when it comes numerical computation, NumPy is the library of choice. Think of it as a high powered calculator with a large toolset. It implements many common mathematical functions, like trigonometric functions, logarithms and more.</p>
 <p>To start using NumPy, like we did with SymPy, we have to import it:</p>
 <div class="cell docutils container">
@@ -520,14 +545,15 @@ document.write(`
 </div>
 </section>
 <section id="let-s-look-at-limits">
-<h2>Let’s look at Limits!<a class="headerlink" href="#let-s-look-at-limits" title="Permalink to this heading">#</a></h2>
+<h2>Let’s look at Limits!<a class="headerlink" href="#let-s-look-at-limits" title="Link to this heading">#</a></h2>
 <section id="the-concept-of-a-limit">
-<h3>The concept of a limit<a class="headerlink" href="#the-concept-of-a-limit" title="Permalink to this heading">#</a></h3>
+<h3>The concept of a limit<a class="headerlink" href="#the-concept-of-a-limit" title="Link to this heading">#</a></h3>
 <p>The <strong>limit</strong> concept is a difficult one, but it’s essential to understanding calculus.
-When we write
-$<span class="math notranslate nohighlight">\(\lim_{x\to c}f(x) = L,\)</span><span class="math notranslate nohighlight">\(
-we are saying that the values of \)</span>f(x)<span class="math notranslate nohighlight">\( can be made as close to \)</span>L<span class="math notranslate nohighlight">\( as we want,
-as long as we use an \)</span>x<span class="math notranslate nohighlight">\( value that's close enough to \)</span>c$.</p>
+When we write</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to c}f(x) = L,\]</div>
+<p>we are saying that the values of <span class="math notranslate nohighlight">\(f(x)\)</span> can be made as close to <span class="math notranslate nohighlight">\(L\)</span> as we want,
+as long as we use an <span class="math notranslate nohighlight">\(x\)</span> value that’s close enough to <span class="math notranslate nohighlight">\(c\)</span>.</p>
 <p>Crucially, we do not allow <span class="math notranslate nohighlight">\(x\)</span> to equal <span class="math notranslate nohighlight">\(c\)</span> in the definition. It can get close, but never equal.</p>
 <p>Run the next cell to display an interactive graph of a function. Notice how the <span class="math notranslate nohighlight">\(y\)</span> values change as we drag <span class="math notranslate nohighlight">\(x\)</span>. At what points does it appear as though our function does not have a limit?</p>
 <div class="cell docutils container">
@@ -541,9 +567,10 @@ as long as we use an \)</span>x<span class="math notranslate nohighlight">\( val
 </section>
 </section>
 <section id="an-algebraic-limit">
-<h2>An algebraic limit<a class="headerlink" href="#an-algebraic-limit" title="Permalink to this heading">#</a></h2>
-<p>Consider the following example:
-$<span class="math notranslate nohighlight">\(\lim_{x\to 2}\frac{x^2-5x+6}{x^2-4}=-\frac14.\)</span>$</p>
+<h2>An algebraic limit<a class="headerlink" href="#an-algebraic-limit" title="Link to this heading">#</a></h2>
+<p>Consider the following example:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x\to 2}\frac{x^2-5x+6}{x^2-4}=-\frac14.\]</div>
 <p>Why is this true?</p>
 <p>First, look at the graph:</p>
 <div class="cell docutils container">
@@ -586,13 +613,14 @@ $<span class="math notranslate nohighlight">\(\lim_{x\to 2}\frac{x^2-5x+6}{x^2-4
 <p>Since we don’t let <span class="math notranslate nohighlight">\(x=2\)</span>, we’re allowed to cancel, and after that, the properties of limits take over:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}\lim_{x\to 2}f(x) &amp;= \lim_{x\to 2}\frac{x^2-5x+6}{x^2-4}\\
-&amp;= \lim_{x\to 2}\frac{(x-2)(x-3)}{(x-2)(x+2)}=\lim_{x\to 2}\frac{x-3}{x+2}\\
+&amp;= \lim_{x\to 2}\frac{(x-2)(x-3)}{(x-2)(x+2)}\\
+&amp;= \lim_{x\to 2}\frac{x-3}{x+2}\\
 &amp;= \frac{\lim_{x\to 2}(x-3)}{\lim_{x\to 2}(x+2)}\\
 &amp;= \frac{2-3}{2+2} = -\frac14,\end{aligned}\end{split}\]</div>
 <p>just as we expected.</p>
 </section>
 <section id="a-trigonometric-limit">
-<h2>A trigonometric limit<a class="headerlink" href="#a-trigonometric-limit" title="Permalink to this heading">#</a></h2>
+<h2>A trigonometric limit<a class="headerlink" href="#a-trigonometric-limit" title="Link to this heading">#</a></h2>
 <p>Next, we’re going to explore the limit</p>
 <div class="math notranslate nohighlight">
 \[\lim_{x\to 0}\dfrac{\sin(x)}{x}.\]</div>
@@ -656,7 +684,7 @@ because we are going to start by investigating numerically.</p>
 </div>
 <p>Establishing this result as fact is actually quite a bit of work, involving a fair amount of trigonometry, and a result called the <em>squeeze theorem</em>. But for now, we’ll cheat and ask the computer to evaluate the limit, using SymPy.</p>
 <section id="evaluating-limits-using-sympy">
-<h3><strong>Evaluating Limits Using SymPy</strong><a class="headerlink" href="#evaluating-limits-using-sympy" title="Permalink to this heading">#</a></h3>
+<h3><strong>Evaluating Limits Using SymPy</strong><a class="headerlink" href="#evaluating-limits-using-sympy" title="Link to this heading">#</a></h3>
 <p>To evaluate limits using SymPy, we can use the <code class="docutils literal notranslate"><span class="pre">limit()</span></code> function. The syntax is</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span><span class="n">variable</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
@@ -712,7 +740,7 @@ when \)</span>\theta&gt;0<span class="math notranslate nohighlight">\(. A simila
 </section>
 </section>
 <section id="some-further-limit-practice">
-<h2>Some further limit practice<a class="headerlink" href="#some-further-limit-practice" title="Permalink to this heading">#</a></h2>
+<h2>Some further limit practice<a class="headerlink" href="#some-further-limit-practice" title="Link to this heading">#</a></h2>
 <p>Now for some more!</p>
 <p>Let’s evaluate:</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle \lim_{x\to 1}{(x^2 + 2x + 2)}\)</span></p>
@@ -811,11 +839,10 @@ when \)</span>\theta&gt;0<span class="math notranslate nohighlight">\(. A simila
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="IntrotoNumPy.html"
@@ -835,10 +862,7 @@ when \)</span>\theta&gt;0<span class="math notranslate nohighlight">\(. A simila
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -846,6 +870,7 @@ when \)</span>\theta&gt;0<span class="math notranslate nohighlight">\(. A simila
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -886,6 +911,7 @@ By Sean Fitzpatrick
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024.
@@ -912,8 +938,8 @@ By Sean Fitzpatrick
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
