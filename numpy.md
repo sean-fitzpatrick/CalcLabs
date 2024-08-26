@@ -85,7 +85,7 @@ Here's how we would access (and output) the first two elements of the array `x`:
 print(x[0], x[1])
 ```
 
-To access elements from the end of an array, we use negative indices. For instance, `[-1]` would specify the last index of an array.  
+To access elements from the end of an array, we use negative indices. For instance, `[-1]` would specify the last index of an array.
 
 Below is how we would access the last three elements of `x`:
 
@@ -192,7 +192,7 @@ Now we can create and display our plot, passing in our $x$ and $y$ values to the
 
 ```python
 plt.plot(x1,y1)  # creating the plot
-plt.xlabel('x')  
+plt.xlabel('x')
 plt.ylabel('cos(x)')
 plt.show()  # displaying the plot
 ```
@@ -203,7 +203,7 @@ First, let's generate our $x$-values with `np.linspace()`:
 
 
 ```python
-x2 = np.linspace(-5, 5, 500)  
+x2 = np.linspace(-5, 5, 500)
 ```
 
 Next, let's define the function we want to plot and generate our $y$-values:
@@ -224,7 +224,7 @@ y2 = f(x2)
 
 ```python
 plt.plot(x2,y2)  # creating the plot
-plt.xlabel('x')  
+plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.show()
 ```
