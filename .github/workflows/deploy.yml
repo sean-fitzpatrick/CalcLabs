@@ -41,11 +41,11 @@ jobs:
       # Install requirements.txt
       - name: Install requirements
         run: |
-          pip install -r my_book/requirements.txt
+          pip install -r requirements.txt
       # Build the example book
       - name: Build book
         run: |
-          jupyter-book build .
+          jupyter-book build ./
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
