@@ -31,7 +31,7 @@ jobs:
           jupyter-book build .
       # Upload the book's HTML as an artifact
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "_build/html"
       # Deploy the book's HTML to GitHub Pages
